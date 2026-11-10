@@ -1,0 +1,73 @@
+from typing import Literal
+
+Lang = Literal["it", "en", "es"]
+
+TEXTS = {
+    "it": {
+        "app_title": "Chess Coach Pro",
+        "tagline": "Coaching scacchistico AI di nuova generazione",
+        "login": "Accedi", "register": "Registrati", "logout": "Esci",
+        "email": "Email", "password": "Password",
+        "login_btn": "Accedi", "register_btn": "Crea account",
+        "forgot_password": "Password dimenticata?",
+        "analyze_btn": "Analizza partita",
+        "upgrade": "Passa a Pro",
+        "settings": "Impostazioni",
+        "language": "Lingua", "theme": "Tema",
+        "dark": "Scuro", "light": "Chiaro",
+        "dash": "Dashboard", "analyze": "Analisi", "import": "Importa",
+        "training": "Palestra", "pricing": "Piani", "account": "Account",
+        "srs": "Ripasso Spaziato",
+        "analytics": "Analytics",
+        "quota_left": "Analisi residue questo mese",
+        "quota_exhausted": "Quota mensile esaurita. Passa a Pro per analisi illimitate.",
+        "confirm_delete": "Sei sicuro? Questa azione è irreversibile.",
+        "due_today": "puzzle da ripassare oggi",
+    },
+    "en": {
+        "app_title": "Chess Coach Pro",
+        "tagline": "Next-generation AI chess coaching",
+        "login": "Login", "register": "Sign up", "logout": "Sign out",
+        "email": "Email", "password": "Password",
+        "login_btn": "Log in", "register_btn": "Create account",
+        "forgot_password": "Forgot password?",
+        "analyze_btn": "Analyze game",
+        "upgrade": "Upgrade to Pro",
+        "settings": "Settings",
+        "language": "Language", "theme": "Theme",
+        "dark": "Dark", "light": "Light",
+        "dash": "Dashboard", "analyze": "Analysis", "import": "Import",
+        "training": "Training", "pricing": "Plans", "account": "Account",
+        "srs": "Spaced Review",
+        "analytics": "Analytics",
+        "quota_left": "Analyses left this month",
+        "quota_exhausted": "Monthly quota exhausted. Upgrade to Pro for unlimited analyses.",
+        "confirm_delete": "Are you sure? This action is irreversible.",
+        "due_today": "puzzles to review today",
+    },
+    "es": {
+        "app_title": "Chess Coach Pro",
+        "tagline": "Entrenamiento de ajedrez con IA de nueva generación",
+        "login": "Iniciar sesión", "register": "Registrarse", "logout": "Salir",
+        "email": "Correo", "password": "Contraseña",
+        "login_btn": "Entrar", "register_btn": "Crear cuenta",
+        "forgot_password": "¿Olvidaste tu contraseña?",
+        "analyze_btn": "Analizar partida",
+        "upgrade": "Pasar a Pro",
+        "settings": "Ajustes",
+        "language": "Idioma", "theme": "Tema",
+        "dark": "Oscuro", "light": "Claro",
+        "dash": "Panel", "analyze": "Análisis", "import": "Importar",
+        "training": "Entrenamiento", "pricing": "Planes", "account": "Cuenta",
+        "srs": "Repaso Espaciado",
+        "analytics": "Analíticas",
+        "quota_left": "Análisis restantes este mes",
+        "quota_exhausted": "Cuota mensual agotada. Pasa a Pro para análisis ilimitados.",
+        "confirm_delete": "¿Estás seguro? Esta acción es irreversible.",
+        "due_today": "puzles para repasar hoy",
+    },
+}
+
+
+def t(key: str, lang: Lang = "it") -> str:
+    return TEXTS.get(lang, TEXTS["it"]).get(key, key)
