@@ -1,0 +1,4 @@
+rae-run.*
+data/crawl.log
+data/artists.jsonl
+__pycache__/
