@@ -2,3 +2,6 @@ rae-run.*
 data/crawl.log
 data/artists.jsonl
 __pycache__/
+data/*.log
+data/artists_follows.csv
+data/artists_signals.csv
