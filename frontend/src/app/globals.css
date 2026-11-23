@@ -847,3 +847,23 @@ a.dr-btn { padding: .55rem .8rem; border: 1px solid var(--line-2); border-radius
 .gv-pick { background: none; border: none; color: inherit; text-align: left; padding: 0; flex: 1; min-width: 0; cursor: pointer; }
 .gv-chart { margin: 0; }
 @media (max-width: 860px) { .gv { grid-template-columns: minmax(0, 1fr); } .gv-board { position: static; } .gv-scroll { max-height: none; } }
+
+/* ===== v3.17: elenco partite, premi, piani ===== */
+.gsum { display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; margin: .2rem 0 .8rem; color: var(--mute); font-size: .92rem; }
+.gsum b { color: var(--ice); font-family: var(--f-display); font-size: 1.1rem; letter-spacing: -.02em; } .gsum .warn b { color: var(--amber); }
+.gfilters { flex-direction: row; flex-wrap: wrap; align-items: center; } .gfilters .search { flex: 1 1 200px; min-width: 0; }
+.fmore { margin: 0; }
+.fscroll { flex-basis: 100%; }
+.plan { position: relative; } .plan.rec { border-color: var(--ember); box-shadow: 0 18px 40px -26px var(--ember); }
+.plan-tag { position: absolute; top: -.7rem; right: .8rem; background: var(--ember); color: #1a0b05; font-weight: 800; font-size: .72rem; padding: .15rem .6rem; border-radius: 999px; }
+.danger-zone { margin-top: 1.6rem; color: var(--mute); } .danger-zone summary { cursor: pointer; font-size: .9rem; } .danger-zone button { margin-top: .6rem; }
+@media (max-width: 520px) { .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.hero-level { margin-bottom: .8rem; }
+
+/* Allenati e Aperture: tutto in una schermata, anche su telefono */
+@media (max-width: 860px) {
+  .drill .board-frame { max-width: min(100%, calc(100svh - 360px)); min-width: 260px; }
+  .om-panel .board-frame { max-width: min(420px, calc(100svh - 380px)); min-width: 260px; }
+  .om-scroll { max-height: 56svh; }
+}
+@media (min-width: 861px) { .om-scroll { max-height: calc(100svh - 240px); } .drill .board-frame { max-width: min(440px, calc(100svh - 200px)); } }
