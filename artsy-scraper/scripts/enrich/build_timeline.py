@@ -8,12 +8,13 @@ Outputs in <out dir>:
   quadrant_transitions.csv counts of artists moving between quadrants FROM_YEAR -> TO_YEAR
   artist_trends.csv        one row per artist: trends, quadrant then and now, primary market prices
 
-Yearly quadrant (only artists with a Wikipedia page, since that is the only popularity
-signal with a history):
-  popularity  = Wikipedia page views in the year (current year annualised), percentile
-  recognition = rolling 5-year sum of 3*institutional shows + 2*solo shows + 1*Artsy articles
-                + 1*top art fairs + 0.5*other non-fair shows, percentile
+Yearly quadrant, for every artist with Artsy history (same rule every year):
+  attention   = rolling 3-year sum of auction lots offered + 5*Artsy articles
+                (market and media attention; Artsy followers have no history), percentile
+  recognition = rolling 5-year sum of 3*institutional shows + 2*solo shows + 1*top art fairs
+                + 0.5*other non-fair shows, percentile
   quadrant    = same 75th-percentile rule as the main matrix
+Wikipedia page views (annual, current year annualised) are kept as a separate column.
 """
 import bisect
 import csv
@@ -56,14 +57,15 @@ if os.path.exists(P("extras/fairs_yearly.csv")):
 slugs = sorted(set(hist) | has_wiki)
 rows = []
 for s in slugs:
-    roll = []
+    roll, att = [], []
     for y in range(FIRST, LAST + 1):
         h = hist[s].get(y, {})
         g = lambda k: int(h.get(k) or 0)
         tf = fairs[s].get(y, 0)
-        pts = (3 * g("inst_shows") + 2 * g("solo_shows") + g("articles") + tf
+        pts = (3 * g("inst_shows") + 2 * g("solo_shows") + tf
                + 0.5 * max(0, g("shows") - g("inst_shows") - g("solo_shows") - g("fair_shows")))
         roll.append(pts)
+        att.append(g("lots_offered") + 5 * g("articles"))
         v = views[s].get(y, 0)
         if v is not None and y == LAST and cur_months:
             v = round(v * 12 / cur_months)
@@ -75,26 +77,25 @@ for s in slugs:
             "lots_offered": g("lots_offered"), "lots_sold": g("lots_sold"),
             "median_price_usd": h.get("median_price_usd", ""), "median_unique_usd": h.get("median_unique_usd", ""),
             "price_to_estimate": h.get("median_price_to_estimate", ""),
-            "recognition_5y": sum(roll[-5:]),
+            "recognition_5y": sum(roll[-5:]), "attention_3y": sum(att[-3:]),
         })
 
 by_year = defaultdict(list)
 for r in rows:
+    r.setdefault("attention_pct", ""); r.setdefault("recognition_pct", ""); r.setdefault("quadrant", "")
     by_year[r["year"]].append(r)
 for y, rs in by_year.items():
-    pop = sorted(float(r["wiki_views"]) for r in rs if r["wiki_views"] != "")
-    rec = sorted(r["recognition_5y"] for r in rs if r["slug"] in has_wiki)
+    rs = [r for r in rs if r["slug"] in hist]
+    pop = sorted(r["attention_3y"] for r in rs)
+    rec = sorted(r["recognition_5y"] for r in rs)
     for r in rs:
-        if r["wiki_views"] == "" or not pop:
-            r["popularity_pct"] = r["recognition_pct"] = r["quadrant"] = ""
-            continue
-        pp = round(100 * bisect.bisect_left(pop, float(r["wiki_views"])) / len(pop), 1)
+        pp = round(100 * bisect.bisect_left(pop, r["attention_3y"]) / len(pop), 1)
         rp = round(100 * bisect.bisect_left(rec, r["recognition_5y"]) / len(rec), 1)
-        r["popularity_pct"], r["recognition_pct"] = pp, rp
+        r["attention_pct"], r["recognition_pct"] = pp, rp
         r["quadrant"] = ("established" if pp >= 75 and rp >= 75 else "hype" if pp >= 75
                          else "insider" if rp >= 75 else "emerging")
 
-fields = ["slug", "name", "year", "wiki_views", "popularity_pct", "shows", "inst_shows", "solo_shows", "fair_shows", "top_fairs",
+fields = ["slug", "name", "year", "wiki_views", "attention_3y", "attention_pct", "shows", "inst_shows", "solo_shows", "fair_shows", "top_fairs",
           "articles", "recognition_5y", "recognition_pct", "quadrant", "lots_offered", "lots_sold",
           "median_price_usd", "median_unique_usd", "price_to_estimate"]
 with open(os.path.join(out_dir, "artist_timeline.csv"), "w", newline="", encoding="utf-8") as fh:
