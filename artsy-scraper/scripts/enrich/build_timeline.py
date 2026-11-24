@@ -12,7 +12,7 @@ Yearly quadrant (only artists with a Wikipedia page, since that is the only popu
 signal with a history):
   popularity  = Wikipedia page views in the year (current year annualised), percentile
   recognition = rolling 5-year sum of 3*institutional shows + 2*solo shows + 1*Artsy articles
-                + 0.5*other shows, percentile
+                + 1*top art fairs + 0.5*other non-fair shows, percentile
   quadrant    = same 75th-percentile rule as the main matrix
 """
 import bisect
@@ -47,6 +47,12 @@ if os.path.exists(P("wiki_pageviews.csv")):
             months_seen[r["slug"]][y] += 1
 cur_months = max((m for d in months_seen.values() for m in [d.get(LAST, 0)]), default=0)
 
+# top art fairs per year (from artist_extras.py), optional
+fairs = defaultdict(dict)
+if os.path.exists(P("extras/fairs_yearly.csv")):
+    for r in csv.DictReader(open(P("extras/fairs_yearly.csv"), encoding="utf-8")):
+        fairs[r["slug"]][int(r["year"])] = int(r["top_fairs"])
+
 slugs = sorted(set(hist) | has_wiki)
 rows = []
 for s in slugs:
@@ -54,7 +60,9 @@ for s in slugs:
     for y in range(FIRST, LAST + 1):
         h = hist[s].get(y, {})
         g = lambda k: int(h.get(k) or 0)
-        pts = 3 * g("inst_shows") + 2 * g("solo_shows") + g("articles") + 0.5 * max(0, g("shows") - g("inst_shows") - g("solo_shows"))
+        tf = fairs[s].get(y, 0)
+        pts = (3 * g("inst_shows") + 2 * g("solo_shows") + g("articles") + tf
+               + 0.5 * max(0, g("shows") - g("inst_shows") - g("solo_shows") - g("fair_shows")))
         roll.append(pts)
         v = views[s].get(y, 0)
         if v is not None and y == LAST and cur_months:
@@ -63,7 +71,7 @@ for s in slugs:
             "slug": s, "name": matrix.get(s, {}).get("name", s), "year": y,
             "wiki_views": v if s in has_wiki else "",
             "shows": g("shows"), "inst_shows": g("inst_shows"), "solo_shows": g("solo_shows"),
-            "fair_shows": g("fair_shows"), "articles": g("articles"),
+            "fair_shows": g("fair_shows"), "top_fairs": tf, "articles": g("articles"),
             "lots_offered": g("lots_offered"), "lots_sold": g("lots_sold"),
             "median_price_usd": h.get("median_price_usd", ""), "median_unique_usd": h.get("median_unique_usd", ""),
             "price_to_estimate": h.get("median_price_to_estimate", ""),
@@ -86,7 +94,7 @@ for y, rs in by_year.items():
         r["quadrant"] = ("established" if pp >= 75 and rp >= 75 else "hype" if pp >= 75
                          else "insider" if rp >= 75 else "emerging")
 
-fields = ["slug", "name", "year", "wiki_views", "popularity_pct", "shows", "inst_shows", "solo_shows", "fair_shows",
+fields = ["slug", "name", "year", "wiki_views", "popularity_pct", "shows", "inst_shows", "solo_shows", "fair_shows", "top_fairs",
           "articles", "recognition_5y", "recognition_pct", "quadrant", "lots_offered", "lots_sold",
           "median_price_usd", "median_unique_usd", "price_to_estimate"]
 with open(os.path.join(out_dir, "artist_timeline.csv"), "w", newline="", encoding="utf-8") as fh:
