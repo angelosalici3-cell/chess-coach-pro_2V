@@ -153,9 +153,15 @@ trend_rows = []
 for s in slugs:
     t = tl[s]
     vv = [(y, float(t[y]["wiki_views"])) for y in range(FIRST, LAST) if t[y]["wiki_views"] not in ("", 0, "0")]
-    pp = [(y, float(t[y]["median_price_usd"])) for y in range(FIRST, LAST + 1)
+    # price trend on unique works (no prints/multiples) when there are >= 3 such years
+    pu = [(y, float(t[y]["median_unique_usd"])) for y in range(FIRST, LAST + 1)
+          if t[y]["median_unique_usd"] and int(t[y]["lots_sold"]) >= 3]
+    pa = [(y, float(t[y]["median_price_usd"])) for y in range(FIRST, LAST + 1)
           if t[y]["median_price_usd"] and int(t[y]["lots_sold"]) >= 3]
+    pp, basis = (pu, "unique works") if len(pu) >= 3 else (pa, "all lots")
     sv, sp = slope(vv), slope(pp)
+    ratios = [float(t[y]["price_to_estimate"]) for y in range(LAST - 2, LAST + 1) if t[y]["price_to_estimate"]]
+    ratios_before = [float(t[y]["price_to_estimate"]) for y in range(LAST - 5, LAST - 2) if t[y]["price_to_estimate"]]
     recent = sum(t[y]["inst_shows"] + t[y]["solo_shows"] for y in range(LAST - 2, LAST + 1))
     before = sum(t[y]["inst_shows"] + t[y]["solo_shows"] for y in range(LAST - 5, LAST - 2))
     d = lst.get(s)
@@ -164,7 +170,9 @@ for s in slugs:
         "slug": s, "name": matrix.get(s, {}).get("name", s),
         "wiki_views_growth_pct_per_year": round(100 * (10 ** sv - 1), 1) if sv is not None else "",
         "price_growth_pct_per_year": round(100 * (10 ** sp - 1), 1) if sp is not None else "",
-        "price_years_used": len(pp),
+        "price_years_used": len(pp), "price_trend_basis": basis if sp is not None else "",
+        "price_to_estimate_last3y": round(statistics.median(ratios), 2) if ratios else "",
+        "price_to_estimate_prev3y": round(statistics.median(ratios_before), 2) if ratios_before else "",
         "major_shows_last3y": recent, "major_shows_prev3y": before,
         f"quadrant_{FROM_YEAR}": q0, f"quadrant_{TO_YEAR}": q1,
         "quadrant_move": f"{q0}→{q1}" if q0 and q1 and q0 != q1 else ("" if not (q0 and q1) else "stable"),

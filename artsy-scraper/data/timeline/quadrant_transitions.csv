@@ -1,0 +1,17 @@
+from_quadrant,to_quadrant,artists,from_year,to_year
+insider,insider,17,2019,2026
+insider,established,2,2019,2026
+insider,hype,1,2019,2026
+insider,emerging,49,2019,2026
+established,insider,2,2019,2026
+established,established,7,2019,2026
+established,hype,11,2019,2026
+established,emerging,2,2019,2026
+hype,insider,3,2019,2026
+hype,established,14,2019,2026
+hype,hype,47,2019,2026
+hype,emerging,7,2019,2026
+emerging,insider,42,2019,2026
+emerging,established,3,2019,2026
+emerging,hype,8,2019,2026
+emerging,emerging,158,2019,2026
