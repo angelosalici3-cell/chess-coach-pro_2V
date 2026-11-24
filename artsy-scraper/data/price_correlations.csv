@@ -1,0 +1,6 @@
+group,artists,rho_price_followers,rho_price_expert,rho_price_interest,median_price_usd
+all,4090,0.183,0.121,0.184,12160
+insider,752,0.092,-0.122,0.05,9735
+established,1855,0.226,0.108,0.188,14942
+hype,741,-0.019,0.116,0.095,10795
+emerging,742,0.073,0.093,0.103,9940
