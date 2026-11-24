@@ -6,3 +6,4 @@ data/*.log
 data/artists_follows.csv
 data/artists_signals.csv
 data/artists_prices.csv
+data/history/
