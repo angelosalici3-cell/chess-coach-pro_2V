@@ -8,12 +8,22 @@ Outputs in <out dir>:
   quadrant_transitions.csv counts of artists moving between quadrants FROM_YEAR -> TO_YEAR
   artist_trends.csv        one row per artist: trends, quadrant then and now, primary market prices
 
-Yearly quadrant, for every artist with Artsy history (same rule every year):
-  attention   = rolling 3-year sum of auction lots offered + 5*Artsy articles
+Yearly quadrant, for every artist with Artsy history:
+  Each year's counts are first divided by that year's total across all artists (times the
+  average yearly total), because Artsy records ~4x more shows in 2026 than in 2015.
+  attention   = rolling 3-year sum of normalised auction lots offered + 5*Artsy articles
                 (market and media attention; Artsy followers have no history), percentile
-  recognition = rolling 5-year sum of 3*institutional shows + 2*solo shows + 1*top art fairs
-                + 0.5*other non-fair shows, percentile
-  quadrant    = same 75th-percentile rule as the main matrix
+  recognition = today's expert score from Artsy insights (museum collections, biennials,
+                reviews...), back-cast to each year by the share of the artist's normalised
+                cumulative activity (3*institutional + 2*solo shows + top fairs + 0.5*other shows,
+                since 2010) reached by that year. Percentile against one fixed yardstick: the
+                expert scores of all artists in the main matrix, so 2026 matches today's quadrant.
+                Careers documented on Artsy before 2010 start from at least half of today's score.
+                Recognition accumulates: it can grow or hold, not vanish. Validated against
+                Artsy's current signals (show records alone agreed only ~52%).
+  quadrant    = 75th-percentile rule with hysteresis: an artist already above the threshold on
+                an axis stays above until it drops under the 65th percentile
+Deceased artists are left out of the transitions table (living = no death date on Artsy).
 Wikipedia page views (annual, current year annualised) are kept as a separate column.
 """
 import bisect
@@ -55,17 +65,41 @@ if os.path.exists(P("extras/fairs_yearly.csv")):
         fairs[r["slug"]][int(r["year"])] = int(r["top_fairs"])
 
 slugs = sorted(set(hist) | has_wiki)
+HALF_LIFE, HYST = 5.0, 65.0
+# yearly totals across all artists, to remove growth in Artsy's coverage
+tot = defaultdict(lambda: defaultdict(float))
+for s_, years in hist.items():
+    for y_, h_ in years.items():
+        for k_ in ("shows", "inst_shows", "solo_shows", "fair_shows", "lots_offered", "articles"):
+            tot[y_][k_] += int(h_.get(k_) or 0)
+    for y_, n_ in fairs[s_].items():
+        tot[y_]["top_fairs"] += n_
+YEARS_ALL = sorted(y_ for y_ in tot if 2010 <= y_ <= LAST)
+def norm_factor(k_):
+    vals = [tot[y_][k_] for y_ in YEARS_ALL if tot[y_][k_] > 0]
+    avg = sum(vals) / len(vals) if vals else 1
+    return {y_: (avg / tot[y_][k_] if tot[y_][k_] else 1) for y_ in YEARS_ALL}
+NF = {k_: norm_factor(k_) for k_ in ("shows", "inst_shows", "solo_shows", "top_fairs", "lots_offered", "articles")}
+living = {s_ for s_ in slugs if not (matrix.get(s_, {}).get("deathday") or "").strip()}
 rows = []
 for s in slugs:
     roll, att = [], []
+    rec_score = 0.0
+    for y0 in range(2010, FIRST):  # warm up the cumulative score from 2010
+        h0 = hist[s].get(y0, {})
+        g0 = lambda k: int(h0.get(k) or 0) * NF.get(k, {}).get(y0, 1)
+        other0 = max(0, int(h0.get("shows") or 0) - int(h0.get("inst_shows") or 0) - int(h0.get("solo_shows") or 0) - int(h0.get("fair_shows") or 0)) * NF["shows"].get(y0, 1)
+        rec_score = rec_score + 3 * g0("inst_shows") + 2 * g0("solo_shows") + fairs[s].get(y0, 0) * NF["top_fairs"].get(y0, 1) + 0.5 * other0
     for y in range(FIRST, LAST + 1):
         h = hist[s].get(y, {})
         g = lambda k: int(h.get(k) or 0)
         tf = fairs[s].get(y, 0)
-        pts = (3 * g("inst_shows") + 2 * g("solo_shows") + tf
-               + 0.5 * max(0, g("shows") - g("inst_shows") - g("solo_shows") - g("fair_shows")))
+        n_ = lambda k: NF[k].get(y, 1)
+        other = max(0, g("shows") - g("inst_shows") - g("solo_shows") - g("fair_shows"))
+        pts = 3 * g("inst_shows") * n_("inst_shows") + 2 * g("solo_shows") * n_("solo_shows") + tf * n_("top_fairs") + 0.5 * other * n_("shows")
+        rec_score = rec_score + pts
         roll.append(pts)
-        att.append(g("lots_offered") + 5 * g("articles"))
+        att.append(g("lots_offered") * n_("lots_offered") + 5 * g("articles") * n_("articles"))
         v = views[s].get(y, 0)
         if v is not None and y == LAST and cur_months:
             v = round(v * 12 / cur_months)
@@ -77,29 +111,55 @@ for s in slugs:
             "lots_offered": g("lots_offered"), "lots_sold": g("lots_sold"),
             "median_price_usd": h.get("median_price_usd", ""), "median_unique_usd": h.get("median_unique_usd", ""),
             "price_to_estimate": h.get("median_price_to_estimate", ""),
-            "recognition_5y": sum(roll[-5:]), "attention_3y": sum(att[-3:]),
+            "cum_activity": rec_score, "attention_3y": round(sum(att[-3:]), 3),
         })
 
+# back-cast expert recognition: today's expert score x share of cumulative activity reached
+# careers documented before Artsy's records start (~2010) already had recognition then
+first_doc = {}
+if os.path.exists(P("extras/extras.csv")):
+    for r in csv.DictReader(open(P("extras/extras.csv"), encoding="utf-8")):
+        ys = [int(x) for x in (r.get("first_show_year"), r.get("first_lot_year")) if x and x.isdigit()]
+        if ys:
+            first_doc[r["slug"]] = min(ys)
+EARLY_FLOOR = 0.5
+final_cum = {}
+for r in rows:
+    if r["year"] == LAST:
+        final_cum[r["slug"]] = r["cum_activity"]
+for r in rows:
+    es = float(matrix.get(r["slug"], {}).get("expert_score") or 0)
+    fc = final_cum.get(r["slug"], 0)
+    share = r["cum_activity"] / fc if fc > 0 else 1.0
+    if first_doc.get(r["slug"], 9999) < 2010:
+        share = max(share, EARLY_FLOOR)
+    r["recognition_score"] = round(es * share, 3)
+
+REC_REF = sorted(float(r.get("expert_score") or 0) for r in matrix.values())
 by_year = defaultdict(list)
 for r in rows:
     r.setdefault("attention_pct", ""); r.setdefault("recognition_pct", ""); r.setdefault("quadrant", "")
     by_year[r["year"]].append(r)
-for y, rs in by_year.items():
-    rs = [r for r in rs if r["slug"] in hist]
+prev_hi = defaultdict(lambda: [False, False])  # per artist: [attention high, recognition high]
+for y in sorted(by_year):
+    rs = [r for r in by_year[y] if r["slug"] in hist]
     pop = sorted(r["attention_3y"] for r in rs)
-    rec = sorted(r["recognition_5y"] for r in rs)
+    rec = REC_REF  # one fixed yardstick for every year: today's expert scores of all matrix artists
     for r in rs:
         pp = round(100 * bisect.bisect_left(pop, r["attention_3y"]) / len(pop), 1)
-        rp = round(100 * bisect.bisect_left(rec, r["recognition_5y"]) / len(rec), 1)
+        rp = round(100 * bisect.bisect_left(rec, r["recognition_score"]) / len(rec), 1)
         r["attention_pct"], r["recognition_pct"] = pp, rp
-        r["quadrant"] = ("established" if pp >= 75 and rp >= 75 else "hype" if pp >= 75
-                         else "insider" if rp >= 75 else "emerging")
+        ph = prev_hi[r["slug"]]
+        ah = pp >= 75 or (ph[0] and pp >= HYST)
+        rh = rp >= 75 or (ph[1] and rp >= HYST)
+        prev_hi[r["slug"]] = [ah, rh]
+        r["quadrant"] = ("established" if ah and rh else "hype" if ah else "insider" if rh else "emerging")
 
 fields = ["slug", "name", "year", "wiki_views", "attention_3y", "attention_pct", "shows", "inst_shows", "solo_shows", "fair_shows", "top_fairs",
-          "articles", "recognition_5y", "recognition_pct", "quadrant", "lots_offered", "lots_sold",
+          "articles", "recognition_score", "recognition_pct", "quadrant", "lots_offered", "lots_sold",
           "median_price_usd", "median_unique_usd", "price_to_estimate"]
 with open(os.path.join(out_dir, "artist_timeline.csv"), "w", newline="", encoding="utf-8") as fh:
-    w = csv.DictWriter(fh, fieldnames=fields)
+    w = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")
     w.writeheader()
     w.writerows(rows)
 
@@ -108,7 +168,7 @@ q_at = defaultdict(dict)
 for r in rows:
     if r["quadrant"]:
         q_at[r["slug"]][r["year"]] = r["quadrant"]
-trans = Counter((d[FROM_YEAR], d[TO_YEAR]) for d in q_at.values() if FROM_YEAR in d and TO_YEAR in d)
+trans = Counter((d[FROM_YEAR], d[TO_YEAR]) for s_, d in q_at.items() if s_ in living and FROM_YEAR in d and TO_YEAR in d)
 Q = ["insider", "established", "hype", "emerging"]
 with open(os.path.join(out_dir, "quadrant_transitions.csv"), "w", newline="", encoding="utf-8") as fh:
     w = csv.writer(fh)
@@ -175,7 +235,7 @@ for s in slugs:
         "price_to_estimate_last3y": round(statistics.median(ratios), 2) if ratios else "",
         "price_to_estimate_prev3y": round(statistics.median(ratios_before), 2) if ratios_before else "",
         "major_shows_last3y": recent, "major_shows_prev3y": before,
-        f"quadrant_{FROM_YEAR}": q0, f"quadrant_{TO_YEAR}": q1,
+        f"quadrant_{FROM_YEAR}": q0, f"quadrant_{TO_YEAR}": q1, "living": int(s in living),
         "quadrant_move": f"{q0}→{q1}" if q0 and q1 and q0 != q1 else ("" if not (q0 and q1) else "stable"),
         "listings_for_sale": d["n"] if d else 0,
         "median_list_price_usd": round(statistics.median(d["all"])) if d and d["all"] else "",
