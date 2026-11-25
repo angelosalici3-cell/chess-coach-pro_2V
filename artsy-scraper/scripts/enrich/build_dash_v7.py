@@ -251,6 +251,7 @@ rep("TR_redraw('t-artist', 't-profile', 't-strip', 't-charts');", "TR_redraw('t-
 NEWJS = r"""
 <script>
   const BETA = __BETA__;
+  const dec = (v) => (v === '' || v == null) ? '—' : String(v).replace('.', ',');  // each dashboard script has its own scope
   const CAT = { P: 'Dipinto', C: 'Opera su carta', S: 'Scultura', M: 'Stampa o multiplo', F: 'Fotografia', A: 'Altro' };
   window.LOT_index = () => {
     const d = dash.data('lots');

@@ -395,8 +395,10 @@ def q_year(slug, Y):  # timeline rows exist only in years with data: carry the l
 tr = Counter((q_year(s_, 2019), q_year(s_, 2026)) for s_ in living)
 with open(os.path.join(D, "quadrant_transitions_v4.csv"), "w", newline="") as fh:
     w = csv.writer(fh); w.writerow(["from_quadrant", "to_quadrant", "artists", "from_year", "to_year"])
-    for (a, b), n in sorted(tr.items()):
-        w.writerow([a, b, n, 2019, 2026])
+    QS = ["insider", "established", "hype", "emerging"]
+    for a in QS:  # all 16 pairs, zeros included: the page's heat table marks every cell
+        for b in QS:
+            w.writerow([a, b, tr.get((a, b), 0), 2019, 2026])
 
 # ---------- 8. compact lots for the dashboard (last 10 years, max 60 per artist) ----------
 with open(os.path.join(D, "lots_radar.csv"), "w", newline="", encoding="utf-8") as fh:
