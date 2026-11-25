@@ -1,0 +1,45 @@
+{
+ "beta_size_elasticity": 0.689,
+ "beta_obs": 202773,
+ "zero_decimal_currencies": [
+  "HUF",
+  "JPY",
+  "KRW"
+ ],
+ "listing_currencies_fixed": {
+  "JPY": 35
+ },
+ "quadrants": {
+  "established": 1954,
+  "insider": 3230,
+  "hype": 2943,
+  "emerging": 13337
+ },
+ "audit": {
+  "growth_sign_flips_after_size_adjustment": 265,
+  "emerging_to_hype_market_rule": 493,
+  "timeline_quadrant_flapping_4plus_changes": 15,
+  "timeline_recognition_high_to_low": 0,
+  "timeline_emerging_to_hype_market_rule": 3338,
+  "lots_sold_parsed": 393029,
+  "lots_with_size": 362536,
+  "lots_fx_recomputed": 2013,
+  "artists_with_lots": 7066,
+  "artists_market_proven": 2875,
+  "deceased_flagged_from_instagram_search": 109
+ },
+ "transitions": {
+  "insider->insider": 1223,
+  "emerging->emerging": 325,
+  "hype->established": 57,
+  "hype->hype": 177,
+  "emerging->hype": 112,
+  "established->established": 376,
+  "emerging->insider": 207,
+  "established->insider": 118,
+  "insider->established": 170,
+  "hype->emerging": 43,
+  "emerging->established": 47,
+  "hype->insider": 56
+ }
+}
