@@ -3,6 +3,7 @@ import json, re, sys
 D = sys.argv[1]
 src = open(f"{D}/index.html", encoding="utf-8").read()
 summ = json.load(open(f"{D}/radar_summary.json"))
+MATRIX = f"{D}/artist_matrix_v7.csv"
 BETA = summ["beta_size_elasticity"]
 h = src
 
@@ -440,5 +441,16 @@ rep("  one('p-med', 'median_price_usd', (v) => TR_FMT(+v));", """  one('p-med', 
 rep("  num('n-analyzed', 'pipeline', 'artists_analyzed');", """  num('n-analyzed', 'pipeline', 'artists_analyzed');
   num('s-ig', 'pipeline', 'instagram_in_matrix');
   num('s-ig-f', 'pipeline', 'instagram_with_followers');""")
+# v7.1 audit fixes
+rep("""          <th class="tr-n" data-field="median_price_usd">Prezzo mediano (USD)</th>""", """          <th class="tr-n" data-field="median_usd_10y">Prezzo mediano, 10 anni (USD)</th>""")
+rep("td(r.mp ? TR_FMT(r.mp) : '', 'tr-n'), td(mom, 'tr-tags')", "td(r.median_usd_10y ? TR_FMT(+r.median_usd_10y) : '', 'tr-n'), td(mom, 'tr-tags')")
+h = h.replace('data-field="sell_through_pct">% venduti</th>', 'data-field="sell_through_10y">% venduti, 10 anni</th>')
+h = h.replace("cell(r.sell_through_pct || '', 'tr-n')", "cell(r.sell_through_10y || '', 'tr-n')")
+rep("    return rows.filter(f[0]).sort((a, b) => f[1](b) - f[1](a));\n  };", "    return rows.filter((r) => String(r.living) === '1').filter(f[0]).sort((a, b) => f[1](b) - f[1](a));\n  };")
+import csv as _csv
+_m = list(_csv.DictReader(open(MATRIX, encoding="utf-8")))
+QDIFF = sum(1 for r in _m if r["quadrant_artsy"] and r["quadrant_artsy"] != r["quadrant"])
+h = h.replace("Differisce dal quadrante oggi per circa 2.250 artisti", f"Differisce dal quadrante oggi per {QDIFF:,} artisti".replace(",", "."))
+print("qdiff", QDIFF)
 open(f"{D}/index_v7.html", "w", encoding="utf-8").write(h)
 print("ok", len(h))

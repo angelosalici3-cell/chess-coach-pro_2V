@@ -85,6 +85,10 @@ for (c, yr), v in RATE.items():
 RATE_C = {c: statistics.median(v) for c, v in RATE_C.items()}
 
 fx_fixed, sold = 0, []
+offered = Counter(); unsold = Counter()  # sell-through over the analysis window, from single lots
+for r in lots:
+    if r["sale_date"][:4].isdigit() and SINCE <= int(r["sale_date"][:4]) <= YEAR_NOW:
+        offered[r["slug"]] += 1; unsold[r["slug"]] += r["bought_in"] == "1"
 for r in lots:
     if r["bought_in"] == "1" or not r["cents"] or not r["sale_date"][:4].isdigit():
         continue
@@ -158,6 +162,7 @@ for slug, L in by.items():
         "raw_growth_pct_per_year": slope_log([(y, statistics.median(v)) for y, v in yr_raw.items()]) if len(rec) >= 6 else "",
         "market_proven_year": proven[0] if proven else "",
         "foreign_currency_share": round(sum(s["cur"] != "USD" for s in rec) / len(rec), 2) if rec else "",
+        "sell_through_10y": round(100 * (1 - unsold[slug] / offered[slug]), 1) if offered[slug] >= 5 else "",
     }
     P[slug] = {k: ("" if v is None else v) for k, v in P[slug].items()}
 
@@ -203,7 +208,7 @@ for r in rows:
     p = P.get(r["slug"], {})
     for k in ["lots_sold_10y", "lots_sized_2d", "median_usd_10y", "max_lot_usd", "max_lot_year", "max_lot_title", "max_lot_dim",
               "max_lot_currency", "price_1m2_usd", "price_per_m2_usd", "adj_growth_pct_per_year", "raw_growth_pct_per_year",
-              "market_proven_year", "foreign_currency_share"]:
+              "market_proven_year", "foreign_currency_share", "sell_through_10y"]:
         r[k] = p.get(k, "")
     L = lst.get(r["slug"])
     old = r["median_list_price_unique_usd"]
@@ -291,7 +296,7 @@ for r in rows:
     else:
         r["value_basis"] = "prezzo a 1 m²" if g is not None else ""
     parts["value"] = 50 + g / 2 if g is not None else None
-    st, pe = num(r["sell_through_pct"]), num(r["price_to_estimate_last3y"])
+    st, pe = num(r["sell_through_10y"]), num(r["price_to_estimate_last3y"])
     parts["solid"] = (min(100, st) * .5 + min(100, 50 * pe) * .5) if st is not None and pe is not None else (st if st is not None else None)
     have = {k: v for k, v in parts.items() if v is not None}
     wsum = sum(W[k] for k in have)
