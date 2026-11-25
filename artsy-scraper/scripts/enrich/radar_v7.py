@@ -386,7 +386,13 @@ for r in tl:
     if r["quadrant"]:
         q_at[r["slug"]][int(r["year"])] = r["quadrant"]
 living = {r["slug"] for r in csv.DictReader(open(os.path.join(DATA, "timeline", "artist_trends.csv"), encoding="utf-8")) if r["living"] == "1"} - dead_ig
-tr = Counter((d[2019], d[2026]) for s_, d in q_at.items() if 2019 in d and 2026 in d and s_ in living)
+def q_year(slug, Y):  # timeline rows exist only in years with data: carry the last known quadrant forward
+    d = q_at.get(slug, {})
+    ys = [y for y in d if y <= Y]
+    q = d[max(ys)] if ys else "emerging"
+    py = proven_year.get(slug)
+    return "hype" if q == "emerging" and py and Y >= int(py) else q
+tr = Counter((q_year(s_, 2019), q_year(s_, 2026)) for s_ in living)
 with open(os.path.join(D, "quadrant_transitions_v4.csv"), "w", newline="") as fh:
     w = csv.writer(fh); w.writerow(["from_quadrant", "to_quadrant", "artists", "from_year", "to_year"])
     for (a, b), n in sorted(tr.items()):

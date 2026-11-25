@@ -30,17 +30,17 @@
   "deceased_flagged_from_instagram_search": 115
  },
  "transitions": {
+  "emerging->emerging": 1230,
   "insider->insider": 1222,
-  "emerging->emerging": 325,
-  "hype->established": 57,
-  "hype->hype": 177,
-  "emerging->hype": 112,
   "established->established": 376,
-  "emerging->insider": 206,
-  "established->insider": 118,
   "insider->established": 170,
-  "hype->emerging": 43,
-  "emerging->established": 47,
-  "hype->insider": 56
+  "hype->hype": 234,
+  "emerging->insider": 525,
+  "emerging->hype": 352,
+  "hype->insider": 69,
+  "established->insider": 118,
+  "hype->emerging": 75,
+  "emerging->established": 84,
+  "hype->established": 63
  }
 }
