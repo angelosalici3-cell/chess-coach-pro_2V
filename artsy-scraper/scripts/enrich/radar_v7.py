@@ -187,8 +187,13 @@ for r in csv.DictReader(open(os.path.join(DATA, "ig_search_results.csv"), encodi
         except (TypeError, ValueError):
             fol = None
         IG[r["slug"]] = {"ig_handle": r["instagram"], "ig_confidence": r["confidence"], "ig_followers": fol}
-dead_ig = {r["slug"] for r in csv.DictReader(open(os.path.join(DATA, "ig_search_results.csv"), encoding="utf-8"))
-           if "deceduto" in (r["evidence"] or "") or "deceduta" in (r["evidence"] or "") or "Estate" in (r["evidence"] or "")}
+DEATH = {}
+for r in csv.DictReader(open(os.path.join(DATA, "ig_search_results.csv"), encoding="utf-8")):
+    ev = r["evidence"] or ""
+    if re.search(r"decedut|Estate|estate", ev):
+        m = re.search(r"decedut[oa]\s+(\d{4})", ev) or re.search(r"\d{4}\s*[-–]\s*(\d{4})", ev)
+        DEATH[r["slug"]] = m.group(1) if m else ""
+dead_ig = set(DEATH)
 
 # ---------- 6. matrix v7 ----------
 rows = list(csv.DictReader(open(os.path.join(D, "artist_matrix_v6.csv"), encoding="utf-8")))
@@ -211,6 +216,13 @@ for r in rows:
     r["ig_followers"] = g.get("ig_followers") or ""
     r["ig_confidence"] = g.get("ig_confidence", "")
     r["deceased_flag"] = int(r["slug"] in dead_ig)
+    r["death_year"] = DEATH.get(r["slug"], "")
+    if r["deceased_flag"]:
+        r["age_artsy"] = r["age"]; r["age"] = ""          # Artsy lists them as living: correct the matrix
+        audit["deceased_corrected_in_matrix"] += 1
+    else:
+        r["age_artsy"] = r["age"]
+    r["living"] = int(r["age"] != "" and not r["deceased_flag"])
     # market-proven rule
     r["quadrant_before_rule"] = r["quadrant"]
     r["quadrant_rule"] = ""
@@ -270,7 +282,7 @@ for r in rows:
 raw_pct = pct(sorted(float(r["median_usd_10y"]) for r in rows if r["median_usd_10y"] != "" and int(r["lots_sold_10y"] or 0) >= 3))
 W = {"rec": .35, "mom": .20, "pub": .15, "value": .20, "solid": .10}
 for r in rows:
-    living = r.get("age") not in ("",) and r["deceased_flag"] == 0
+    living = r["living"] == 1
     parts = {"rec": num(r["recognition_pct_now"]), "mom": num(r["momentum_pct"]), "pub": num(r["public_pct"])}
     g = num(r["interest_vs_price_gap_adj"])
     if g is None and r["median_usd_10y"] != "" and int(r["lots_sold_10y"] or 0) >= 3:

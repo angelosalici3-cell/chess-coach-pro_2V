@@ -2,7 +2,7 @@ from_quadrant,to_quadrant,artists,from_year,to_year
 emerging,emerging,325,2019,2026
 emerging,established,47,2019,2026
 emerging,hype,112,2019,2026
-emerging,insider,207,2019,2026
+emerging,insider,206,2019,2026
 established,established,376,2019,2026
 established,insider,118,2019,2026
 hype,emerging,43,2019,2026
@@ -10,4 +10,4 @@ hype,established,57,2019,2026
 hype,hype,177,2019,2026
 hype,insider,56,2019,2026
 insider,established,170,2019,2026
-insider,insider,1223,2019,2026
+insider,insider,1222,2019,2026

@@ -226,6 +226,7 @@ rep("g.append('text').attr('x', m.l + 4).attr('y', m.t + 4).attr('dy', '0.7em').
 # correlation tiles/numbers
 rep("""      <div class="tr-tile"><span class="tr-label">Prezzo tipico di 1 m²</span>""", """      <div class="tr-tile"><span class="tr-label">Prezzo tipico di 1 m²</span>""")
 
+rep("fact('Età', 'age', r.age || '—'),", "fact(r.deceased_flag === '1' ? 'Morto' : 'Età', r.deceased_flag === '1' ? 'death_year' : 'age', r.deceased_flag === '1' ? (r.death_year ? `nel ${r.death_year} (Artsy lo indica ancora in vita)` : 'sì (Artsy lo indica ancora in vita)') : (r.age || '—')),")
 # movers: size-adjusted growth
 rep("""      const g = cell(pct(r.price_growth_pct_per_year), 'tr-n');
       if (r.price_growth_pct_per_year !== '') g.style.color = +r.price_growth_pct_per_year >= 0 ? 'var(--color-ok)' : 'var(--color-bad)';""",
@@ -240,7 +241,7 @@ rep("""      fact('Crescita annua prezzi', 'adj_growth_pct_per_year', r.adj_grow
       fact('Opera più cara venduta (USD)', 'max_lot_usd', r.max_lot_usd ? `${TR_FMT(+r.max_lot_usd)} (${r.max_lot_year}${r.max_lot_currency && r.max_lot_currency !== 'USD' ? ', venduta in ' + r.max_lot_currency : ''}${r.max_lot_dim ? ', ' + r.max_lot_dim : ''})` : '—'),
       ...(r.quadrant_rule ? [fact('Regola del mercato provato', 'quadrant_rule', `Era ${TR_LABEL[r.quadrant_before_rule]}: ${r.quadrant_rule}`)] : []),
       fact('Instagram', 'ig_followers', r.instagram ? `@${r.instagram}${r.ig_followers ? ' · ' + TR_FMT(+r.ig_followers) + ' follower' : ''}` : '—'),
-      fact('Punteggio di sintesi', 'score_synthesis', r.score_synthesis ? dec(r.score_synthesis) : '—'),""")
+      fact('Punteggio di sintesi', 'score_synthesis', r.eligible_synthesis === '1' ? dec(r.score_synthesis) : (r.deceased_flag === '1' ? 'non calcolato (artista morto)' : 'non calcolato (meno di 3 opere vendute o dati insufficienti)')),""")
 rep("""    mini({ title: 'Prezzo d\\'asta mediano (USD, scala log)', type: 'lines', log: true, series: [
       { key: 'median_unique_usd', label: 'Opere uniche', color: c[0] }, { key: 'median_price_usd', label: 'Tutti i lotti', color: muted }] });
 """, "")
@@ -307,7 +308,7 @@ NEWJS = r"""
     growth_sign_flips_after_size_adjustment: ['Artisti la cui crescita dei prezzi cambia segno tenendo conto delle dimensioni', 'La crescita «grezza» dipendeva dal formato delle opere vendute in ogni anno. Ora tutte le crescite sono calcolate a parità di dimensioni.'],
     listing_price_was_inflated: ['Listini galleria gonfiati da un errore di cambio', 'Opere in vendita in yen, won o fiorini: Artsy registra l\'importo intero, non i centesimi. Corretto il tasso.'],
     lots_fx_recomputed: ['Lotti con conversione in USD mancante o fuori scala', 'Ricalcolati con il tasso mediano di quella valuta in quell\'anno.'],
-    deceased_flagged_from_instagram_search: ['Artisti indicati in vita da Artsy ma morti', 'Trovati durante la ricerca degli account Instagram. Esclusi dalla sintesi; Artsy andrebbe corretto.'],
+    deceased_corrected_in_matrix: ['Artisti indicati in vita da Artsy ma morti, corretti nella matrice', 'Trovati durante la ricerca degli account Instagram (data di morte o account gestito dall\'estate). Nella matrice non hanno più l\'età, il profilo mostra l\'anno di morte, e sono esclusi dalla sintesi e dai passaggi tra quadranti degli artisti in vita.'],
     timeline_quadrant_flapping_4plus_changes: ['Artisti che cambiano quadrante 4 o più volte dal 2016', 'Casi rari: la soglia di uscita al 65° percentile funziona. Restano segnati come «al limite».'],
     timeline_recognition_high_to_low: ['Riconoscimento degli esperti che scende da alto a basso', 'Nessun caso: il riconoscimento si accumula e non torna indietro, come previsto.'],
     artists_market_proven: ['Artisti con almeno un\'opera venduta a 100.000 USD o più', 'Riferimento per la regola del mercato provato.'],
