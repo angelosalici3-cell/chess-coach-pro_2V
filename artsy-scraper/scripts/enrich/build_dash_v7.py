@@ -455,3 +455,67 @@ h = h.replace("Differisce dal quadrante oggi per circa 2.250 artisti", f"Differi
 print("qdiff", QDIFF)
 open(f"{D}/index_v7.html", "w", encoding="utf-8").write(h)
 print("ok", len(h))
+
+# ---------- v7.2: buy list under 5,000 EUR ----------
+BUY_HTML = """
+  <style>.tr-reason { min-width: 320px; white-space: normal; }</style>
+  <section class="tr-section" id="buy">
+    <h2>Cosa compreremmo con meno di 5.000 €</h2>
+    <p lang="it" data-read>Fra gli artisti in vita non affermati abbiamo tenuto chi, negli ultimi 3 anni, ha venduto all'asta almeno 2 opere uniche (dipinti, opere su carta, sculture) a 5.000 € o meno, e almeno il 30% delle sue opere uniche sotto quella soglia. Il suo mercato deve essere sano: almeno il 70% dei lotti venduti e un prezzo pari almeno al 90% della stima. Teniamo solo chi ha fino a 60 anni, per avere carriera davanti. Restano <b data-draw="buy-n" data-source="buylist">—</b> artisti; tra questi ne scegliamo 10 in tre gruppi.</p>
+    <div class="tr-tablewrap">
+      <table class="tr-table" data-source="buylist" data-row-key="slug">
+        <thead><tr>
+          <th data-field="pick_tier">Perché</th>
+          <th data-field="name">Artista</th>
+          <th data-field="quadrant">Quadrante</th>
+          <th class="tr-n" data-field="age">Età</th>
+          <th class="tr-n" data-field="score_synthesis">Sintesi</th>
+          <th class="tr-n" data-field="unique_under_5k_eur">Sotto 5.000 €</th>
+          <th class="tr-n" data-field="median_under_5k_eur">Prezzo tipico €</th>
+          <th class="tr-n" data-field="sell_through_10y">% venduti</th>
+          <th class="tr-n" data-field="price_to_estimate_last3y">Prezzo/stima</th>
+          <th data-field="pick_reason">Motivazione</th>
+        </tr></thead>
+        <tbody data-draw="buy-rows"></tbody>
+      </table>
+    </div>
+    <label class="tr-check"><input type="checkbox" id="buy-all"> Mostra tutti i candidati, non solo i 10 scelti</label>
+    <p class="tr-note" lang="it">Prezzi d'asta realizzati, convertiti in euro al cambio medio 2025–2026 (1 € = __EUR__ USD). Le opere sotto soglia sono spesso piccole o su carta: il prezzo di galleria per un'opera nuova può essere più alto. Esempi da approfondire con gli specialisti, non raccomandazioni di investimento.</p>
+  </section>
+"""
+import csv as _csv2, statistics as _st2
+_lots = [r for r in _csv2.DictReader(open(f"{D}/lots_radar.csv")) if r['cur'] == 'EUR' and r['d'][:4] in ('2025', '2026') and r['orig']]
+_eur = round(_st2.median(float(r['usd']) / float(r['orig']) for r in _lots), 2)
+rep("  <details id=\"method\">", BUY_HTML.replace("__EUR__", str(_eur).replace('.', ',')) + "\n  <details id=\"method\">")
+rep("<a href=\"#part-3\">3 · Sintesi</a>", "<a href=\"#part-3\">3 · Sintesi</a><a href=\"#buy\">Cosa compreremmo</a>")
+BUY_JS = """
+<script>
+  const decB = (v) => (v === '' || v == null) ? '—' : String(v).replace('.', ',');
+  const fmtB = d3.formatLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['€', ''] }).format(',d');
+  let buyAll = false;
+  dash.calc('buy_n', { inputs: ['buylist'], title: 'Candidati sotto 5.000 €', description: 'Numero di artisti che passano i filtri', fn: (rows) => rows.length });
+  dash.draw('buy-n', (el) => { const d = dash.data('buy_n'); el.textContent = d.status === 'ok' && d.data != null ? fmtB(d.data) : '—'; });
+  dash.draw('buy-rows', (tb) => {
+    const d = dash.data('buylist');
+    if (d.status !== 'ok') return;
+    const rows = d.data.filter((r) => buyAll || r.pick_tier);
+    const cell = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; if (t instanceof Node) x.append(t); else x.textContent = t; return x; };
+    const QL = { insider: 'Insider', emerging: 'Emergente', hype: 'Hype', established: 'Affermato' };
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'tr-linkbtn'; b.textContent = r.name;
+      b.onclick = () => { if (window.TR_select) window.TR_select(r.slug); };
+      const t = cell(r.pick_tier || '—'); if (r.pick_tier) t.style.fontWeight = '600';
+      tr.append(t, cell(b), cell(QL[r.quadrant] || r.quadrant), cell(r.age, 'tr-n'), cell(decB(r.score_synthesis), 'tr-n'),
+        cell(`${r.unique_under_5k_eur} su ${r.unique_sold_3y}`, 'tr-n'), cell(fmtB(+r.median_under_5k_eur), 'tr-n'),
+        cell(decB(r.sell_through_10y), 'tr-n'), cell(decB(r.price_to_estimate_last3y), 'tr-n'), cell(r.pick_reason || '', 'tr-reason'));
+      return tr;
+    }));
+  });
+  document.querySelectorAll('#buy-all').forEach((el) => el.addEventListener('change', (e) => { buyAll = e.target.checked; dash.draw('buy-rows'); }));
+</script>
+"""
+h = h.rstrip() + "\n" + BUY_JS
+rep("      <li>Sintesi: riconoscimento 35%", "      <li>Cosa compreremmo: artisti in vita non affermati, fino a 60 anni, con almeno 2 opere uniche vendute all'asta a 5.000 € o meno negli ultimi 3 anni (almeno il 30% delle loro opere uniche), almeno il 70% di lotti venduti e prezzo almeno al 90% della stima. La scelta dei 10 tra i candidati è nostra: pesa riconoscimento istituzionale, liquidità del mercato e crescita dei prezzi.</li>\n      <li>Sintesi: riconoscimento 35%")
+open(f"{D}/index_v7.html", "w", encoding="utf-8").write(h)
+print("buy ok", len(h))
