@@ -17,7 +17,7 @@
  },
  "audit": {
   "growth_sign_flips_after_size_adjustment": 265,
-  "deceased_corrected_in_matrix": 115,
+  "deceased_corrected_in_matrix": 116,
   "emerging_to_hype_market_rule": 493,
   "timeline_quadrant_flapping_4plus_changes": 15,
   "timeline_recognition_high_to_low": 0,
@@ -27,20 +27,20 @@
   "lots_fx_recomputed": 2013,
   "artists_with_lots": 7066,
   "artists_market_proven": 2875,
-  "deceased_flagged_from_instagram_search": 115
+  "deceased_flagged_from_instagram_search": 116
  },
  "transitions": {
   "emerging->emerging": 1230,
+  "emerging->hype": 352,
+  "hype->hype": 234,
   "insider->insider": 1222,
   "established->established": 376,
+  "emerging->insider": 524,
+  "emerging->established": 84,
   "insider->established": 170,
-  "hype->hype": 234,
-  "emerging->insider": 525,
-  "emerging->hype": 352,
+  "hype->established": 63,
   "hype->insider": 69,
   "established->insider": 118,
-  "hype->emerging": 75,
-  "emerging->established": 84,
-  "hype->established": 63
+  "hype->emerging": 75
  }
 }

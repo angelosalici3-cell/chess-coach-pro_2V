@@ -185,7 +185,13 @@ for r in csv.DictReader(open(os.path.join(H, "listings.csv"), encoding="utf-8"))
 
 # ---------- 5. Instagram ----------
 IG = {}
-for r in csv.DictReader(open(os.path.join(DATA, "ig_search_results.csv"), encoding="utf-8")):
+IG_ROWS = list(csv.DictReader(open(os.path.join(DATA, "ig_search_results.csv"), encoding="utf-8")))
+_top = os.path.join(DATA, "ig_top300_results.csv")  # second, targeted search on the synthesis top 300: overrides
+if os.path.exists(_top):
+    IG_ROWS += list(csv.DictReader(open(_top, encoding="utf-8")))
+for r in IG_ROWS:
+    if r["slug"] in IG and not (r["instagram"] and r["confidence"] in ("alta", "media")):
+        IG.pop(r["slug"])
     if r["instagram"] and r["confidence"] in ("alta", "media"):
         try:
             fol = int(float(r["followers_snippet"]))
@@ -193,7 +199,7 @@ for r in csv.DictReader(open(os.path.join(DATA, "ig_search_results.csv"), encodi
             fol = None
         IG[r["slug"]] = {"ig_handle": r["instagram"], "ig_confidence": r["confidence"], "ig_followers": fol}
 DEATH = {}
-for r in csv.DictReader(open(os.path.join(DATA, "ig_search_results.csv"), encoding="utf-8")):
+for r in IG_ROWS:
     ev = r["evidence"] or ""
     if re.search(r"decedut|Estate|estate", ev):
         m = re.search(r"decedut[oa]\s+(\d{4})", ev) or re.search(r"\d{4}\s*[-–]\s*(\d{4})", ev)

@@ -24,7 +24,7 @@ sanford-biggers,Sanford Biggers,sanfordbiggers,alta,56000,bio artista; handle an
 john-zurier,John Zurier,,nessuna,,nessun profilo
 jitish-kallat,Jitish Kallat,jitishkallat,media,5741,"nome esatto, 19 post"
 tony-matelli,Tony Matelli,tonymatelli,alta,49000,"nome esatto, 611 post"
-alicja-kwade,Alicja Kwade,,nessuna,,nessun risultato (riprovare)
+alicja-kwade,Alicja Kwade,alicjakwade,alta,96000,"nome esatto, 827 post (seconda ricerca)"
 teresita-fernandez,Teresita Fernández,teresita.fernandez,alta,64000,"bio ""Artist, NYC"""
 sophie-calle,Sophie Calle,adansophiecalle,bassa,21000,"7 post, non verificato"
 marina-abramovic-1,Marina Abramović,abramovicinstitute,bassa,,"Wikidata indica l'account dell'istituto MAI, non personale; nessun profilo personale trovato"
@@ -41,7 +41,7 @@ bridget-riley,Bridget Riley,,nessuna,,l'artista non usa social; solo fan account
 adam-pendleton,Adam Pendleton,pendleton.adam,media,41000,"bio ""Artist"", nome esatto"
 pia-camil-1,Pia Camil,piacamil,media,12000,"nome esatto, 101 post"
 pipilotti-rist,Pipilotti Rist,pipilotti_rist_studio,alta,75000,account dello studio
-laurie-simmons,Laurie Simmons,lauriesimmons,alta,106000,"bio artista, filmmaker, esecutrice estate Jimmy DeSana"
+laurie-simmons,Laurie Simmons,lauriesimmons,alta,106000,"bio artista, filmmaker, esecutrice del lascito di Jimmy DeSana"
 jeremy-deller,Jeremy Deller,jeremydeller,alta,77000,"bio ""Artist"""
 xavier-veilhan,Xavier Veilhan,xavier_veilhan,alta,51000,"bio artista, Parigi"
 tony-cragg,Tony Cragg,,nessuna,,solo omonimi
@@ -146,7 +146,7 @@ hamish-fulton,Hamish Fulton,a.walking.artist,media,3695,bio sul camminare e la n
 gregor-hildebrandt,Gregor Hildebrandt,,nessuna,,solo omonimi (Greg Hildebrandt)
 ross-bleckner,Ross Bleckner,rossbleckner,alta,23000,tag Petzel e Mazzoli
 jim-nutt,Jim Nutt,,nessuna,,nessun profilo
-kent-monkman,Kent Monkman,kentmonkman,media,,handle da Wikidata; follower non trovati
+kent-monkman,Kent Monkman,kentmonkman,alta,120700,handle confermato da nunanow.com; follower da un visualizzatore terzo
 barry-mcgee,Barry McGee,,nessuna,,solo omonimi
 olaf-breuning,Olaf Breuning,olafbreuning,alta,64000,"nome esatto, 1.120 post"
 sable-elyse-smith,Sable Elyse Smith,sable_elyse,alta,13000,bio cita TIME100 Next e Regen Projects
@@ -198,9 +198,104 @@ athi-patra-ruga,Athi-Patra Ruga,athipatra,alta,15000,"bio pittura, film, arazzi,
 jessica-craig-martin,Jessica Craig-Martin,,nessuna,,nessun profilo
 theaster-gates,Theaster Gates,theastergates,alta,169000,"bio tag Rebuild Foundation, Black Artists Retreat"
 jose-maria-sicilia,José María Sicilia,,nessuna,,nessun profilo
+sandro-chia,Sandro Chia,sandroxchia,media,6399,"nome esatto, 644 post; bio non letta"
+michael-sailstorfer,Michael Sailstorfer,michaelsailstorfer,alta,15000,nome esatto; Galerie Judin lo rappresenta
+doug-and-mike-starn,Doug & Mike Starn,dmstarn,alta,6605,"bio ""Starn Twins"", nati nel 1961"
 laura-lima,Laura Lima,lauralima________,alta,10000,"fase 1: bio artista di Rio, rimanda a studio e galleria"
+pieter-schoolwerth,Pieter Schoolwerth,,nessuna,,nessun risultato
+natvar-bhavsar,Natvar Bhavsar,natvarbhavsarpainter,media,773,"handle ""painter"", 21 post"
+kerry-james-marshall,Kerry James Marshall,,nessuna,,"solo fan account (90K, non affiliato)"
+wolfgang-laib,Wolfgang Laib,,nessuna,,nessun profilo
+terence-koh,Terence Koh,,bassa,,omonimi; terrorkks 108K non attribuibile
+anna-maria-maiolino,Anna Maria Maiolino,,bassa,,"annamariamaiolino 141 follower, 2 post"
+alec-soth,Alec Soth,littlebrownmushroom,alta,272000,"profilo ""Alec Soth"", handle = sua casa editrice"
+matthew-brannon,Matthew Brannon,,nessuna,,solo omonimi
+hans-op-de-beeck,Hans Op de Beeck,hans_op_de_beeck,alta,67000,"bio scultura, installazioni, video, scenografia"
+william-kentridge,William Kentridge,williamkentridgestudio,alta,177000,"account dello studio, Johannesburg"
+francis-alys,Francis Alÿs,francis_alys_official,alta,78000,"bio: Belgio 1959, Città del Messico"
+carsten-holler,Carsten Höller,carsten.holler,media,10000,"nome esatto, 7 post"
 enrico-david,Enrico David,,nessuna,,fase 1: solo omonimi
+gary-hume,Gary Hume,,nessuna,,solo omonimi
+thomas-scheibitz-2,Thomas Scheibitz,thomasscheibitz.atelier,media,6474,"account ""atelier"", 132 post"
+sylvie-fleury,Sylvie Fleury,fleury49000,bassa,25000,"nome visualizzato corretto, handle non coerente"
+barbara-kasten,Barbara Kasten,kastenstudios,alta,2404,bio con città e gallerie
+liza-lou,Liza Lou,liza_lou_studio,alta,26000,post su Brooklyn Museum e PODO Museum
+kudzanai-chiurai,Kudzanai Chiurai,,nessuna,,solo omonimi
+lee-bae,Lee Bae,leebae.art,alta,16000,"bio ""Official account"""
+joseph-kosuth,Joseph Kosuth,josephkosuthstudio,alta,13000,"account dello studio, Roma/New York"
+gary-simmons,Gary Simmons,,nessuna,,solo omonimi
+jaume-plensa,Jaume Plensa,jaumeplensaofficial,alta,49000,"handle ""official"", 245 post"
+kerstin-bratsch,Kerstin Brätsch,,nessuna,,solo omonimi
+lubaina-himid,Lubaina Himid,,nessuna,,nessun risultato
+richard-bosman,Richard Bosman,,bassa,,"bosman_richard 5.987 follower, non attribuibile"
+andreas-eriksson,Andreas Eriksson,andreas.eriksson.medelplana,alta,15000,"bio: studio dell'artista svedese, link medelplana.com"
+lynette-yiadom-boakye,Lynette Yiadom-Boakye,,nessuna,,nessun account personale
 diana-thater,Diana Thater,dianathaterstudio,alta,4313,"fase 1: Diana Thater Studio, bio Artist"
+alex-katz,Alex Katz,alexkatzofficial,alta,48000,"handle ""official"", bio ""b. 1927"""
+susan-meiselas,Susan Meiselas,susanmeiselas,alta,49000,"bio fotografa, tag Magnum"
+stephen-shore,Stephen Shore,stephen.shore,alta,247000,"bio ""Photographer""; istantanea vecchia (circa 6 anni)"
+sean-scully,Sean Scully,seanscullystudio,alta,61000,account dello studio con rimando alle gallerie; esiste anche seanscully5 (56K)
+joel-sternfeld,Joel Sternfeld,sternfeldarchive,media,24000,account dell'archivio
+torbjorn-rodland,Torbjørn Rødland,,nessuna,,nessun profilo
+graciela-iturbide,Graciela Iturbide,gracielaiturbide,alta,117000,bio: progetto del suo studio
+petra-cortright,Petra Cortright,petra_cortright,alta,74000,nome esatto; istantanea molto vecchia (circa 8 anni)
+chris-johanson,Chris Johanson,,nessuna,,solo omonimi
 jacqueline-de-jong,Jacqueline de Jong,,nessuna,,fase 1: nessun account confermato
+matthew-brandt,Matthew Brandt,phatbrandt,bassa,3884,non confermato
+anri-sala,Anri Sala,,nessuna,,solo omonimi
+annette-messager,Annette Messager,annettemessager,alta,12000,"nome esatto, 88 post"
+wilhelm-sasnal,Wilhelm Sasnal,wilhelm_sasnal,alta,26000,"nome esatto, 29 post"
+jonas-wood,Jonas Wood,jonasbrwood,media,167000,"handle con nome e iniziale, 1.581 post"
+nicole-eisenman,Nicole Eisenman,,nessuna,,nessun profilo
+stan-douglas,Stan Douglas,,nessuna,,solo omonimi
+larry-bell,Larry Bell,larrybellstudio,alta,7178,"bio: Light and Space, studi a Taos e Venice"
+bernard-frize,Bernard Frize,bernardfrize,media,27000,bio: vive a Berlino; 3 post
+pierre-alechinsky,Pierre Alechinsky,alechinsky_archive,media,3786,"account dell'archivio, bio coerente"
+james-casebere,James Casebere,jamescasebere,alta,13000,"nome esatto, 845 post"
+sonia-gomes,Sonia Gomes,soniagomesarte,alta,23000,"bio ""Artista Visual / afro-brasileira"""
+claudia-comte,Claudia Comte,claudiacomte,alta,34000,bio artista a Basilea
+mequitta-ahuja,Mequitta Ahuja,,nessuna,,nessun profilo
+bosco-sodi,Bosco Sodi,studioboscosodi,alta,88000,"bio: Città del Messico 1970, fondatore di Casa Wabi"
+thomas-schutte,Thomas Schütte,,nessuna,,nessun profilo
+ann-veronica-janssens,Ann Veronica Janssens,,nessuna,,nessun profilo
+edward-burtynsky,Edward Burtynsky,edwardburtynsky,alta,76000,account ufficiale; handle anche su Wikidata
+jamie-nares-1,Jamie Nares,jamienares,media,4213,"handle esatto, 672 post"
+deborah-kass,Deborah Kass,debkass,alta,11000,bio con link a Interview Magazine (arte)
+paul-winstanley,Paul Winstanley,paulwinstanley54,alta,4312,bio con elenco delle gallerie
+hernan-bas,Hernan Bas,hernanbas,alta,57000,"bio ""Artist living and working in Miami"", gallerie"
+paulo-nazareth,Paulo Nazareth,p.nazarethedicoesltda,media,14000,"account della sua attività artistica, blog"
 william-cordova,William Cordova,,nessuna,,fase 1: omonimi non verificabili
+gladys-nilsson,Gladys Nilsson,,nessuna,,nessun profilo
+katherine-bradford-1,Katherine Bradford,kathebradford,media,93000,"nome esatto, 1.133 post; bio non letta"
+kara-walker,Kara Walker,,nessuna,,solo omonimi
+yoshitomo-nara,Yoshitomo Nara,michinara3,alta,713000,nome 奈良美智; handle anche su Wikidata
+philip-lorca-dicorcia,Philip-Lorca diCorcia,,nessuna,,solo fan page
+red-grooms,Red Grooms,,bassa,,"grooms_grooms 144 follower, 1 post"
+danny-lyon,Danny Lyon,dannylyonphotos2,alta,12000,"post sui suoi libri, link bleakbeauty.com"
+sarah-lucas,Sarah Lucas,,nessuna,,solo omonimi
+sheila-hicks,Sheila Hicks,ateliersheilahicks,alta,53000,account dell'atelier; handle anche su Wikidata
+jack-pierson,Jack Pierson,jackpierson9,bassa,31000,"più omonimi, non confermato"
+richard-misrach,Richard Misrach,,nessuna,,nessun profilo
+arlene-shechet,Arlene Shechet,arleneshechet,alta,23000,"nome esatto, 1.188 post"
+todd-hido,Todd Hido,toddhido_,alta,232000,"bio ""Photographer, Educator, Bookmaker""; istantanea di circa 800 giorni fa"
+ed-ruscha,Ed Ruscha,edruschaofficial,alta,49000,"account ufficiale, bio: Los Angeles, Gagosian"
+ugo-rondinone,Ugo Rondinone,ugorondinone0,media,55000,"nome esatto, 189 post"
+john-m-armleder,John M. Armleder,,nessuna,,nessun risultato
+allan-mccollum,Allan McCollum,,bassa,,"allanmcnyc 465 follower, 0 post"
+valerio-adami,Valerio Adami,archivio_valerioadami,media,2574,account dell'archivio ufficiale
+mario-testino,Mario Testino,mariotestino,alta,6000000,"account ufficiale; istantanee 4,2-6M"
+alex-webb,Alex Webb,webb_norriswebb,media,,account condiviso con Rebecca Norris Webb (Wikidata); follower non trovati
+gerhard-richter,Gerhard Richter,gerhard.richter,bassa,133000,"non confermato ufficiale; 1 seguito, 60 post"
+ellen-gallagher,Ellen Gallagher,,nessuna,,solo omonimi
+wim-delvoye,Wim Delvoye,wimdelvoye,alta,23000,"nome esatto, 59 post"
+richard-mosse,Richard Mosse,richardmosse_,alta,19000,rag_tree rimanda a questo account
+george-herms,George Herms,,nessuna,,nessun profilo
+ali-banisadr,Ali Banisadr,,nessuna,,nessun profilo
+lois-dodd,Lois Dodd,,nessuna,,solo pagina della galleria
+david-bates-b-1952,David Bates (b. 1952),,nessuna,,omonimi non confermati
 glen-baxter,Glen Baxter,glenbaxterartist,media,26000,"fase 1: handle con artist, nome Glen Baxter"
+neil-beloufa,Neïl Beloufa,,nessuna,,nessun risultato
+njideka-akunyili-crosby,Njideka Akunyili Crosby,njidekaakunyilicrosby,alta,92000,"nome esatto, 12 post"
+keith-tyson,Keith Tyson,keithtyson23,media,14000,"bio ""Artist"", 132 post"
+sally-mann,Sally Mann,,nessuna,,solo omonimi
+jane-dickson,Jane Dickson,janeinpeepland,alta,9824,"bio ""Painter of American darkness""; handle anche su Wikidata"
