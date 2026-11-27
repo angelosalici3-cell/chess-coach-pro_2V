@@ -82,6 +82,7 @@
       <label><input type="checkbox" id="f-ig-has"> Con Instagram</label>
       <label><input type="checkbox" id="f-buy"> Candidati sotto 5.000 €</label>
       <label><input type="checkbox" id="f-pick"> Solo i 10 che compreremmo</label>
+      <label><input type="checkbox" id="f-net"> Esposto dal 2023 da sedi con fiuto</label>
     </div>
     <div class="ex-actions">
       <button type="button" class="ex-btn" id="f-reset">Azzera i filtri</button>
@@ -174,6 +175,7 @@
           <th class="ex-n c-eco" data-field="museum_collections" data-sort="museum_collections">Musei</th>
           <th class="ex-n c-eco" data-field="biennials" data-sort="biennials">Biennali</th>
           <th class="c-eco" data-field="top_galleries" data-sort="top_galleries">Grandi gallerie</th>
+          <th class="c-eco" data-field="net_track_names" data-sort="net_track_venues">Sedi con fiuto, dal 2023</th>
         </tr></thead>
         <tbody data-draw="rows"></tbody>
       </table>
@@ -186,6 +188,7 @@
     <ul lang="it" class="ex-muted" style="line-height:1.6">
       <li>Artsy (artisti, mostre, musei, fiere, aste e listini), Wikidata e Wikipedia; account Instagram cercati sul web per 2.527 insider ed emergenti e per i primi 300 della sintesi. Dati raccolti nel novembre 2026.</li>
       <li>Prezzi d'asta degli ultimi 10 anni, in USD verificati lotto per lotto. Prezzo a 1 m² = prezzo riportato a un dipinto o un'opera su carta di 1 m², per artisti con almeno 3 opere di misura nota.</li>
+      <li>Sedi con fiuto: gallerie e istituzioni che tra il 2015 e il 2022 hanno esposto artisti ancora emergenti o hype poi diventati insider o affermati, almeno 3 volte e con frequenza almeno 1,3 volte la media (fiere, stamperie e rivenditori esclusi). Valgono il 10% del punteggio di sintesi, solo come bonus.</li>
       <li>Quadranti della lettura storica: chi ha venduto un'opera sopra 100.000 USD non è più emergente. Punteggio di sintesi solo per artisti in vita con almeno 3 opere vendute.</li>
       <li>Candidati sotto 5.000 €: artisti in vita non affermati, fino a 60 anni, con almeno 2 opere uniche vendute all'asta a 5.000 € o meno negli ultimi 3 anni e mercato sano. Esempi da approfondire, non consigli di investimento.</li>
     </ul>
@@ -195,7 +198,7 @@
 <script>
 {
   const DEF = { q: '', nat: '', age_min: '', age_max: '', score_min: 0, p1m2_max: '', pmed_max: '', ig_min: '', mus_min: '',
-    quad: ['insider', 'emerging', 'hype', 'established'], living: true, gallery: false, proven: false, ig_has: false, buy: false, pick: false,
+    quad: ['insider', 'emerging', 'hype', 'established'], living: true, gallery: false, proven: false, ig_has: false, buy: false, pick: false, net: false,
     sort: 'score_synthesis', dir: 'desc', artist: '' };
   window.EX_P = () => Object.assign({}, DEF, dash.params());
   const num = (v) => (v === '' || v == null || isNaN(+v) ? null : +v);
@@ -208,7 +211,8 @@
       const q = (p.q || '').trim().toLowerCase();
       const quads = new Set(p.quad || []);
       const n = (v) => (v === '' || v == null || isNaN(+v) ? null : +v);
-      const out = matrix.filter((r) => {
+      const ok = (r) => (r.eligible_synthesis === '1' ? r : Object.assign({}, r, { score_synthesis: '' }));  // score only where the radar computes it
+      const out = matrix.map(ok).filter((r) => {
         if (!quads.has(r.quadrant)) return false;
         if (p.living && r.living !== '1') return false;
         if (p.nat && r.nationality !== p.nat) return false;
@@ -226,6 +230,7 @@
         if (p.ig_has && !(r.ig_handle || r.instagram)) return false;
         if (p.buy && !buy.has(r.slug)) return false;
         if (p.pick && !(buy.get(r.slug) || {}).pick_tier) return false;
+        if (p.net && !(+r.net_track_venues > 0)) return false;
         return true;
       }).map((r) => Object.assign({}, r, { buy_tier: (buy.get(r.slug) || {}).pick_tier || (buy.has(r.slug) ? 'candidato' : '') }));
       const key = p.sort, sgn = p.dir === 'asc' ? 1 : -1;
@@ -363,12 +368,12 @@
   });
   dash.draw('rows', (tb) => {
     const d = dash.data('filtered');
-    if (d.status === 'error') { const tr = document.createElement('tr'); const td = document.createElement('td'); td.colSpan = 17; td.textContent = 'I dati non si sono caricati.'; tr.append(td); tb.replaceChildren(tr); return; }
+    if (d.status === 'error') { const tr = document.createElement('tr'); const td = document.createElement('td'); td.colSpan = 18; td.textContent = 'I dati non si sono caricati.'; tr.append(td); tb.replaceChildren(tr); return; }
     if (d.status !== 'ok') return;
     const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; x.textContent = t == null || t === '' ? '—' : t; return x; };
     const n = (v, f) => (v === '' || v == null ? '—' : f(+v));
     const sel = window.EX_P().artist;
-    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessun artista corrisponde ai filtri.'); c.colSpan = 17; tr.append(c); tb.replaceChildren(tr); return; }
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessun artista corrisponde ai filtri.'); c.colSpan = 18; tr.append(c); tb.replaceChildren(tr); return; }
     tb.replaceChildren(...d.data.slice(0, limit).map((r) => {
       const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
       if (r.slug === sel) tr.style.background = 'color-mix(in srgb, var(--color-fg) 9%, transparent)';
@@ -380,7 +385,7 @@
         td(n(r.artsy_followers, fmt), 'ex-n c-pub'), td(n(r.ig_followers, fmt), 'ex-n c-pub'),
         td(n(r.median_usd_10y, fmt), 'ex-n c-mkt'), td(n(r.price_1m2_usd, fmt), 'ex-n c-mkt'), td(n(r.max_lot_usd, fmt), 'ex-n c-mkt'),
         td(n(r.lots_sold_10y, fmt), 'ex-n c-mkt'), td(n(r.sell_through_10y, dec1), 'ex-n c-mkt'), td(n(r.price_to_estimate_last3y, dec2), 'ex-n c-mkt'),
-        td(n(r.museum_collections, fmt), 'ex-n c-eco'), td(n(r.biennials, fmt), 'ex-n c-eco'), td(r.top_galleries, 'c-eco ex-wrap'));
+        td(n(r.museum_collections, fmt), 'ex-n c-eco'), td(n(r.biennials, fmt), 'ex-n c-eco'), td(r.top_galleries, 'c-eco ex-wrap'), td(r.net_track_names, 'c-eco ex-wrap'));
       return tr;
     }));
   });
@@ -410,6 +415,7 @@
       ['Prezzo mediano, 10 anni', n(r.median_usd_10y, (v) => fmt(v) + ' USD')], ['Prezzo a 1 m²', n(r.price_1m2_usd, (v) => fmt(v) + ' USD')],
       ['Opera più cara', r.max_lot_usd ? `${fmt(+r.max_lot_usd)} USD (${r.max_lot_year})` : '—'],
       ['Lotti venduti, % venduti', `${r.lots_sold_10y || 0} · ${n(r.sell_through_10y, dec1)}%`], ['Prezzo/stima, ultimi 3 anni', n(r.price_to_estimate_last3y, dec2)],
+      ['Sedi con fiuto che lo espongono dal 2023', r.net_track_names || '—'],
       ['Crescita prezzi a parità di dimensioni', r.adj_growth_pct_per_year === '' ? '—' : `${dec1(+r.adj_growth_pct_per_year)}% l'anno`],
     ];
     dl.replaceChildren(...items.flatMap(([k, v]) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; return [dt, dd]; }));
@@ -453,7 +459,7 @@
   set('#f-score', 'value', P.score_min || 0); set('#f-p1m2', 'value', P.p1m2_max ?? ''); set('#f-pmed', 'value', P.pmed_max ?? '');
   set('#f-ig', 'value', P.ig_min ?? ''); set('#f-mus', 'value', P.mus_min ?? '');
   set('#f-living', 'checked', !!P.living); set('#f-gallery', 'checked', !!P.gallery); set('#f-proven', 'checked', !!P.proven);
-  set('#f-ig-has', 'checked', !!P.ig_has); set('#f-buy', 'checked', !!P.buy); set('#f-pick', 'checked', !!P.pick);
+  set('#f-ig-has', 'checked', !!P.ig_has); set('#f-buy', 'checked', !!P.buy); set('#f-pick', 'checked', !!P.pick); set('#f-net', 'checked', !!P.net);
   document.querySelectorAll('.f-quad').forEach((c) => { c.checked = (P.quad || []).includes(c.value); });
   document.querySelectorAll('#f-score-out').forEach((o) => { o.value = String(P.score_min || 0); });
   let t;
@@ -465,7 +471,7 @@
   numField('#f-ig', 'ig_min'); numField('#f-mus', 'mus_min');
   on('#f-score', 'input', (e) => { document.querySelectorAll('#f-score-out').forEach((o) => { o.value = e.target.value; }); later(() => dash.setParams({ score_min: Number(e.target.value) })); });
   const box = (sel, key) => on(sel, 'change', (e) => dash.setParams({ [key]: e.target.checked }));
-  box('#f-living', 'living'); box('#f-gallery', 'gallery'); box('#f-proven', 'proven'); box('#f-ig-has', 'ig_has'); box('#f-buy', 'buy'); box('#f-pick', 'pick');
+  box('#f-living', 'living'); box('#f-gallery', 'gallery'); box('#f-proven', 'proven'); box('#f-ig-has', 'ig_has'); box('#f-buy', 'buy'); box('#f-pick', 'pick'); box('#f-net', 'net');
   on('.f-quad', 'change', () => dash.setParams({ quad: [...document.querySelectorAll('.f-quad')].filter((c) => c.checked).map((c) => c.value) }));
   on('.f-col', 'change', (e) => document.querySelectorAll('.ex-table').forEach((tb) => tb.classList.toggle(e.target.value, e.target.checked)));
   on('#f-x', 'change', () => dash.draw('scatter')); on('#f-y', 'change', () => dash.draw('scatter'));
@@ -473,7 +479,7 @@
     dash.resetParams();
     set('#f-q', 'value', ''); ['#f-age-min', '#f-age-max', '#f-p1m2', '#f-pmed', '#f-ig', '#f-mus'].forEach((s) => set(s, 'value', ''));
     set('#f-score', 'value', 0); document.querySelectorAll('#f-score-out').forEach((o) => { o.value = '0'; });
-    set('#f-living', 'checked', true); ['#f-gallery', '#f-proven', '#f-ig-has', '#f-buy', '#f-pick'].forEach((s) => set(s, 'checked', false));
+    set('#f-living', 'checked', true); ['#f-gallery', '#f-proven', '#f-ig-has', '#f-buy', '#f-pick', '#f-net'].forEach((s) => set(s, 'checked', false));
     document.querySelectorAll('.f-quad').forEach((c) => { c.checked = true; });
     document.querySelectorAll('#f-nat').forEach((s) => { s.value = ''; });
   });

@@ -146,7 +146,7 @@ PART3 = """
   <div class="tr-part" id="part-3">
     <span class="tr-label">Parte 3</span>
     <h2>Sintesi: gli artisti più interessanti</h2>
-    <p lang="it">Un punteggio da 0 a 100 per gli artisti in vita con almeno 3 opere vendute all'asta negli ultimi 10 anni. Pesa cinque cose: <b>riconoscimento degli esperti</b> 35%, <b>slancio</b> 20% (mostre importanti in aumento, crescita dei prezzi a parità di dimensioni, visualizzazioni Wikipedia, salita di quadrante), <b>notorietà pubblica</b> 15%, <b>valore</b> 20% (quanto l'interesse supera il prezzo a 1 m²) e <b>solidità del mercato</b> 10% (percentuale di lotti venduti e prezzo rispetto alla stima). Se manca un dato, il peso si ridistribuisce sugli altri; servono almeno il 60% dei pesi.</p>
+    <p lang="it">Un punteggio da 0 a 100 per gli artisti in vita con almeno 3 opere vendute all'asta negli ultimi 10 anni. Pesa sei cose: <b>riconoscimento degli esperti</b> 31,5%, <b>slancio</b> 18% (mostre importanti in aumento, crescita dei prezzi a parità di dimensioni, visualizzazioni Wikipedia, salita di quadrante), <b>notorietà pubblica</b> 13,5%, <b>valore</b> 18% (quanto l'interesse supera il prezzo a 1 m²), <b>solidità del mercato</b> 9% (percentuale di lotti venduti e prezzo rispetto alla stima) e <b>rete</b> 10%: conta solo se dal 2023 l'artista è stato esposto da gallerie o istituzioni che, tra il 2015 e il 2022, hanno scommesso presto su artisti poi diventati insider o affermati (100 punti se ce n'è almeno una; se non ce ne sono la componente non conta e il peso va alle altre, quindi la rete può solo alzare il punteggio). Se manca un dato, il peso si ridistribuisce sugli altri; servono almeno il 60% dei pesi.</p>
   </div>
   <section class="tr-section" id="synthesis">
     <div class="tr-controls">
@@ -178,6 +178,7 @@ PART3 = """
           <th class="tr-n">Pubblico</th>
           <th class="tr-n">Valore</th>
           <th class="tr-n">Solidità</th>
+          <th class="tr-n">Rete</th>
           <th class="tr-n" data-field="price_1m2_usd">Prezzo a 1 m² (USD)</th>
           <th class="tr-n" data-field="max_lot_usd">Opera più cara (USD)</th>
           <th data-field="instagram">Instagram</th>
@@ -202,7 +203,8 @@ rep("""      <li>Prezzi: ultimi 50 risultati d'asta per artista su Artsy, tenend
       <li>Dimensioni: per dipinti e opere su carta abbiamo letto altezza e larghezza (centimetri, pollici o millimetri). Confrontando opere dello stesso artista vendute nello stesso anno, il prezzo cresce in media come la superficie elevata a {str(BETA).replace('.', ',')}: un'opera grande il doppio costa circa il {round((2**BETA-1)*100)}% in più. Prezzo a 1 m² = prezzo × (1 m² ÷ superficie)^{str(BETA).replace('.', ',')}, poi la mediana per artista.</li>
       <li>Regola del mercato provato: chi ha venduto all'asta almeno un'opera a 100.000 USD o più non può più essere emergente. Nel quadrante di oggi passa in Hype (attenzione alta, riconoscimento ancora basso); nella serie anno per anno la regola vale dall'anno di quella vendita in poi.</li>
       <li>Instagram: oltre ai profili Wikidata, abbiamo cercato per nome l'account di 2.527 insider ed emergenti in vita e dei primi 300 artisti della sintesi, controllando nella bio gallerie, mostre o sito. Per i primi 300 la ricerca è limitata alle pagine profilo di Instagram indicizzate dal motore di ricerca, che riportano il numero di follower; contano anche gli account dello studio o dell'archivio dell'artista, non le fan page. Affidabilità alta = bio che conferma l'artista; media = nome corrispondente; bassa = esclusa dalle analisi.</li>
-      <li>Sintesi: riconoscimento 35%, slancio 20%, notorietà pubblica 15%, valore 20%, solidità 10%; tutte le componenti sono percentili da 0 a 100. Esclusi gli artisti morti, anche quelli che Artsy indica ancora in vita e che abbiamo scoperto durante la ricerca su Instagram.</li>""")
+      <li>Sintesi: riconoscimento 31,5%, slancio 18%, notorietà pubblica 13,5%, valore 18%, solidità 9%, rete 10%; le prime cinque sono percentili da 0 a 100.</li>
+      <li>Rete: 40.593 mostre su Artsy di 7.935 artisti e di chi ha esposto con loro. Una sede «ha fiuto» se, tra il 2015 e il 2022, almeno 3 artisti che ha esposto quando erano ancora emergenti o hype sono poi diventati insider o affermati, con una frequenza almeno 1,3 volte la media. Escluse fiere, stamperie e rivenditori del mercato secondario. Test all'indietro: chi nel 2019–2021 è stato esposto da sedi con fiuto (misurato sul 2015–2018) è arrivato in alto entro il 2026 nel 31% dei casi, contro il 19% degli altri; con le sole gallerie 30% contro 18%. Esclusi gli artisti morti, anche quelli che Artsy indica ancora in vita e che abbiamo scoperto durante la ricerca su Instagram.</li>""")
 rep("""      <li>Instagram: dai profili Wikidata, collegati all'artista tramite l'ID Artsy oppure per nome quando il nome è univoco. Gli abbinamenti per nome vanno verificati.</li>""",
     """      <li>Instagram da Wikidata: collegati all'artista tramite l'ID Artsy oppure per nome quando il nome è univoco. Gli abbinamenti per nome vanno verificati.</li>""")
 rep("""      <li>Scarto = interesse combinato (percentile) meno percentile di prezzo, calcolato solo per artisti con almeno 5 lotti venduti.</li>""",
@@ -411,7 +413,7 @@ NEWJS = r"""
     const rows = TR_syn();
     if (!rows) { tb.replaceChildren(); return; }
     const cell = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; if (t instanceof Node) x.append(t); else x.textContent = t; return x; };
-    if (!rows.length) { const tr = document.createElement('tr'); const c = cell('Nessun artista corrisponde ai filtri.', 'tr-empty'); c.colSpan = 12; tr.append(c); tb.replaceChildren(tr); return; }
+    if (!rows.length) { const tr = document.createElement('tr'); const c = cell('Nessun artista corrisponde ai filtri.', 'tr-empty'); c.colSpan = 13; tr.append(c); tb.replaceChildren(tr); return; }
     tb.replaceChildren(...rows.slice(0, 100).map((r, i) => {
       const parts = Object.fromEntries((r.score_parts || '').split(';').filter(Boolean).map((s) => s.split('=')));
       const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
@@ -419,7 +421,7 @@ NEWJS = r"""
       const sc = cell(dec(r.score_synthesis), 'tr-n'); sc.style.fontWeight = '600'; sc.dataset.source = 'matrix'; sc.dataset.field = 'score_synthesis'; sc.dataset.where = `slug=${encodeURIComponent(r.slug)}`;
       const ig = r.instagram ? (() => { const a = document.createElement('a'); a.href = `https://www.instagram.com/${encodeURIComponent(r.instagram)}/`; a.target = '_blank'; a.rel = 'noopener'; a.textContent = '@' + r.instagram + (r.igf ? ` · ${TR_FMT(r.igf)}` : ''); return a; })() : '';
       tr.append(cell(String(i + 1), 'tr-n'), cell(b), cell(TR_pill(r)), sc, cell(parts.rec ?? '—', 'tr-n'), cell(parts.mom ?? '—', 'tr-n'), cell(parts.pub ?? '—', 'tr-n'),
-        cell(parts.value ?? '—', 'tr-n'), cell(parts.solid ?? '—', 'tr-n'), cell(r.mp ? TR_FMT(r.mp) : '—', 'tr-n'), cell(r.max_lot_usd ? TR_FMT(+r.max_lot_usd) : '—', 'tr-n'), cell(ig));
+        cell(parts.value ?? '—', 'tr-n'), cell(parts.solid ?? '—', 'tr-n'), cell(parts.net ?? '—', 'tr-n'), cell(r.mp ? TR_FMT(r.mp) : '—', 'tr-n'), cell(r.max_lot_usd ? TR_FMT(+r.max_lot_usd) : '—', 'tr-n'), cell(ig));
       return tr;
     }));
   });
@@ -516,6 +518,6 @@ BUY_JS = """
 </script>
 """
 h = h.rstrip() + "\n" + BUY_JS
-rep("      <li>Sintesi: riconoscimento 35%", "      <li>Cosa compreremmo: artisti in vita non affermati, fino a 60 anni, con almeno 2 opere uniche vendute all'asta a 5.000 € o meno negli ultimi 3 anni (almeno il 30% delle loro opere uniche), almeno il 70% di lotti venduti e prezzo almeno al 90% della stima. La scelta dei 10 tra i candidati è nostra: pesa riconoscimento istituzionale, liquidità del mercato e crescita dei prezzi.</li>\n      <li>Sintesi: riconoscimento 35%")
+rep("      <li>Sintesi: riconoscimento 31,5%", "      <li>Cosa compreremmo: artisti in vita non affermati, fino a 60 anni, con almeno 2 opere uniche vendute all'asta a 5.000 € o meno negli ultimi 3 anni (almeno il 30% delle loro opere uniche), almeno il 70% di lotti venduti e prezzo almeno al 90% della stima. La scelta dei 10 tra i candidati è nostra: pesa riconoscimento istituzionale, liquidità del mercato e crescita dei prezzi.</li>\n      <li>Sintesi: riconoscimento 31,5%")
 open(f"{D}/index_v7.html", "w", encoding="utf-8").write(h)
 print("buy ok", len(h))

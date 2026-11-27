@@ -291,7 +291,11 @@ for r in rows:
 
 # synthesis score (living, not flagged deceased)
 raw_pct = pct(sorted(float(r["median_usd_10y"]) for r in rows if r["median_usd_10y"] != "" and int(r["lots_sold_10y"] or 0) >= 3))
-W = {"rec": .35, "mom": .20, "pub": .15, "value": .20, "solid": .10}
+W = {"rec": .315, "mom": .18, "pub": .135, "value": .18, "solid": .09, "net": .10}
+NET = {}
+_netf = os.path.join(DATA, "radar", "network_full", "artist_network.csv")
+if os.path.exists(_netf):  # venues with a track record of early bets (2015-2022) that showed the artist in 2023-2026
+    NET = {r["slug"]: r for r in csv.DictReader(open(_netf, encoding="utf-8"))}
 for r in rows:
     living = r["living"] == 1
     parts = {"rec": num(r["recognition_pct_now"]), "mom": num(r["momentum_pct"]), "pub": num(r["public_pct"])}
@@ -304,6 +308,11 @@ for r in rows:
     parts["value"] = 50 + g / 2 if g is not None else None
     st, pe = num(r["sell_through_10y"]), num(r["price_to_estimate_last3y"])
     parts["solid"] = (min(100, st) * .5 + min(100, 50 * pe) * .5) if st is not None and pe is not None else (st if st is not None else None)
+    nt = NET.get(r["slug"]) or {}
+    r["net_track_venues"] = nt.get("net_track_venues", ""); r["net_track_names"] = nt.get("net_track_names", "")
+    r["net_recent_shows"] = nt.get("net_recent_shows", ""); r["net_partners"] = nt.get("net_partners", "")
+    k = int(nt.get("net_track_venues") or 0)
+    parts["net"] = 100 if k else None  # bonus only: never lowers a score; no exposure = component left out
     have = {k: v for k, v in parts.items() if v is not None}
     wsum = sum(W[k] for k in have)
     r["score_synthesis"] = round(sum(W[k] * v for k, v in have.items()) / wsum, 1) if wsum >= .6 else ""

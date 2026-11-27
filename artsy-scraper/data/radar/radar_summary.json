@@ -31,16 +31,16 @@
  },
  "transitions": {
   "emerging->emerging": 1230,
-  "emerging->hype": 352,
-  "hype->hype": 234,
-  "insider->insider": 1222,
   "established->established": 376,
-  "emerging->insider": 524,
-  "emerging->established": 84,
-  "insider->established": 170,
-  "hype->established": 63,
-  "hype->insider": 69,
+  "insider->insider": 1222,
   "established->insider": 118,
-  "hype->emerging": 75
+  "emerging->established": 84,
+  "hype->established": 63,
+  "emerging->insider": 524,
+  "emerging->hype": 352,
+  "hype->emerging": 75,
+  "hype->insider": 69,
+  "hype->hype": 234,
+  "insider->established": 170
  }
 }

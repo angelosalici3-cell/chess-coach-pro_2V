@@ -13,6 +13,8 @@ SAMPLE = sys.argv[4] if len(sys.argv) > 4 else f"{NET}/../network_sample.txt"
 os.makedirs(OUT, exist_ok=True)
 LOW, HIGH = {"emerging", "hype"}, {"insider", "established"}
 K = 5  # shrinkage towards the base rate
+ONLY_TYPE = os.environ.get("NET_ONLY_TYPE", "")  # e.g. "Gallery": test without institutions
+LIFT_MIN = float(os.environ.get("NET_LIFT", "1.5")); BETS_MIN = int(os.environ.get("NET_BETS", "3"))
 
 M = {r["slug"]: r for r in csv.DictReader(open(f"{D}/artist_matrix_v7.csv", encoding="utf-8"))}
 qrow = defaultdict(dict)
@@ -90,7 +92,7 @@ def bets_for(year_from, year_to, outcome_until):
         if not sh["start"][:4].isdigit() or sh["fair_booth"] == "1" or sh["kind"] == "fair":
             continue  # fair booths are stock rotation, not curatorial bets
         y = int(sh["start"][:4]); p = sh["partner_slug"] or ("ext:" + sh["partner_name"])
-        if not (year_from <= y <= year_to) or p in ("ext:",) or ptype.get(p) != "sceglie":
+        if not (year_from <= y <= year_to) or p in ("ext:",) or ptype.get(p) != "sceglie" or (ONLY_TYPE and sh["partner_type"] != ONLY_TYPE):
             continue
         for a in members[sh["show_slug"]]:
             if a not in qrow or q_at(a, y) not in LOW:
@@ -124,7 +126,7 @@ with open(f"{OUT}/partner_track_record.csv", "w", newline="") as fh:
 # ---- 3. out-of-sample test: track record 2015-2018 (outcomes to 2021) -> artists low in 2021, shown 2019-2021 ----
 _, st_tr = bets_for(2015, 2018, 2021)
 bt = sum(v[0] for v in st_tr.values()); bh = sum(v[1] for v in st_tr.values()); base_tr = bh / bt if bt else 0
-good = {p for p, (b, h) in st_tr.items() if b >= 3 and (h + K * base_tr) / (b + K) >= 1.5 * base_tr}
+good = {p for p, (b, h) in st_tr.items() if b >= BETS_MIN and (h + K * base_tr) / (b + K) >= LIFT_MIN * base_tr}
 test = defaultdict(lambda: [0, 0])
 f2, _ = bets_for(2019, 2021, 2021)
 art_good = defaultdict(bool); arts = set()
@@ -181,3 +183,21 @@ summary = {
 }
 json.dump(summary, open(f"{OUT}/network_summary.json", "w"), indent=1)
 print(json.dumps(summary, indent=1))
+
+# ---- 5. per-artist network fields for the radar (track record on 2015-2022, exposures 2023-2026) ----
+TRACK = {r["partner"] for r in rows if r["early_bets"] >= 3 and r["lift"] != "" and r["lift"] >= 1.3}
+in_net, recent, track_hit, partners_all = set(), defaultdict(int), defaultdict(set), defaultdict(set)
+for sh in shows.values():
+    p = sh["partner_slug"] or ("ext:" + sh["partner_name"])
+    y = int(sh["start"][:4]) if sh["start"][:4].isdigit() else 0
+    for a in members[sh["show_slug"]]:
+        in_net.add(a); partners_all[a].add(p)
+        if y >= 2023 and sh["fair_booth"] != "1" and sh["kind"] != "fair":
+            recent[a] += 1
+            if p in TRACK:
+                track_hit[a].add(p)
+with open(f"{OUT}/artist_network.csv", "w", newline="", encoding="utf-8") as fh:
+    w = csv.writer(fh); w.writerow(["slug", "net_partners", "net_recent_shows", "net_track_venues", "net_track_names"])
+    for a in sorted(in_net):
+        w.writerow([a, len(partners_all[a]), recent[a], len(track_hit[a]), "; ".join(sorted(PNAME.get(p, p) for p in track_hit[a]))[:200]])
+print("track venues", len(TRACK), "artists in network", len(in_net), "with track exposure", sum(1 for a in in_net if track_hit[a]))
