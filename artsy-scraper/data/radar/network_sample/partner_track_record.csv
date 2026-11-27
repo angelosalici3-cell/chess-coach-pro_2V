@@ -1,0 +1,548 @@
+partner,name,type,city,early_bets,hits,hit_rate,shrunk_rate,lift
+56th-venice-biennale,56th Venice Biennale,Institution,,7,7,1.0,0.714,2.27
+new-museum-1,New Museum,Institution,New York,7,7,1.0,0.714,2.27
+the-studio-museum-in-harlem,The Studio Museum in Harlem,Institution,New York,19,15,0.789,0.69,2.2
+mass-moca,MASS MoCA,Institution,North Adams,5,5,1.0,0.657,2.09
+universal-limited-art-editions,Universal Limited Art Editions,Gallery,,5,5,1.0,0.657,2.09
+hammer-museum,Hammer Museum,Institution,Los Angeles,7,6,0.857,0.631,2.01
+herlitzka-and-co,Herlitzka & Co.,Gallery,"Buenos Aires, Argentina",7,6,0.857,0.631,2.01
+crown-point-press,Crown Point Press,Gallery,San Francisco,7,6,0.857,0.631,2.01
+laart,LAART,Gallery,,4,4,1.0,0.619,1.97
+yancey-richardson-gallery,Yancey Richardson Gallery,Gallery,,6,5,0.833,0.597,1.9
+museo-de-arte-contemporaneo-de-buenos-aires,Museo de Arte Contemporáneo de Buenos Aires,Institution,Ciudad Autónoma de Buenos Aires,6,5,0.833,0.597,1.9
+mario-mauroner-contemporary-art-salzburg,Mario Mauroner Contemporary Art Salzburg,Gallery,,10,7,0.7,0.571,1.82
+cosmocosa,Cosmocosa,Gallery,Buenos Aires,3,3,1.0,0.571,1.82
+pinchukartcentre,PinchukArtCentre,Institution,Kyiv,3,3,1.0,0.571,1.82
+malba,MALBA,Institution,Buenos Aires,3,3,1.0,0.571,1.82
+revolver-galeria,Revolver Galería,Gallery,,3,3,1.0,0.571,1.82
+the-flag-art-foundation,The FLAG Art Foundation,Institution,New York,12,8,0.667,0.563,1.79
+galerie-lelong,Galerie Lelong,Gallery,,5,4,0.8,0.557,1.77
+carlier-gebauer,carlier | gebauer,Gallery,Berlin,5,4,0.8,0.557,1.77
+moma-ps1,MoMA PS1,Institution,Long Island City,5,4,0.8,0.557,1.77
+petzel-gallery,Petzel Gallery,Gallery,,5,4,0.8,0.557,1.77
+aki-gallery,Aki Gallery,Gallery,,7,5,0.714,0.548,1.74
+san-francisco-museum-of-modern-art-sfmoma,San Francisco Museum of Modern Art (SFMOMA),Institution,San Francisco,7,5,0.714,0.548,1.74
+paulson-fontaine-press,Paulson Fontaine Press,Gallery,Berkeley,7,5,0.714,0.548,1.74
+ronald-feldman-gallery,Ronald Feldman Gallery,Gallery,New York,7,5,0.714,0.548,1.74
+jessica-silverman,Jessica Silverman,Gallery,,9,6,0.667,0.541,1.72
+caviar20,Caviar20,Gallery,,9,6,0.667,0.541,1.72
+etherton-gallery,Etherton Gallery,Gallery,Tucson,13,8,0.615,0.532,1.69
+mendes-wood-dm,Mendes Wood DM,Gallery,,2,2,1.0,0.51,1.62
+galerie-steinek,Galerie Steinek,Gallery,Vienna,2,2,1.0,0.51,1.62
+galerie-nordenhake,Galerie Nordenhake,Gallery,Mexico City,2,2,1.0,0.51,1.62
+norval-foundation,Norval Foundation,Institution,Cape Town,2,2,1.0,0.51,1.62
+alpha-137-gallery,Alpha 137 Gallery,Gallery,New York,2,2,1.0,0.51,1.62
+princeton-university-art-museum,Princeton University Art Museum,Institution,Princeton,2,2,1.0,0.51,1.62
+clamp,CLAMP,Gallery,,2,2,1.0,0.51,1.62
+public-art-fund,Public Art Fund,Institution,Brooklyn,2,2,1.0,0.51,1.62
+galleria-continua,GALLERIA CONTINUA,Gallery,,2,2,1.0,0.51,1.62
+baro-galeria,Baró Galeria,Gallery,Abu Dhabi,2,2,1.0,0.51,1.62
+ica-london,ICA London,Institution,,2,2,1.0,0.51,1.62
+galerie-maximillian,Galerie Maximillian,Gallery,,2,2,1.0,0.51,1.62
+plinth,Plinth,Gallery,,2,2,1.0,0.51,1.62
+galerie-eigen-plus-art,Galerie EIGEN + ART,Gallery,,4,3,0.75,0.508,1.62
+aperture,Aperture,Gallery,,4,3,0.75,0.508,1.62
+jhaveri-contemporary,Jhaveri Contemporary,Gallery,,4,3,0.75,0.508,1.62
+michael-hoppen-gallery,Michael Hoppen Gallery,Gallery,,4,3,0.75,0.508,1.62
+tang-teaching-museum-and-art-gallery,Tang Teaching Museum and Art Gallery,Institution,Saratoga Springs ,4,3,0.75,0.508,1.62
+grob-gallery,Grob Gallery,Gallery,Genève,4,3,0.75,0.508,1.62
+galerie-henze-and-ketterer,Galerie Henze & Ketterer,Gallery,,4,3,0.75,0.508,1.62
+louisiana-museum-of-modern-art,Louisiana Museum of Modern Art,Institution,Humlebaek,4,3,0.75,0.508,1.62
+fortes-daloia-and-gabriel,Fortes D'Aloia & Gabriel,Gallery,Rio de Janeiro,4,3,0.75,0.508,1.62
+future-generation-art-prize,Future Generation Art Prize,Institution,Kyiv,4,3,0.75,0.508,1.62
+walker-art-center,Walker Art Center,Institution,Minneapolis,6,4,0.667,0.507,1.61
+friedman-benda,Friedman Benda,Gallery,,6,4,0.667,0.507,1.61
+catharine-clark-gallery,Catharine Clark Gallery,Gallery,,6,4,0.667,0.507,1.61
+g2-kunsthalle,G2 Kunsthalle,Institution,Leipzig,6,4,0.667,0.507,1.61
+forum-gallery,Forum Gallery,Gallery,New York,6,4,0.667,0.507,1.61
+osborne-samuel,Osborne Samuel,Gallery,,6,4,0.667,0.507,1.61
+john-wolf-art-advisory-and-brokerage,John Wolf Art Advisory & Brokerage,Gallery,,29,15,0.517,0.487,1.55
+galerie-nathalie-obadia,Galerie Nathalie Obadia,Gallery,,5,3,0.6,0.457,1.45
+luisa-strina,Luisa Strina,Gallery,,5,3,0.6,0.457,1.45
+whatiftheworld,WHATIFTHEWORLD,Gallery,,5,3,0.6,0.457,1.45
+white-cube,White Cube,Gallery,,5,3,0.6,0.457,1.45
+roberts-projects,Roberts Projects,Gallery,Los Angeles,5,3,0.6,0.457,1.45
+zeitz-mocaa,Zeitz MOCAA,Institution,Cape Town,5,3,0.6,0.457,1.45
+singapore-art-museum-sam,Singapore Art Museum (SAM),Institution,,3,2,0.667,0.446,1.42
+storm-king-art-center,Storm King Art Center,Institution,New Windsor,3,2,0.667,0.446,1.42
+jarrett-mccusker,Jarrett McCusker,Gallery,,3,2,0.667,0.446,1.42
+mireille-mosler-ltd,Mireille Mosler Ltd.,Gallery,,3,2,0.667,0.446,1.42
+sean-kelly-gallery,Sean Kelly Gallery,Gallery,New York,3,2,0.667,0.446,1.42
+robert-berman-gallery,Robert Berman Gallery,Gallery,Santa Monica,3,2,0.667,0.446,1.42
+boca-raton-museum-of-art,Boca Raton Museum of Art,Institution,Boca Raton,3,2,0.667,0.446,1.42
+gutan-fine-art,Gutan Fine Art,Gallery,,3,2,0.667,0.446,1.42
+track-16-gallery,Track 16 Gallery,Gallery,Los Angeles,3,2,0.667,0.446,1.42
+visioner,Visioner,Gallery,,3,2,0.667,0.446,1.42
+dieu-donne,Dieu Donné,Institution,,22,10,0.455,0.429,1.36
+taschen,TASCHEN,Gallery,,8,4,0.5,0.429,1.36
+galeria-vermelho,Galería Vermelho,Gallery,São Paulo,1,1,1.0,0.429,1.36
+noguchi-museum,Noguchi Museum,Institution,Long Island City,1,1,1.0,0.429,1.36
+mattress-factory,Mattress Factory,Institution,,1,1,1.0,0.429,1.36
+goya-contemporary-llc,Goya Contemporary LLC,Gallery,Baltimore,1,1,1.0,0.429,1.36
+island-press,Island Press,Gallery,,1,1,1.0,0.429,1.36
+for-site-foundation,FOR-SITE Foundation,Institution,,1,1,1.0,0.429,1.36
+galerie-fons-welters,Galerie Fons Welters,Gallery,Amsterdam,1,1,1.0,0.429,1.36
+oude-kerk,Oude Kerk,Institution,Amsterdam,1,1,1.0,0.429,1.36
+moderna-museet,Moderna Museet,Institution,Stockholm,1,1,1.0,0.429,1.36
+random-institute,Random Institute,Institution,Zürich,1,1,1.0,0.429,1.36
+vistamare,Vistamare,Gallery,,1,1,1.0,0.429,1.36
+galerie-tschudi,Galerie Tschudi,Gallery,Zuoz,1,1,1.0,0.429,1.36
+highpoint-editions,Highpoint Editions,Gallery,,1,1,1.0,0.429,1.36
+galleria-valentina-bonomo,Galleria Valentina Bonomo,Gallery,,1,1,1.0,0.429,1.36
+leon-tovar-gallery,Leon Tovar Gallery,Gallery,,1,1,1.0,0.429,1.36
+beirut-art-center,Beirut Art Center,Institution,Beirut,1,1,1.0,0.429,1.36
+radius-books,Radius Books,Institution,,1,1,1.0,0.429,1.36
+gallery-nosco,Gallery Nosco,Gallery,Brussels,1,1,1.0,0.429,1.36
+museum-ludwig,Museum Ludwig,Institution,Cologne,1,1,1.0,0.429,1.36
+arton-foundation,Arton Foundation,Gallery,Warsaw,1,1,1.0,0.429,1.36
+gropius-bau,Gropius Bau,Institution,,1,1,1.0,0.429,1.36
+galerie-gabriel-rolt,Galerie Gabriel Rolt,Gallery,Amsterdam,1,1,1.0,0.429,1.36
+atelier-neerlandais,Atelier Néerlandais,Institution,Paris,1,1,1.0,0.429,1.36
+weng-contemporary,Weng Contemporary,Gallery,Monheim am Rhein,1,1,1.0,0.429,1.36
+galerie-knoell-basel,"Galerie Knoell, Basel",Gallery,Basel,1,1,1.0,0.429,1.36
+grieder-contemporary,Grieder Contemporary,Gallery,Kusnacht,1,1,1.0,0.429,1.36
+lumen-travo,Lumen Travo,Gallery,,1,1,1.0,0.429,1.36
+gemini-gel,Gemini G.E.L.,Gallery,Los Angeles,1,1,1.0,0.429,1.36
+cultural-avenue,Cultural Avenue,Institution,Aschaffenburg,1,1,1.0,0.429,1.36
+jean-paul-najar-foundation,Jean-Paul Najar Foundation,Institution,,1,1,1.0,0.429,1.36
+crystal-bridges-museum-of-american-art,Crystal Bridges Museum of American Art,Institution,Bentonville,1,1,1.0,0.429,1.36
+mizuma-art-gallery,Mizuma Art Gallery,Gallery,Tokyo,1,1,1.0,0.429,1.36
+piano-nobile,Piano Nobile,Gallery,London,1,1,1.0,0.429,1.36
+galeria-artizar,Galería Artizar,Gallery,,1,1,1.0,0.429,1.36
+jcamejo-art,JCamejo Art,Gallery,,1,1,1.0,0.429,1.36
+art-night-london,Art Night London,Gallery,London,1,1,1.0,0.429,1.36
+mestre-projects,MESTRE PROJECTS,Gallery,,1,1,1.0,0.429,1.36
+rmn-grand-palais,RMN Grand Palais,Institution,Paris,1,1,1.0,0.429,1.36
+inde-slash-jacobs,inde/jacobs,Gallery,,1,1,1.0,0.429,1.36
+fondation-beyeler,Fondation Beyeler,Institution,Riehen,1,1,1.0,0.429,1.36
+galerie-crone,Galerie Crone,Gallery,Vienna,1,1,1.0,0.429,1.36
+max54-gallery-the-global-fine-art,MAX54 Gallery | The Global Fine Art,Gallery,Zürich,1,1,1.0,0.429,1.36
+luma-arte,Luma Arte,Gallery,,1,1,1.0,0.429,1.36
+fondazione-berengo,Fondazione Berengo,Institution,Dordrecht,1,1,1.0,0.429,1.36
+galerie-leu,Galerie Leu,Gallery,Munich,1,1,1.0,0.429,1.36
+58th-venice-biennale,58th Venice Biennale,Institution,Venice,1,1,1.0,0.429,1.36
+palais-de-tokyo,Palais de Tokyo,Institution,Paris,1,1,1.0,0.429,1.36
+vermillion-editions-limited,Vermillion Editions Limited,Gallery,,1,1,1.0,0.429,1.36
+vertu-fine-art,Vertu Fine Art,Gallery,,1,1,1.0,0.429,1.36
+shoshana-wayne-gallery,Shoshana Wayne Gallery,Gallery,,1,1,1.0,0.429,1.36
+opera-gallery,Opera Gallery,Gallery,Madrid,1,1,1.0,0.429,1.36
+ascaso-gallery,Ascaso Gallery,Gallery,,1,1,1.0,0.429,1.36
+aurora-vigil-escalera-art-gallery,Aurora Vigil-Escalera Art Gallery,Gallery,,1,1,1.0,0.429,1.36
+schellmann-art,Schellmann Art,Gallery,Munich,1,1,1.0,0.429,1.36
+rosenfeld-1,rosenfeld,Gallery,London,1,1,1.0,0.429,1.36
+perez-art-museum-miami-pamm,Pérez Art Museum Miami (PAMM),Institution,Miami,1,1,1.0,0.429,1.36
+pizzuti-collection,Pizzuti Collection,Institution,Columbus,1,1,1.0,0.429,1.36
+chase-contemporary,Chase Contemporary,Gallery,,1,1,1.0,0.429,1.36
+hakgojae-gallery,Hakgojae Gallery,Gallery,,1,1,1.0,0.429,1.36
+jack-shainman-gallery,Jack Shainman Gallery,Gallery,,1,1,1.0,0.429,1.36
+heather-gaudio-fine-art,Heather Gaudio Fine Art,Gallery,,1,1,1.0,0.429,1.36
+dep-art-gallery,Dep Art Gallery,Gallery,Milan,6,3,0.5,0.416,1.32
+cantor-fitzgerald-gallery-haverford-college,"Cantor Fitzgerald Gallery, Haverford College",Institution,Haverford ,6,3,0.5,0.416,1.32
+litvak-contemporary,Litvak Contemporary,Gallery,Tel-Aviv,6,3,0.5,0.416,1.32
+fl-braswell-fine-art,F.L. Braswell Fine Art,Gallery,,6,3,0.5,0.416,1.32
+grey-art-gallery,Grey Art Gallery,Institution,New York,6,3,0.5,0.416,1.32
+mcevoy-foundation-for-the-arts,McEvoy Foundation for the Arts,Institution,San Francisco,9,4,0.444,0.398,1.27
+peter-blake-gallery,Peter Blake Gallery,Gallery,,9,4,0.444,0.398,1.27
+earlh,EARLH,Gallery,,9,4,0.444,0.398,1.27
+maison-particuliere,Maison Particulière,Institution,Brussels,4,2,0.5,0.397,1.26
+lora-reynolds-gallery,Lora Reynolds Gallery,Gallery,Austin,4,2,0.5,0.397,1.26
+asia-university-museum-of-modern-art,Asia University Museum of Modern Art,Institution,Taichung,4,2,0.5,0.397,1.26
+tracey-morgan-gallery,Tracey Morgan Gallery,Gallery,Asheville,4,2,0.5,0.397,1.26
+strouk-gallery,Strouk Gallery,Gallery,,4,2,0.5,0.397,1.26
+galleri-gkm,Galleri GKM,Gallery,,4,2,0.5,0.397,1.26
+lougher-contemporary,Lougher Contemporary,Gallery,,4,2,0.5,0.397,1.26
+timothy-taylor,Timothy Taylor,Gallery,London,4,2,0.5,0.397,1.26
+eli-klein-gallery,Eli Klein Gallery,Gallery,New York,4,2,0.5,0.397,1.26
+gazelli-art-house,Gazelli Art House,Gallery,London,4,2,0.5,0.397,1.26
+david-kordansky-gallery,David Kordansky Gallery,Gallery,New York,4,2,0.5,0.397,1.26
+raw-editions,RAW Editions,Gallery,,4,2,0.5,0.397,1.26
+david-krut-projects,David Krut Projects,Gallery,,4,2,0.5,0.397,1.26
+winston-wachter-fine-art,Winston Wächter Fine Art,Gallery,New York,12,5,0.417,0.387,1.23
+artwise,ArtWise,Gallery,,20,8,0.4,0.383,1.22
+zane-bennett-contemporary-art,Zane Bennett Contemporary Art,Gallery,Santa Fe,7,3,0.429,0.381,1.21
+atrium-gallery,Atrium Gallery,Gallery,St. Louis,7,3,0.429,0.381,1.21
+rosegallery,ROSEGALLERY,Gallery,Los Angeles,7,3,0.429,0.381,1.21
+mca-chicago,MCA Chicago,Institution,Chicago,7,3,0.429,0.381,1.21
+arte-fundamental,Arte Fundamental,Gallery,,2,1,0.5,0.367,1.17
+galerie-jocelyn-wolff,Galerie Jocelyn Wolff,Gallery,Romainville (Grand Paris),2,1,0.5,0.367,1.17
+halsey-mckay-gallery,Halsey McKay Gallery,Gallery,Brooklyn,2,1,0.5,0.367,1.17
+henrique-faria-fine-art,Henrique Faria Fine Art,Gallery,Tuxedo Park,2,1,0.5,0.367,1.17
+denk-gallery,DENK Gallery,Gallery,,2,1,0.5,0.367,1.17
+mai-36-galerie,Mai 36 Galerie,Gallery,,2,1,0.5,0.367,1.17
+pen-plus-brush,Pen + Brush,Institution,New York,2,1,0.5,0.367,1.17
+k-contemporary,K Contemporary,Gallery,Denver,2,1,0.5,0.367,1.17
+bric,BRIC,Institution,Brooklyn,2,1,0.5,0.367,1.17
+locks-gallery,Locks Gallery,Gallery,,2,1,0.5,0.367,1.17
+richard-taittinger-gallery,Richard Taittinger Gallery,Gallery,Paris,2,1,0.5,0.367,1.17
+art-and-collectors,Art & Collectors,Gallery,,2,1,0.5,0.367,1.17
+larkin-durey,Larkin Durey,Gallery,London,2,1,0.5,0.367,1.17
+rachael-cozad-fine-art,Rachael Cozad Fine Art,Gallery,,2,1,0.5,0.367,1.17
+hieronymus,Hieronymus,Gallery,,2,1,0.5,0.367,1.17
+david-pluskwa,David Pluskwa,Gallery,,2,1,0.5,0.367,1.17
+qualia-contemporary-art,Qualia Contemporary Art,Gallery,Palo Alto,2,1,0.5,0.367,1.17
+new-york-academy-of-art,New York Academy of Art,Institution,New York ,2,1,0.5,0.367,1.17
+ira-stehmann-fine-art,Ira Stehmann Fine Art,Gallery,,2,1,0.5,0.367,1.17
+japan-art-galerie-friedrich-mueller,Japan Art - Galerie Friedrich Mueller,Gallery,Frankfurt am Main,2,1,0.5,0.367,1.17
+galerie-f-hessler,Galerie F. Hessler,Gallery,Luxembourg,2,1,0.5,0.367,1.17
+wangsim,Wangsim,Gallery,Hong Kong ,2,1,0.5,0.367,1.17
+whitney-museum-of-american-art-1,Whitney Museum of American Art,Institution,New York,2,1,0.5,0.367,1.17
+bookstein-projects,Bookstein Projects,Gallery,New York,2,1,0.5,0.367,1.17
+simon-studer-art,Simon Studer Art,Gallery,,2,1,0.5,0.367,1.17
+san-jose-museum-of-art,San Jose Museum of Art,Institution,San Jose,2,1,0.5,0.367,1.17
+faurschou-foundation,Faurschou Foundation,Institution,Beijing,2,1,0.5,0.367,1.17
+twentieth-gallery,Twentieth Gallery,Gallery,Los Angeles,2,1,0.5,0.367,1.17
+ifac-arts,IFAC Arts,Gallery,New York City,2,1,0.5,0.367,1.17
+elgiz-museum,Elgiz Museum,Institution,Istanbul,2,1,0.5,0.367,1.17
+gagosian,Gagosian,Gallery,,2,1,0.5,0.367,1.17
+rosenbaum-contemporary,Rosenbaum Contemporary,Gallery,,2,1,0.5,0.367,1.17
+jonathan-novak-contemporary-art,Jonathan Novak Contemporary Art,Gallery,,2,1,0.5,0.367,1.17
+eckert-fine-art,Eckert Fine Art,Gallery,,2,1,0.5,0.367,1.17
+galeria-daniel-cardani,Galería Daniel Cardani,Gallery,,5,2,0.4,0.357,1.14
+robischon-gallery,Robischon Gallery,Gallery,Denver,5,2,0.4,0.357,1.14
+the-current-museum,The Current Museum,Institution,New York,5,2,0.4,0.357,1.14
+galerie-greta-meert,Galerie Greta Meert,Gallery,,5,2,0.4,0.357,1.14
+whitford-fine-art,Whitford Fine Art,Gallery,,5,2,0.4,0.357,1.14
+jarilager-gallery,JARILAGER Gallery,Gallery,,5,2,0.4,0.357,1.14
+tamarind-institute,Tamarind Institute,Gallery,,24,8,0.333,0.33,1.05
+bitforms-gallery,bitforms gallery,Gallery,New York ,9,3,0.333,0.327,1.04
+michael-lisi-slash-contemporary-art,michael lisi / contemporary art,Gallery,New York,9,3,0.333,0.327,1.04
+masa-galeria,MASA Galeria,Gallery,Mexico City,6,2,0.333,0.325,1.03
+toshkova-fine-art-advisory,Toshkova Fine Art Advisory,Gallery,,6,2,0.333,0.325,1.03
+freight-plus-volume,Freight + Volume,Gallery,,6,2,0.333,0.325,1.03
+gallery-odyssey,Gallery Odyssey,Gallery,Mumbai,6,2,0.333,0.325,1.03
+ludorff,Ludorff,Gallery,,6,2,0.333,0.325,1.03
+odalys,Odalys,Gallery,Madrid,6,2,0.333,0.325,1.03
+kunstmuseum-bern,Kunstmuseum Bern,Institution,Bern,3,1,0.333,0.321,1.02
+the-aldrich-contemporary-art-museum,The Aldrich Contemporary Art Museum,Institution,Ridgefield,3,1,0.333,0.321,1.02
+luis-de-jesus-los-angeles,Luis De Jesus Los Angeles,Gallery,,3,1,0.333,0.321,1.02
+m-woods,M WOODS,Institution,Beijing,3,1,0.333,0.321,1.02
+sager-reeves-gallery,Sager Reeves Gallery,Gallery,Columbia,3,1,0.333,0.321,1.02
+margot-samel,Margot Samel,Gallery,New York,3,1,0.333,0.321,1.02
+michel-soskine-inc,Michel Soskine Inc.,Gallery,Madrid,3,1,0.333,0.321,1.02
+ideelart,IdeelArt,Gallery,,3,1,0.333,0.321,1.02
+galerie-chabannes-valle,Galerie Chabannes Vallé,Gallery,Clermont-Ferrand,3,1,0.333,0.321,1.02
+the-dot-project,The Dot Project,Gallery,  Moreton-In-Marsh,3,1,0.333,0.321,1.02
+the-art-vault-gallery,The Art Vault Gallery,Gallery,,3,1,0.333,0.321,1.02
+kantor-gallery,Kantor Gallery,Gallery,,3,1,0.333,0.321,1.02
+galerie-wolfgang-jahn,Galerie Wolfgang Jahn,Gallery,,3,1,0.333,0.321,1.02
+national-museum-of-women-in-the-arts,National Museum of Women in the Arts,Institution,Washington,3,1,0.333,0.321,1.02
+alon-zakaim-fine-art,Alon Zakaim Fine Art,Gallery,London,3,1,0.333,0.321,1.02
+sin-titulo-gallery,Sin Título Gallery,Gallery,San Francisco,3,1,0.333,0.321,1.02
+nina-johnson,Nina Johnson,Gallery,,3,1,0.333,0.321,1.02
+coleccion-solo,Coleccion SOLO,Institution,Madrid,3,1,0.333,0.321,1.02
+galerie-kluser,Galerie Klüser,Gallery,Munich,3,1,0.333,0.321,1.02
+toth-gallery,TOTH GALLERY,Gallery,,3,1,0.333,0.321,1.02
+howard-greenberg-gallery,Howard Greenberg Gallery,Gallery,,3,1,0.333,0.321,1.02
+corkin-gallery,Corkin Gallery,Gallery,Toronto,3,1,0.333,0.321,1.02
+west-chelsea-contemporary-1,West Chelsea Contemporary,Gallery,Austin ,3,1,0.333,0.321,1.02
+eric-firestone-gallery,Eric Firestone Gallery,Gallery,East Hampton,3,1,0.333,0.321,1.02
+eternity-gallery,Eternity Gallery,Gallery,Geneva,3,1,0.333,0.321,1.02
+padiglione-darte-contemporanea-pac,Padiglione d'Arte Contemporanea (PAC),Institution,Milan,3,1,0.333,0.321,1.02
+fondation-louis-vuitton,Fondation Louis Vuitton,Institution,Paris ,3,1,0.333,0.321,1.02
+ica-philadelphia,ICA Philadelphia,Institution,Philadelphia,3,1,0.333,0.321,1.02
+g-gibson-gallery,G. Gibson Gallery,Gallery,,10,3,0.3,0.305,0.97
+x-museum,X Museum,Institution,Beijing,7,2,0.286,0.298,0.95
+oliver-clatworthy,Oliver Clatworthy,Gallery,,7,2,0.286,0.298,0.95
+atlas-gallery,Atlas Gallery,Gallery,,24,7,0.292,0.296,0.94
+ethan-cohen-gallery,Ethan Cohen Gallery,Gallery,,14,4,0.286,0.293,0.93
+huxley-parlour,Huxley-Parlour,Gallery,London,14,4,0.286,0.293,0.93
+staley-wise-gallery,Staley-Wise Gallery,Gallery,,28,8,0.286,0.29,0.92
+sanchit-art,Sanchit Art,Gallery,Singapore,11,3,0.273,0.286,0.91
+new-discretions,New Discretions,Gallery,Catskill,4,1,0.25,0.286,0.91
+helicline-fine-art,Helicline Fine Art,Gallery,,4,1,0.25,0.286,0.91
+lisa-sette-gallery,Lisa Sette Gallery,Gallery,Phoenix,4,1,0.25,0.286,0.91
+new-image-art,New Image Art,Gallery,West Hollywood,4,1,0.25,0.286,0.91
+mimmo-scognamiglio,Mimmo Scognamiglio,Gallery,Milano,4,1,0.25,0.286,0.91
+hirschl-and-adler-1,Hirschl & Adler,Gallery,,4,1,0.25,0.286,0.91
+scott-nichols-gallery,Scott Nichols Gallery,Gallery,Sonoma,4,1,0.25,0.286,0.91
+richard-saltoun,Richard Saltoun,Gallery,,4,1,0.25,0.286,0.91
+sharks-ink,Shark's Ink.,Gallery,,4,1,0.25,0.286,0.91
+ms-rau,M.S. Rau,Gallery,,4,1,0.25,0.286,0.91
+oblong-contemporary,Oblong Contemporary,Gallery,Dubai,4,1,0.25,0.286,0.91
+subliminal-projects,Subliminal Projects,Gallery,Los Angeles,4,1,0.25,0.286,0.91
+chambers-fine-art,Chambers Fine Art,Gallery,New York,4,1,0.25,0.286,0.91
+jd-malat-gallery,JD Malat Gallery,Gallery,,4,1,0.25,0.286,0.91
+strartegy,StrARTegy,Gallery,,4,1,0.25,0.286,0.91
+hang-up-gallery,Hang-Up Gallery,Gallery,London,4,1,0.25,0.286,0.91
+bau-xi-gallery,Bau-Xi Gallery,Gallery,,4,1,0.25,0.286,0.91
+10-chancery-lane-gallery,10 Chancery Lane Gallery,Gallery,,4,1,0.25,0.286,0.91
+les-arts-decoratifs,Les Arts Décoratifs,Institution,Paris,4,1,0.25,0.286,0.91
+kala-art-institute,Kala Art Institute,Gallery,Berkeley,4,1,0.25,0.286,0.91
+dellasposa,Dellasposa,Gallery,London,4,1,0.25,0.286,0.91
+cfhill,CFHILL,Gallery,Stockholm,8,2,0.25,0.275,0.87
+rogallery,RoGallery,Gallery,,19,5,0.263,0.274,0.87
+gallery-kolkata,Gallery Kolkata,Gallery,Kolkata ,20,5,0.25,0.263,0.84
+cmay-gallery,CMay Gallery,Gallery,Los Angeles,1,0,0.0,0.262,0.83
+kunstverein-reutlingen,Kunstverein Reutlingen,Institution,Reutlingen,1,0,0.0,0.262,0.83
+chisenhale-gallery,Chisenhale Gallery,Institution,,1,0,0.0,0.262,0.83
+james-freeman-gallery,James Freeman Gallery,Gallery,London,1,0,0.0,0.262,0.83
+sikkema-malloy-jenkins,Sikkema Malloy Jenkins,Gallery,,1,0,0.0,0.262,0.83
+galerie-lilja-zakirova,Galerie Lilja Zakirova,Gallery,Heusden,1,0,0.0,0.262,0.83
+grosvenor-gallery,Grosvenor Gallery,Gallery,London,1,0,0.0,0.262,0.83
+liliana-bloch-gallery,Liliana Bloch Gallery,Gallery,,1,0,0.0,0.262,0.83
+fort-worth-contemporary-arts,Fort Worth Contemporary Arts,Institution,Fort Worth,1,0,0.0,0.262,0.83
+berry-campbell-gallery,Berry Campbell Gallery,Gallery,,1,0,0.0,0.262,0.83
+bruce-silverstein-gallery,Bruce Silverstein Gallery,Gallery,,1,0,0.0,0.262,0.83
+andriesse-eyck-galerie,andriesse eyck galerie,Gallery,,1,0,0.0,0.262,0.83
+musee-du-quai-branly,Musée du quai Branly,Institution,Paris,1,0,0.0,0.262,0.83
+galerie-knust-kunz,Galerie Knust Kunz,Gallery,,1,0,0.0,0.262,0.83
+aspinwall-editions,Aspinwall Editions,Gallery,,1,0,0.0,0.262,0.83
+aldo-castillo-gallery,Aldo Castillo Gallery,Gallery,,1,0,0.0,0.262,0.83
+galeria-contrast,Galeria Contrast,Gallery,,1,0,0.0,0.262,0.83
+the-selects-gallery,The Selects Gallery,Gallery,,1,0,0.0,0.262,0.83
+euqinom-gallery-1,EUQINOM Gallery,Gallery,San Francisco,1,0,0.0,0.262,0.83
+walking-house-new-york,Walking House New York,Gallery,Busan,1,0,0.0,0.262,0.83
+flowers,Flowers,Gallery,,1,0,0.0,0.262,0.83
+edwynn-houk-gallery,Edwynn Houk Gallery,Gallery,,1,0,0.0,0.262,0.83
+up-gallery,UP Gallery,Gallery,,1,0,0.0,0.262,0.83
+posner-fine-art,Posner Fine Art,Gallery,West Hollywood,1,0,0.0,0.262,0.83
+pilar-serra,Pilar Serra,Gallery,,1,0,0.0,0.262,0.83
+galeria-fernando-pradilla,Galería Fernando Pradilla,Gallery,Madrid,1,0,0.0,0.262,0.83
+galeria-duque-arango,Galería Duque Arango,Gallery,,1,0,0.0,0.262,0.83
+haines-gallery,Haines Gallery,Gallery,San Francisco,1,0,0.0,0.262,0.83
+william-turner-gallery,William Turner Gallery,Gallery,Santa Monica,1,0,0.0,0.262,0.83
+launch-la,LAUNCH LA,Institution,Los Angeles,1,0,0.0,0.262,0.83
+kathryn-markel-fine-arts,Kathryn Markel Fine Arts,Gallery,New York,1,0,0.0,0.262,0.83
+galerie-voss,Galerie Voss,Gallery,,1,0,0.0,0.262,0.83
+bg-gallery,bG Gallery,Gallery,Santa Monica,1,0,0.0,0.262,0.83
+ferrara-showman-gallery,Ferrara Showman Gallery,Gallery,New Orleans,1,0,0.0,0.262,0.83
+asia-society,Asia Society,Institution,New York,1,0,0.0,0.262,0.83
+moca-taipei,MOCA Taipei,Institution,Taipei City,1,0,0.0,0.262,0.83
+arteeast,ArteEast,Institution,,1,0,0.0,0.262,0.83
+barakat-contemporary,Barakat Contemporary,Gallery,Seoul,1,0,0.0,0.262,0.83
+paradigm-gallery-plus-studio,Paradigm Gallery + Studio,Gallery,Philadelphia,1,0,0.0,0.262,0.83
+eran-gallery,Eran Gallery,Gallery,,1,0,0.0,0.262,0.83
+kolnischer-kunstverein,Kölnischer Kunstverein,Institution,Cologne,1,0,0.0,0.262,0.83
+rhona-hoffman-gallery,Rhona Hoffman Gallery,Gallery,,1,0,0.0,0.262,0.83
+ikon-ltd-contemporary-art,IKON Ltd. Contemporary Art,Gallery,Los Angeles,1,0,0.0,0.262,0.83
+arsculture,ArsCulture,Institution,,1,0,0.0,0.262,0.83
+galerie-krinzinger,Galerie Krinzinger,Gallery,Vienna,1,0,0.0,0.262,0.83
+galerie-studer,Galerie Studer,Gallery,Paris,1,0,0.0,0.262,0.83
+galerie-brugier-rigail,Galerie Brugier-Rigail,Gallery,Paris 03,1,0,0.0,0.262,0.83
+stanek-gallery,Stanek Gallery,Gallery,,1,0,0.0,0.262,0.83
+kadel-willborn,Kadel Willborn,Gallery,,1,0,0.0,0.262,0.83
+veta,VETA,Gallery,Madrid,1,0,0.0,0.262,0.83
+alvaro-alcazar,Álvaro Alcázar,Gallery,Madrid,1,0,0.0,0.262,0.83
+eden-house-of-art,"EDEN, House of Art",Gallery,Aspen,1,0,0.0,0.262,0.83
+galerie-fahid-taghavi,Galerie Fahid Taghavi,Gallery,Geneva,1,0,0.0,0.262,0.83
+artlife-gallery,ArtLife Gallery,Gallery,Miami,1,0,0.0,0.262,0.83
+vart-space,V'Art Space,Gallery,,1,0,0.0,0.262,0.83
+castle-fine-art,Castle Fine Art,Gallery,,1,0,0.0,0.262,0.83
+art-supermarket,Art Supermarket,Gallery,Hong Kong,1,0,0.0,0.262,0.83
+hales,Hales,Gallery,New York,1,0,0.0,0.262,0.83
+terreno-baldio,Terreno Baldío,Gallery,,1,0,0.0,0.262,0.83
+galerie-fetzer,Galerie Fetzer,Gallery,Sontheim an der Brenz,1,0,0.0,0.262,0.83
+pop-international-galleries,Pop International Galleries,Gallery,New York,1,0,0.0,0.262,0.83
+uprise-art,Uprise Art,Gallery,,1,0,0.0,0.262,0.83
+kotaro-nukaga,KOTARO NUKAGA,Gallery,,1,0,0.0,0.262,0.83
+the-fame-collective-gallery,The Fame Collective Gallery,Gallery,,1,0,0.0,0.262,0.83
+obscura-gallery,Obscura Gallery,Gallery,Santa Fe,1,0,0.0,0.262,0.83
+richard-levy-gallery,Richard Levy Gallery,Gallery,,1,0,0.0,0.262,0.83
+pictura-gallery,Pictura Gallery,Gallery,,1,0,0.0,0.262,0.83
+east-wing,East Wing,Gallery,,1,0,0.0,0.262,0.83
+trendy-gallery,Trendy Gallery,Gallery,"299 Soi Charoen Nakhon 5 Charoen Nakhon Road  Khlong Ton Sai, Khlong San,Bangkok ",1,0,0.0,0.262,0.83
+over-the-influence,Over the Influence,Gallery,,1,0,0.0,0.262,0.83
+rafael-perez-hernando-arte-contemporaneo,Rafael Pérez Hernando Arte Contemporáneo,Gallery,Madrid ,1,0,0.0,0.262,0.83
+verena-kerfin-gallery,Verena Kerfin Gallery,Gallery,Berlin,1,0,0.0,0.262,0.83
+mkg127,MKG127,Gallery,Toronto,1,0,0.0,0.262,0.83
+robert-fontaine-gallery,Robert Fontaine Gallery,Gallery,Miami Beach,1,0,0.0,0.262,0.83
+koki-arts,KOKI ARTS,Gallery,Tokyo,1,0,0.0,0.262,0.83
+bode,Bode,Gallery,Berlin,1,0,0.0,0.262,0.83
+sies-plus-hoke-1,Sies + Höke,Gallery,Düsseldorf,1,0,0.0,0.262,0.83
+adelson-galleries,Adelson Galleries,Gallery,,1,0,0.0,0.262,0.83
+bel-air-fine-art,Bel-Air Fine Art,Gallery,,1,0,0.0,0.262,0.83
+pellas-gallery,Pellas Gallery,Gallery,Boston,1,0,0.0,0.262,0.83
+wilde,Wilde,Gallery,Genève,1,0,0.0,0.262,0.83
+le-salon-vert,Le Salon Vert,Gallery,Carouge,1,0,0.0,0.262,0.83
+gana-art,Gana Art,Gallery,,1,0,0.0,0.262,0.83
+ota-fine-arts,Ota Fine Arts,Gallery,Singapore,1,0,0.0,0.262,0.83
+tokyo-international-gallery,Tokyo International Gallery,Gallery,,1,0,0.0,0.262,0.83
+maruani-mercier-gallery,MARUANI MERCIER GALLERY,Gallery,,1,0,0.0,0.262,0.83
+the-hourglass-gallery,The Hourglass Gallery,Gallery,Lagos,1,0,0.0,0.262,0.83
+polka-galerie,Polka Galerie,Gallery,,1,0,0.0,0.262,0.83
+piermarq,Piermarq,Gallery,Sydney,1,0,0.0,0.262,0.83
+everyday-gallery,Everyday Gallery,Gallery,,1,0,0.0,0.262,0.83
+aicon-contemporary-1,Aicon Contemporary,Gallery,New York,1,0,0.0,0.262,0.83
+hashimoto-contemporary,Hashimoto Contemporary,Gallery,San Francisco,1,0,0.0,0.262,0.83
+gallery-naga,Gallery NAGA,Gallery,Boston,1,0,0.0,0.262,0.83
+duarte-sequeira,Duarte Sequeira,Gallery,Braga,1,0,0.0,0.262,0.83
+depart-foundation,Depart Foundation,Institution,Malibu,1,0,0.0,0.262,0.83
+buchmann-galerie,Buchmann Galerie,Gallery,Berlin,1,0,0.0,0.262,0.83
+smithdavidson-gallery,SmithDavidson Gallery,Gallery,,1,0,0.0,0.262,0.83
+acquavella-galleries,Acquavella Galleries,Gallery,New York,1,0,0.0,0.262,0.83
+bkhz-gallery,BKhz Gallery,Gallery,Johannesburg ,1,0,0.0,0.262,0.83
+galleria-13,Galleria 13,Gallery,Reggio Emilia,1,0,0.0,0.262,0.83
+kaikai-kiki-gallery,Kaikai Kiki Gallery,Gallery,,1,0,0.0,0.262,0.83
+dot-fiftyone-gallery,Dot Fiftyone Gallery,Gallery,Miami,1,0,0.0,0.262,0.83
+chart,CHART,Gallery,New York,1,0,0.0,0.262,0.83
+victoria-miro,Victoria Miro,Gallery,,1,0,0.0,0.262,0.83
+topcos,TOPCOS,Gallery,,1,0,0.0,0.262,0.83
+tomio-koyama-gallery,Tomio Koyama Gallery,Gallery,,1,0,0.0,0.262,0.83
+laurence-miller-gallery,Laurence Miller Gallery,Gallery,,1,0,0.0,0.262,0.83
+priska-pasquer,PRISKA PASQUER,Gallery,Cologne,1,0,0.0,0.262,0.83
+bernay-fine-art,Bernay Fine Art,Gallery,,1,0,0.0,0.262,0.83
+art-degypte,Art D'Egypte,Gallery,,1,0,0.0,0.262,0.83
+ujung-art-center,uJung Art Center,Gallery,Seoul,1,0,0.0,0.262,0.83
+artadia,Artadia,Institution,,1,0,0.0,0.262,0.83
+larsen-slash-warner,LARSEN / WARNER,Gallery,Stockholm,1,0,0.0,0.262,0.83
+magnin-a,Magnin-A,Gallery,Paris,1,0,0.0,0.262,0.83
+gary-nader,Gary Nader,Gallery,MIAMI,1,0,0.0,0.262,0.83
+parrish-art-museum,Parrish Art Museum,Institution,Water Mill,1,0,0.0,0.262,0.83
+adamar-fine-arts,Adamar Fine Arts,Gallery,,1,0,0.0,0.262,0.83
+swaraj-art-archive,Swaraj Art Archive,Institution,Noida,1,0,0.0,0.262,0.83
+vancouver-art-gallery,Vancouver Art Gallery,Institution,Vancouver,1,0,0.0,0.262,0.83
+addison-slash-ripley-fine-art,Addison/Ripley Fine Art,Gallery,Washington,1,0,0.0,0.262,0.83
+af-projects-slash-louise-alexander-gallery,AF Projects/Louise Alexander Gallery,Gallery,Porto Cervo,5,1,0.2,0.257,0.82
+pierogi,Pierogi,Gallery,Brooklyn,5,1,0.2,0.257,0.82
+turner-carroll-gallery,Turner Carroll Gallery,Gallery,Santa Fe,5,1,0.2,0.257,0.82
+the-time-in-childrens-arts-initiative,The Time In Children's Arts Initiative,Institution,,5,1,0.2,0.257,0.82
+patrick-jones-gallery,Patrick Jones Gallery,Gallery,,5,1,0.2,0.257,0.82
+vigo-gallery,Vigo Gallery,Gallery,,5,1,0.2,0.257,0.82
+modernism-inc,Modernism Inc.,Gallery,San Francisco,5,1,0.2,0.257,0.82
+cooper-hewitt-smithsonian-design-museum,"Cooper Hewitt, Smithsonian Design Museum",Institution,New York,5,1,0.2,0.257,0.82
+v1-gallery,V1 Gallery,Gallery,Copenhagen V,13,3,0.231,0.254,0.81
+holden-luntz-gallery,Holden Luntz Gallery,Gallery,,17,4,0.235,0.253,0.81
+tang-contemporary-art,Tang Contemporary Art,Gallery,Beijing,29,7,0.241,0.252,0.8
+corridor-contemporary,Corridor Contemporary,Gallery,Palm Beach,14,3,0.214,0.241,0.77
+anat-ebgi,Anat Ebgi,Gallery,Los Angeles,10,2,0.2,0.238,0.76
+cob,Cob,Gallery,London ,6,1,0.167,0.234,0.74
+exclusive-urban-art,Exclusive Urban Art,Gallery,Rome,6,1,0.167,0.234,0.74
+david-benrimon-fine-art,David Benrimon Fine Art,Gallery,New York,6,1,0.167,0.234,0.74
+guggenheim-museum,Guggenheim Museum,Institution,New York,2,0,0.0,0.225,0.71
+elizabeth-clement-fine-art,Elizabeth Clement Fine Art,Gallery,,2,0,0.0,0.225,0.71
+dc-moore-gallery,DC Moore Gallery,Gallery,New York,2,0,0.0,0.225,0.71
+asia-society-hong-kong,Asia Society Hong Kong,Institution,Admiralty ,2,0,0.0,0.225,0.71
+hosfelt-gallery,Hosfelt Gallery,Gallery,,2,0,0.0,0.225,0.71
+gallery-lvs,Gallery LVS,Gallery,Seoul,2,0,0.0,0.225,0.71
+arcadia-contemporary,ARCADIA CONTEMPORARY,Gallery,New York,2,0,0.0,0.225,0.71
+aurora,Aurora,Institution,Dallas,2,0,0.0,0.225,0.71
+gallery-har-el,Gallery Har-El,Gallery,Tel Aviv-Jaffa,2,0,0.0,0.225,0.71
+mindy-solomon-gallery,Mindy Solomon Gallery,Gallery,Miami,2,0,0.0,0.225,0.71
+aca-galleries,ACA Galleries,Gallery,,2,0,0.0,0.225,0.71
+haven-gallery,Haven Gallery,Gallery,Northport,2,0,0.0,0.225,0.71
+galleri-christoffer-egelund,Galleri Christoffer Egelund,Gallery,Copenhagen,2,0,0.0,0.225,0.71
+art-alive-gallery,Art Alive Gallery,Gallery,,2,0,0.0,0.225,0.71
+beinart-gallery,Beinart Gallery,Gallery,Brunswick,2,0,0.0,0.225,0.71
+abend-gallery,Abend Gallery,Gallery,Denver,2,0,0.0,0.225,0.71
+the-untitled-space,The Untitled Space,Gallery,New York,2,0,0.0,0.225,0.71
+galleria-ca-doro,Galleria Ca' d'Oro,Gallery,,2,0,0.0,0.225,0.71
+kristin-hjellegjerde-gallery,Kristin Hjellegjerde Gallery,Gallery,London,2,0,0.0,0.225,0.71
+garvey-simon,Garvey | Simon,Gallery,,2,0,0.0,0.225,0.71
+tanya-baxter-contemporary,Tanya Baxter Contemporary,Gallery,London,2,0,0.0,0.225,0.71
+connaught-brown,Connaught Brown,Gallery,London,2,0,0.0,0.225,0.71
+albertz-benda,Albertz Benda,Gallery,New York,2,0,0.0,0.225,0.71
+fahey-slash-klein-gallery,Fahey/Klein Gallery,Gallery,Los Angeles,2,0,0.0,0.225,0.71
+christophe-guye-galerie,CHRISTOPHE GUYE GALERIE,Gallery,Zurich,2,0,0.0,0.225,0.71
+alex-daniels-reflex-amsterdam,Alex Daniels - Reflex Amsterdam,Gallery,Amsterdam,2,0,0.0,0.225,0.71
+jack-barrett,Jack Barrett,Gallery,,2,0,0.0,0.225,0.71
+flatland,FLATLAND,Gallery,Amsterdam,2,0,0.0,0.225,0.71
+john-natsoulas-gallery,John Natsoulas Gallery,Gallery,Davis,2,0,0.0,0.225,0.71
+perrotin,Perrotin,Gallery,Paris,2,0,0.0,0.225,0.71
+michael-kohn-gallery,Michael Kohn Gallery,Gallery,Los Angeles,2,0,0.0,0.225,0.71
+everard-read,Everard Read,Gallery,,2,0,0.0,0.225,0.71
+ode-to-art,Ode to Art,Gallery,,2,0,0.0,0.225,0.71
+pangee,Pangée,Gallery,Montreal,2,0,0.0,0.225,0.71
+galleria-barbara-paci,galleria barbara paci,Gallery,,2,0,0.0,0.225,0.71
+hong-kong-contemporary-art,Hong Kong Contemporary Art,Institution,,2,0,0.0,0.225,0.71
+ipreciation,iPreciation,Gallery,,2,0,0.0,0.225,0.71
+coma,COMA,Gallery,"Darlinghurst, Sydney",2,0,0.0,0.225,0.71
+latitude-gallery-new-york,LATITUDE Gallery New York,Gallery,New York,2,0,0.0,0.225,0.71
+flux-factory,Flux Factory,Institution,,2,0,0.0,0.225,0.71
+willas-contemporary,WILLAS contemporary,Gallery,,2,0,0.0,0.225,0.71
+gilman-contemporary,Gilman Contemporary,Gallery,,2,0,0.0,0.225,0.71
+montague-contemporary,Montague Contemporary,Gallery,,2,0,0.0,0.225,0.71
+patricia-conde-galeria,Patricia Conde Galería,Gallery,,2,0,0.0,0.225,0.71
+ruiz-healy-art,Ruiz-Healy Art,Gallery,New York City,2,0,0.0,0.225,0.71
+artaflo-collective-ltd,Artaflo Collective Ltd,Gallery,,2,0,0.0,0.225,0.71
+casey-kaplan,Casey Kaplan,Gallery,New York,2,0,0.0,0.225,0.71
+cerbera-gallery,Cerbera Gallery,Gallery,Kansas City,2,0,0.0,0.225,0.71
+bryce-wolkowitz-gallery,Bryce Wolkowitz Gallery,Gallery,New York,2,0,0.0,0.225,0.71
+fondation-cartier-pour-lart-contemporain,Fondation Cartier pour l’art contemporain,Institution,Paris,2,0,0.0,0.225,0.71
+bam,BAM,Institution,,2,0,0.0,0.225,0.71
+somerville-manning-gallery,Somerville Manning Gallery,Gallery,,2,0,0.0,0.225,0.71
+superposition,Superposition,Gallery,Sag Harbor,2,0,0.0,0.225,0.71
+levy-gorvy-dayan,Lévy Gorvy Dayan,Gallery,Hong Kong,2,0,0.0,0.225,0.71
+qiao-space,Qiao Space,Institution,,2,0,0.0,0.225,0.71
+almine-rech,Almine Rech,Gallery,,2,0,0.0,0.225,0.71
+art-for-change,ART FOR CHANGE,Gallery,,11,2,0.182,0.223,0.71
+robert-klein-gallery,Robert Klein Gallery,Gallery,,7,1,0.143,0.214,0.68
+signari-gallery,Signari Gallery,Gallery,,7,1,0.143,0.214,0.68
+nohra-haime-gallery,Nohra Haime Gallery,Gallery,,12,2,0.167,0.21,0.67
+gallery-art,Gallery Art,Gallery,Aventura,17,3,0.176,0.208,0.66
+mark-hachem-gallery,Mark Hachem Gallery,Gallery,,8,1,0.125,0.198,0.63
+downtown-for-democracy,Downtown for Democracy,Institution,,3,0,0.0,0.196,0.62
+childs-gallery,Childs Gallery,Gallery,,3,0,0.0,0.196,0.62
+galerie-georg-nothelfer,Galerie Georg Nothelfer,Gallery,Berlin,3,0,0.0,0.196,0.62
+c-grimaldis-gallery,C. Grimaldis Gallery,Gallery,,3,0,0.0,0.196,0.62
+mark-moore-fine-art,Mark Moore Fine Art,Gallery,Los Angeles,3,0,0.0,0.196,0.62
+afikaris,AFIKARIS,Gallery,,3,0,0.0,0.196,0.62
+parlor-gallery,Parlor Gallery,Gallery,Asbury Park,3,0,0.0,0.196,0.62
+tatjana-pieters,Tatjana Pieters,Gallery,Kortrijk,3,0,0.0,0.196,0.62
+sahar-k-boluki-gallery,Sahar K. Boluki Gallery,Gallery,,3,0,0.0,0.196,0.62
+gallery-poulsen,Gallery Poulsen,Gallery,Copenhagen,3,0,0.0,0.196,0.62
+leviton-fine-art,Leviton Fine Art,Gallery,,3,0,0.0,0.196,0.62
+pasqui-galerie,Pasqui Galerie,Gallery,,3,0,0.0,0.196,0.62
+linda-gallery,Linda Gallery,Gallery,,3,0,0.0,0.196,0.62
+efie-gallery,Efiɛ Gallery,Gallery,London,3,0,0.0,0.196,0.62
+woaw,Woaw,Gallery,Hong Kong,3,0,0.0,0.196,0.62
+2b-art-gallery,2B Art Gallery,Gallery,,3,0,0.0,0.196,0.62
+mamoth,Mamoth,Gallery,London,3,0,0.0,0.196,0.62
+kavi-gupta,Kavi Gupta,Gallery,,3,0,0.0,0.196,0.62
+zidoun-bossuyt,Zidoun-Bossuyt,Gallery,Luxembourg,3,0,0.0,0.196,0.62
+alisan-fine-arts,Alisan Fine Arts,Gallery,,3,0,0.0,0.196,0.62
+circle-culture,Circle Culture,Gallery,,3,0,0.0,0.196,0.62
+templon,Templon,Gallery,,3,0,0.0,0.196,0.62
+waddington-custot-dubai,Waddington Custot Dubai,Gallery,,3,0,0.0,0.196,0.62
+art-of-the-world-gallery,Art Of The World Gallery,Gallery,,3,0,0.0,0.196,0.62
+maune-contemporary,Maune Contemporary,Gallery,,3,0,0.0,0.196,0.62
+emami-art,Emami Art,Gallery,,3,0,0.0,0.196,0.62
+manolis-projects-gallery,Manolis Projects Gallery,Gallery,,3,0,0.0,0.196,0.62
+art-lead-her,Art Lead Her,Institution,,3,0,0.0,0.196,0.62
+galerie-kovacek-and-zetter,Galerie Kovacek & Zetter,Gallery,Vienna,14,2,0.143,0.188,0.6
+hofa-gallery-house-of-fine-art,HOFA Gallery (House of Fine Art),Gallery,,14,2,0.143,0.188,0.6
+ed-cross-fine-art,Ed Cross Fine Art,Gallery,London,4,0,0.0,0.175,0.56
+cynthia-corbett-gallery,Cynthia Corbett Gallery,Gallery,London ,4,0,0.0,0.175,0.56
+childrens-museum-of-the-arts,Children's Museum of the Arts,Institution,,4,0,0.0,0.175,0.56
+virginia-museum-of-contemporary-art,Virginia Museum of Contemporary Art,Institution,Virginia Beach,4,0,0.0,0.175,0.56
+undercurrent-projects,Undercurrent Projects,Gallery,,4,0,0.0,0.175,0.56
+griffin-galleries,Griffin Galleries,Gallery,Chagrin Falls,4,0,0.0,0.175,0.56
+hilton-contemporary,Hilton Contemporary,Gallery,Chicago,4,0,0.0,0.175,0.56
+deborah-colton-gallery,Deborah Colton Gallery,Gallery,Houston,4,0,0.0,0.175,0.56
+galerie-hussenot,Galerie Hussenot,Gallery,Paris,4,0,0.0,0.175,0.56
+andrea-festa,Andrea Festa,Gallery,,4,0,0.0,0.175,0.56
+pulpo-gallery,PULPO GALLERY,Gallery,,4,0,0.0,0.175,0.56
+danysz-gallery,Danysz Gallery,Gallery,Paris,4,0,0.0,0.175,0.56
+ebony-slash-curated,EBONY/CURATED,Gallery,,4,0,0.0,0.175,0.56
+gallery-270,Gallery 270,Gallery,,4,0,0.0,0.175,0.56
+catherine-couturier-gallery,Catherine Couturier Gallery,Gallery,,4,0,0.0,0.175,0.56
+joshua-liner-gallery,Joshua Liner Gallery,Gallery,New York,10,1,0.1,0.171,0.55
+arushi-arts,Arushi Arts,Gallery,Hyderabad,16,2,0.125,0.17,0.54
+ross-sutton-gallery,Ross-Sutton Gallery,Gallery,Venice,17,2,0.118,0.162,0.52
+the-photographers-gallery-print-sales,The Photographers' Gallery | Print Sales,Gallery,London,5,0,0.0,0.157,0.5
+jonathan-levine-projects,Jonathan LeVine Projects,Gallery,,5,0,0.0,0.157,0.5
+pm-slash-am,PM/AM,Gallery,London,5,0,0.0,0.157,0.5
+we-art-partners,We Art Partners,Gallery,,5,0,0.0,0.157,0.5
+zemack-contemporary-art,Zemack Contemporary Art,Gallery,,5,0,0.0,0.157,0.5
+choi-and-choi,CHOI&CHOI,Gallery,Seoul,5,0,0.0,0.157,0.5
+pdnb-gallery,PDNB Gallery,Gallery,Denton,5,0,0.0,0.157,0.5
+samuel-freeman,Samuel Freeman,Gallery,,5,0,0.0,0.157,0.5
+lis10-gallery,LIS10 Gallery,Gallery,,5,0,0.0,0.157,0.5
+the-hole,The Hole,Gallery,New York,59,8,0.136,0.15,0.48
+beyond-the-streets,BEYOND THE STREETS,Gallery,London,19,2,0.105,0.149,0.47
+artscoops,Artscoops,Gallery,,13,1,0.077,0.143,0.45
+jackson-fine-art,Jackson Fine Art,Gallery,,6,0,0.0,0.143,0.45
+thinkspace-projects,Thinkspace Projects,Gallery,Los Angeles,6,0,0.0,0.143,0.45
+richard-heller-gallery,Richard Heller Gallery,Gallery,Santa Monica,6,0,0.0,0.143,0.45
+gallery-192,Gallery 192,Gallery,,6,0,0.0,0.143,0.45
+3-white-dots,3 White Dots,Gallery,,28,3,0.107,0.139,0.44
+anthony-gallery-2,Anthony Gallery,Gallery,Chicago,7,0,0.0,0.131,0.42
+ross-plus-co-gallery,Ross + Co. Gallery,Gallery,,15,1,0.067,0.129,0.41
+preiss-fine-arts,Preiss Fine Arts,Gallery,Vienna,8,0,0.0,0.121,0.38
+kp-projects,KP Projects,Gallery,Los Angeles,8,0,0.0,0.121,0.38
+dolby-chadwick-gallery,Dolby Chadwick Gallery,Gallery,,8,0,0.0,0.121,0.38
+harpers,Harper's,Gallery,East Hampton,43,4,0.093,0.116,0.37
+meem-gallery,Meem Gallery,Gallery,,9,0,0.0,0.112,0.36
+barjeel-art-foundation,Barjeel Art Foundation,Institution,Sharjah,19,1,0.053,0.107,0.34
+dorothy-circus-gallery,Dorothy Circus Gallery,Gallery,,11,0,0.0,0.098,0.31
+unit,Unit,Gallery,London,14,0,0.0,0.083,0.26
+end-to-end-gallery,End to End Gallery,Gallery,,17,0,0.0,0.071,0.23
