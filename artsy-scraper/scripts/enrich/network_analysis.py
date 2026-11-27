@@ -9,6 +9,7 @@ import csv, json, os, sys, statistics
 from collections import Counter, defaultdict
 
 NET, D, OUT = sys.argv[1:4]
+SAMPLE = sys.argv[4] if len(sys.argv) > 4 else f"{NET}/../network_sample.txt"
 os.makedirs(OUT, exist_ok=True)
 LOW, HIGH = {"emerging", "hype"}, {"insider", "established"}
 K = 5  # shrinkage towards the base rate
@@ -40,7 +41,7 @@ for r in csv.DictReader(open(f"{NET}/show_artists.csv", encoding="utf-8")):
     members[r["show_slug"]].add(r["artist_slug"])
 for r in csv.DictReader(open(f"{NET}/artist_shows.csv", encoding="utf-8")):
     members[r["show_slug"]].add(r["artist_slug"])
-sample = [x.strip() for x in open(f"{NET}/../network_sample.txt") if x.strip()]
+sample = [x.strip() for x in open(SAMPLE) if x.strip()]
 done = set(open(f"{NET}/done.txt").read().split())
 sample = [x for x in sample if x in done]
 
@@ -61,6 +62,26 @@ for s_ in sample:
 with open(f"{OUT}/network_density.csv", "w", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=list(dens[0])); w.writeheader(); w.writerows(dens)
 
+# ---- 2a. which venues choose artists (primary galleries, institutions) and which resell or print ----
+import re
+PRINT_RX = re.compile(r"\b(press|editions?|prints?|printmaking|graphics?|graphic studio|print studio|atelier|tamarind|gemini g\.?e\.?l|ulae|universal limited art editions|two palms|lithograph|serigraph)\b", re.I)
+RESALE_RX = re.compile(r"\b(advisory|brokerage|auction|auctions|caviar20|art dealers?|fine art dealers?|collection sale|private sales?|vertu|editions? ltd)\b", re.I)
+p_members = defaultdict(set); PNAME = {}
+for sh in shows.values():
+    PNAME.setdefault(sh["partner_slug"] or ("ext:" + sh["partner_name"]), sh["partner_name"])
+    p_members[sh["partner_slug"] or ("ext:" + sh["partner_name"])] |= members[sh["show_slug"]]
+ptype = {}
+for p, arts in p_members.items():
+    nm = PNAME.get(p, "")
+    known = [a for a in arts if a in M]
+    dead = sum(M[a]["living"] != "1" for a in known) / len(known) if known else 0
+    if PRINT_RX.search(nm):
+        ptype[p] = "stamperia"
+    elif RESALE_RX.search(nm) or (len(known) >= 8 and dead > 0.3):
+        ptype[p] = "mercato secondario"
+    else:
+        ptype[p] = "sceglie"
+
 # ---- 2. bets per partner ----
 def bets_for(year_from, year_to, outcome_until):
     """(partner, artist) first low-recognition showing in [year_from, year_to]; hit if high by outcome_until."""
@@ -69,7 +90,7 @@ def bets_for(year_from, year_to, outcome_until):
         if not sh["start"][:4].isdigit() or sh["fair_booth"] == "1" or sh["kind"] == "fair":
             continue  # fair booths are stock rotation, not curatorial bets
         y = int(sh["start"][:4]); p = sh["partner_slug"] or ("ext:" + sh["partner_name"])
-        if not (year_from <= y <= year_to) or p in ("ext:",):
+        if not (year_from <= y <= year_to) or p in ("ext:",) or ptype.get(p) != "sceglie":
             continue
         for a in members[sh["show_slug"]]:
             if a not in qrow or q_at(a, y) not in LOW:
@@ -93,7 +114,7 @@ base = tot_h / tot_b if tot_b else 0
 rows = []
 for p, (b, h) in st.items():
     nm, ty, city = pinfo.get(p, ("", "", ""))
-    rows.append({"partner": p, "name": nm, "type": ty, "city": city, "early_bets": b, "hits": h,
+    rows.append({"partner": p, "name": nm, "type": ty, "role": ptype.get(p, ""), "city": city, "early_bets": b, "hits": h,
                  "hit_rate": round(h / b, 3), "shrunk_rate": round((h + K * base) / (b + K), 3),
                  "lift": round(((h + K * base) / (b + K)) / base, 2) if base else ""})
 rows.sort(key=lambda r: (-r["shrunk_rate"], -r["early_bets"]))
@@ -113,7 +134,12 @@ for (p, a), y in f2.items():
 for a in arts:
     g = "con fiuto" if art_good[a] else "senza"
     test[g][0] += 1; test[g][1] += reached_high(a, 2021, 2026)
-oos = {g: {"artists": n, "reached_high": h, "rate": round(h / n, 3) if n else None} for g, (n, h) in test.items()}
+def wilson(h, n, z=1.96):
+    if not n:
+        return None, None
+    p_ = h / n; den = 1 + z * z / n; c = (p_ + z * z / (2 * n)) / den; w = z * ((p_ * (1 - p_) / n + z * z / (4 * n * n)) ** .5) / den
+    return round(c - w, 3), round(c + w, 3)
+oos = {g: {"artists": n, "reached_high": h, "rate": round(h / n, 3) if n else None, "ci95": wilson(h, n)} for g, (n, h) in test.items()}
 
 # ---- 4. current signals: low-recognition artists now, shown 2023-2026 by high-track-record venues ----
 top = {r["partner"] for r in rows if r["early_bets"] >= 5 and r["lift"] != "" and r["lift"] >= 1.5}
@@ -150,7 +176,7 @@ summary = {
                                 "median_partners": statistics.median([x["partners"] for x in L]),
                                 "median_institution_shows": statistics.median([x["institution_shows"] for x in L])} for q, L in byq.items()},
     "bets_2015_2022": tot_b, "base_hit_rate": round(base, 3), "partners_with_5_bets": sum(1 for r in rows if r["early_bets"] >= 5),
-    "partners_with_track_record": len(top), "out_of_sample": oos, "good_partners_2015_2018": len(good),
+    "partners_with_track_record": len(top), "venue_roles": dict(Counter(ptype.values())), "out_of_sample": oos, "good_partners_2015_2018": len(good),
     "current_signal_artists": len(srows),
 }
 json.dump(summary, open(f"{OUT}/network_summary.json", "w"), indent=1)
