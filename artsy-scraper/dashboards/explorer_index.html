@@ -184,6 +184,29 @@
   </section>
 
 
+  <section class="ex-panel" id="aste">
+    <h2>In asta adesso</h2>
+    <p lang="it" data-read>Opere dei 50 artisti che compreremmo e dei 10 scelti sotto 5.000 € in aste aperte su Artsy o già annunciate dalle case d'asta: <b data-draw="au-n" data-source="au_kpi" data-field="lots" data-row="0">—</b> lotti, controllo del <b data-draw="au-date" data-source="auctions" data-field="checked" data-row="0">—</b>. L'elenco si aggiorna ogni tre giorni.</p>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="auctions" data-row-key="key">
+        <thead><tr>
+          <th data-field="date">Data</th>
+          <th data-field="artist">Artista</th>
+          <th data-field="title">Opera</th>
+          <th data-field="category">Tipo</th>
+          <th data-field="auction_house">Casa d'asta</th>
+          <th data-field="sale">Asta</th>
+          <th data-field="lot">Lotto</th>
+          <th data-field="estimate">Stima</th>
+          <th data-field="current_bid">Offerta attuale</th>
+          <th data-field="first_seen">Segnalato il</th>
+        </tr></thead>
+        <tbody data-draw="au-rows"></tbody>
+      </table>
+    </div>
+    <p class="ex-muted">La stima è il prezzo martello atteso; chi compra paga in più la commissione della casa d'asta, di solito tra il 20 e il 28%, più eventuali tasse. Il prezzo minimo sotto cui l'opera non si vende (la riserva) è riservato e di norma non supera la stima bassa. Segnalazioni da verificare, non consigli di investimento.</p>
+  </section>
+
   <section class="ex-panel" id="fiuto">
     <h2>Gli artisti delle sedi con fiuto</h2>
     <p lang="it" data-read>Le <b data-draw="fv-nv" data-source="fv_kpi" data-field="venues" data-row="0">—</b> gallerie e istituzioni che tra il 2015 e il 2022 hanno esposto per prime artisti poi diventati insider o affermati. Per le gallerie elenchiamo gli artisti che rappresentano oggi su Artsy, per musei e spazi chi hanno esposto dal 2023: in tutto <b data-draw="fv-na" data-source="fv_kpi" data-field="artists" data-row="0">—</b> artisti, di cui <b data-draw="fv-ns" data-source="fv_kpi" data-field="with_sale" data-row="0">—</b> con opere in vendita su Artsy adesso.</p>
@@ -674,6 +697,31 @@
       if (r.slug === sel) tr.style.background = 'color-mix(in srgb, var(--color-fg) 9%, transparent)';
       tr.onclick = () => { const on = window.EX_PV().fv_artist === r.slug; dash.setParams({ fv_artist: on ? '' : r.slug, artist: on ? window.EX_PV().artist : r.slug }); };
       tr.append(td(r.rank, 'ex-n'), td(r.name), td(QL[r.quadrant] || r.quadrant), td(r.age, 'ex-n'), td(r.nationality), td(dec1(+r.backing), 'ex-n'), td(r.why, 'ex-wrap'));
+      return tr;
+    }));
+  });
+}
+</script>
+
+<script>
+{
+  dash.calc('au_kpi', { inputs: ['auctions'], title: 'Lotti in asta', description: 'Numero di lotti in asta o annunciati per gli artisti seguiti', fn: (auctions) => [{ lots: auctions.length }] });
+  dash.draw('au-n', (el) => { const d = dash.data('au_kpi'); if (d.status !== 'ok' || !d.data) return; el.textContent = String(d.data[0].lots); });
+  dash.draw('au-date', (el) => { const d = dash.data('auctions'); if (d.status !== 'ok') return; const v = d.data[0]?.checked; el.textContent = v ? d3.utcFormat('%d/%m/%Y')(new Date(v + 'T00:00:00Z')) : '—'; });
+  dash.draw('au-rows', (tb) => {
+    const d = dash.data('auctions');
+    const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; if (t instanceof Node) x.append(t); else x.textContent = t == null || t === '' ? '—' : t; return x; };
+    if (d.status === 'error') { const tr = document.createElement('tr'); const c = td('I lotti non si sono caricati.'); c.colSpan = 10; tr.append(c); tb.replaceChildren(tr); return; }
+    if (d.status !== 'ok') return;
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessun lotto in asta per gli artisti seguiti all\'ultimo controllo.'); c.colSpan = 10; tr.append(c); tb.replaceChildren(tr); return; }
+    const fd = (v) => (v ? d3.utcFormat('%d/%m/%Y')(new Date(v + 'T00:00:00Z')) : '');
+    tb.replaceChildren(...d.data.map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.key);
+      let title = r.title || 'Senza titolo';
+      if (/^https:\/\//.test(r.url || '')) { const a = document.createElement('a'); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = title; title = a; }
+      const isNew = r.first_seen && r.first_seen === r.checked;
+      const fs = document.createElement('span'); fs.textContent = fd(r.first_seen); if (isNew) { const s = document.createElement('span'); s.className = 'ex-pill'; s.style.marginLeft = '6px'; s.textContent = 'nuovo'; fs.append(s); }
+      tr.append(td(fd(r.date)), td(r.artist), td(title, 'ex-wrap'), td(r.category), td(r.auction_house), td(r.sale, 'ex-wrap'), td(r.lot), td(r.estimate), td(r.current_bid), td(fs));
       return tr;
     }));
   });

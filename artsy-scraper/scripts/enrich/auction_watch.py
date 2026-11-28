@@ -79,8 +79,11 @@ def main():
     seen_p = os.path.join(a.out, "seen.csv")
     seen = {r["key"] for r in csv.DictReader(open(seen_p, encoding="utf-8"))} if os.path.exists(seen_p) else set()
     new = [r for r in found if r["key"] not in seen]
+    first_seen = {r["key"]: r["first_seen"] for r in csv.DictReader(open(seen_p, encoding="utf-8"))} if os.path.exists(seen_p) else {}
+    today = dt.date.today().isoformat()
     with open(os.path.join(a.out, "latest.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=F); w.writeheader(); w.writerows(found)
+        w = csv.DictWriter(fh, fieldnames=F + ["first_seen", "checked"]); w.writeheader()
+        w.writerows(sorted((dict(r, first_seen=first_seen.get(r["key"], today), checked=today) for r in found), key=lambda r: r["date"] or "9999"))
     first = not os.path.exists(seen_p)
     with open(seen_p, "a", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=F + ["first_seen"])
