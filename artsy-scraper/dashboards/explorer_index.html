@@ -187,6 +187,23 @@
   <section class="ex-panel" id="fiuto">
     <h2>Gli artisti delle sedi con fiuto</h2>
     <p lang="it" data-read>Le <b data-draw="fv-nv" data-source="fv_kpi" data-field="venues" data-row="0">—</b> gallerie e istituzioni che tra il 2015 e il 2022 hanno esposto per prime artisti poi diventati insider o affermati. Per le gallerie elenchiamo gli artisti che rappresentano oggi su Artsy, per musei e spazi chi hanno esposto dal 2023: in tutto <b data-draw="fv-na" data-source="fv_kpi" data-field="artists" data-row="0">—</b> artisti, di cui <b data-draw="fv-ns" data-source="fv_kpi" data-field="with_sale" data-row="0">—</b> con opere in vendita su Artsy adesso.</p>
+    <h2 id="fiuto-picks">I 50 che compreremmo</h2>
+    <p lang="it" data-read>Scelti senza guardare i punteggi del radar: artisti in vita non affermati, fino a 55 anni, non ancora cari (asta e prezzi di listino fino a 50.000 USD) e acquistabili. Li ordiniamo per sostegno curatoriale: quante sedi con fiuto li espongono e quanto fiuto hanno, poi biennali e collezioni museali. Clicca un nome per vederne le opere in vendita.</p>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="fiuto_picks" data-row-key="slug">
+        <thead><tr>
+          <th class="ex-n" data-field="rank">#</th>
+          <th data-field="name">Artista</th>
+          <th data-field="quadrant">Quadrante</th>
+          <th class="ex-n" data-field="age">Età</th>
+          <th data-field="nationality">Paese</th>
+          <th class="ex-n" data-field="backing">Sostegno</th>
+          <th data-field="why">Perché</th>
+        </tr></thead>
+        <tbody data-draw="fv-picks"></tbody>
+      </table>
+    </div>
+    <h2>Tutti gli artisti delle sedi con fiuto</h2>
     <div class="ex-filters">
       <label class="ex-f">Sede<select class="dash-select" id="fv-venue" data-draw="fv-venue" data-source="fiuto_venues" aria-label="Sede"></select></label>
       <label class="ex-f">Quadrante<select class="dash-select" id="fv-quad" aria-label="Quadrante">
@@ -571,7 +588,7 @@
     fn: (fiuto_works, fiuto_f) => {
       const p = Object.assign({ fv_pmax: '', fv_artist: '', fv_uniq: true }, dash.params());
       const pm = p.fv_pmax === '' || p.fv_pmax == null ? null : +p.fv_pmax;
-      const ok = p.fv_artist ? new Set([p.fv_artist]) : new Set(fiuto_f.map((r) => r.slug));
+      const ok = p.fv_artist ? new Set([p.fv_artist]) : new Set(fiuto_f.map((r) => r.slug));  // a chosen artist shows even if outside the list filters
       return fiuto_works.filter((w) => ok.has(w.artist_slug) && !(p.fv_uniq && w.multiple === '1') && (pm == null || (w.price_usd !== '' && w.price_usd != null && +w.price_usd <= pm)))
         .sort((a, b) => (a.price_usd === '' || a.price_usd == null ? 1e12 : +a.price_usd) - (b.price_usd === '' || b.price_usd == null ? 1e12 : +b.price_usd));
     },
@@ -640,5 +657,25 @@
   on('#fv-sale', 'change', (e) => dash.setParams({ fv_sale: e.target.checked }));
   on('#fv-uniq', 'change', (e) => dash.setParams({ fv_uniq: e.target.checked }));
   document.querySelectorAll('#fv-uniq').forEach((s) => { s.checked = P.fv_uniq !== false; });
+}
+</script>
+
+<script>
+{
+  const { dec1 } = window.EX_fmt; const { QL } = window.EX_Q;
+  dash.draw('fv-picks', (tb) => {
+    const d = dash.data('fiuto_picks');
+    if (d.status === 'error') { const tr = document.createElement('tr'); const c = document.createElement('td'); c.colSpan = 7; c.textContent = 'La lista non si è caricata.'; tr.append(c); tb.replaceChildren(tr); return; }
+    if (d.status !== 'ok') return;
+    const sel = (window.EX_PV ? window.EX_PV().fv_artist : '');
+    const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; x.textContent = t == null || t === '' ? '—' : t; return x; };
+    tb.replaceChildren(...d.data.map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
+      if (r.slug === sel) tr.style.background = 'color-mix(in srgb, var(--color-fg) 9%, transparent)';
+      tr.onclick = () => { const on = window.EX_PV().fv_artist === r.slug; dash.setParams({ fv_artist: on ? '' : r.slug, artist: on ? window.EX_PV().artist : r.slug }); };
+      tr.append(td(r.rank, 'ex-n'), td(r.name), td(QL[r.quadrant] || r.quadrant), td(r.age, 'ex-n'), td(r.nationality), td(dec1(+r.backing), 'ex-n'), td(r.why, 'ex-wrap'));
+      return tr;
+    }));
+  });
 }
 </script>
