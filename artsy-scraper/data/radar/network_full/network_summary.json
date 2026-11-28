@@ -1,0 +1,68 @@
+{
+ "sample_fetched": 7935,
+ "shows": 40593,
+ "artists_in_network": 54420,
+ "artists_in_network_with_timeline": 7456,
+ "partners": 4146,
+ "density_by_quadrant": {
+  "emerging": {
+   "artists": 1932,
+   "median_shows": 6.0,
+   "share_no_shows": 0.08,
+   "median_partners": 2.0,
+   "median_institution_shows": 0.0
+  },
+  "hype": {
+   "artists": 1130,
+   "median_shows": 7.0,
+   "share_no_shows": 0.08,
+   "median_partners": 3.0,
+   "median_institution_shows": 0.0
+  },
+  "insider": {
+   "artists": 3206,
+   "median_shows": 6.0,
+   "share_no_shows": 0.06,
+   "median_partners": 3.0,
+   "median_institution_shows": 0.0
+  },
+  "established": {
+   "artists": 1667,
+   "median_shows": 22,
+   "share_no_shows": 0.01,
+   "median_partners": 9,
+   "median_institution_shows": 1
+  }
+ },
+ "bets_2015_2022": 3510,
+ "base_hit_rate": 0.305,
+ "partners_with_5_bets": 212,
+ "partners_with_track_record": 43,
+ "venue_roles": {
+  "sceglie": 3085,
+  "mercato secondario": 972,
+  "stamperia": 89
+ },
+ "out_of_sample": {
+  "senza": {
+   "artists": 1158,
+   "reached_high": 218,
+   "rate": 0.188,
+   "ci95": [
+    0.167,
+    0.212
+   ]
+  },
+  "con fiuto": {
+   "artists": 19,
+   "reached_high": 9,
+   "rate": 0.474,
+   "ci95": [
+    0.273,
+    0.683
+   ]
+  }
+ },
+ "good_partners_2015_2018": 30,
+ "current_signal_artists": 326
+}

@@ -1,0 +1,1004 @@
+partner,name,type,role,city,early_bets,hits,hit_rate,shrunk_rate,lift
+56th-venice-biennale,56th Venice Biennale,Institution,sceglie,,11,11,1.0,0.783,2.56
+galerie-fons-welters,Galerie Fons Welters,Gallery,sceglie,Amsterdam,9,9,1.0,0.752,2.46
+new-museum-1,New Museum,Institution,sceglie,New York,8,8,1.0,0.733,2.4
+hammer-museum,Hammer Museum,Institution,sceglie,Los Angeles,14,12,0.857,0.712,2.33
+mass-moca,MASS MoCA,Institution,sceglie,North Adams,7,7,1.0,0.711,2.33
+the-studio-museum-in-harlem,The Studio Museum in Harlem,Institution,sceglie,New York,26,19,0.731,0.662,2.17
+public-art-fund,Public Art Fund,Institution,sceglie,Brooklyn,5,5,1.0,0.653,2.14
+rush-philanthropic-arts-foundation,Rush Philanthropic Arts Foundation,Institution,sceglie,Philadelphia,5,5,1.0,0.653,2.14
+galerie-nordenhake,Galerie Nordenhake,Gallery,sceglie,Mexico City,7,6,0.857,0.627,2.05
+galerie-maximillian,Galerie Maximillian,Gallery,sceglie,,4,4,1.0,0.614,2.01
+biennale-de-lyon,Biennale de Lyon,Institution,sceglie,Lyon,4,4,1.0,0.614,2.01
+hausler-contemporary,Häusler Contemporary,Gallery,sceglie,,4,4,1.0,0.614,2.01
+moma-ps1,MoMA PS1,Institution,sceglie,Long Island City,6,5,0.833,0.593,1.94
+jhaveri-contemporary,Jhaveri Contemporary,Gallery,sceglie,,6,5,0.833,0.593,1.94
+petzel-gallery,Petzel Gallery,Gallery,sceglie,,6,5,0.833,0.593,1.94
+fortes-daloia-and-gabriel,Fortes D'Aloia & Gabriel,Gallery,sceglie,Rio de Janeiro,6,5,0.833,0.593,1.94
+istanbul-biennial,Istanbul Biennial,Institution,sceglie,Istanbul,6,5,0.833,0.593,1.94
+norton-museum-of-art,Norton Museum of Art,Institution,sceglie,West Palm Beach,6,5,0.833,0.593,1.94
+galerie-nathalie-obadia,Galerie Nathalie Obadia,Gallery,sceglie,,8,6,0.75,0.579,1.9
+los-angeles-contemporary-exhibitions,Los Angeles Contemporary Exhibitions,Institution,sceglie,Los Angeles,8,6,0.75,0.579,1.9
+pinchukartcentre,PinchukArtCentre,Institution,sceglie,Kyiv,3,3,1.0,0.566,1.85
+ica-london,ICA London,Institution,sceglie,,3,3,1.0,0.566,1.85
+revolver-galeria,Revolver Galería,Gallery,sceglie,,3,3,1.0,0.566,1.85
+pizzuti-collection,Pizzuti Collection,Institution,sceglie,Columbus,3,3,1.0,0.566,1.85
+eva-international-biennial,EVA International Biennial,Institution,sceglie,Limerick,3,3,1.0,0.566,1.85
+galleri-nicolai-wallner,Galleri Nicolai Wallner,Gallery,sceglie,,3,3,1.0,0.566,1.85
+garage-museum-of-contemporary-art,Garage Museum of Contemporary Art,Institution,sceglie,Moscow,3,3,1.0,0.566,1.85
+kunstforeningen-gl-strand,Kunstforeningen GL STRAND,Institution,sceglie,,3,3,1.0,0.566,1.85
+art-plus-culture-projects,Art+Culture Projects,Gallery,sceglie,,3,3,1.0,0.566,1.85
+the-flag-art-foundation,The FLAG Art Foundation,Institution,sceglie,New York,19,12,0.632,0.564,1.85
+norval-foundation,Norval Foundation,Institution,sceglie,Cape Town,5,4,0.8,0.553,1.81
+heather-gaudio-fine-art,Heather Gaudio Fine Art,Gallery,sceglie,,5,4,0.8,0.553,1.81
+akinci,AKINCI,Gallery,sceglie,,5,4,0.8,0.553,1.81
+roslyn-oxley9-gallery,Roslyn Oxley9 Gallery,Gallery,sceglie,Sydney,5,4,0.8,0.553,1.81
+singapore-art-museum-sam,Singapore Art Museum (SAM),Institution,sceglie,,7,5,0.714,0.544,1.78
+casemore-gallery,Casemore Gallery,Gallery,sceglie,,7,5,0.714,0.544,1.78
+lora-reynolds-gallery,Lora Reynolds Gallery,Gallery,sceglie,Austin,9,6,0.667,0.538,1.76
+g2-kunsthalle,G2 Kunsthalle,Institution,sceglie,Leipzig,9,6,0.667,0.538,1.76
+yancey-richardson-gallery,Yancey Richardson Gallery,Gallery,sceglie,,13,8,0.615,0.529,1.73
+mario-mauroner-contemporary-art-salzburg,Mario Mauroner Contemporary Art Salzburg,Gallery,sceglie,,17,10,0.588,0.524,1.72
+beirut-art-center,Beirut Art Center,Institution,sceglie,Beirut,2,2,1.0,0.504,1.65
+galerie-steinek,Galerie Steinek,Gallery,sceglie,Vienna,2,2,1.0,0.504,1.65
+plinth,Plinth,Gallery,sceglie,,2,2,1.0,0.504,1.65
+hakgojae-gallery,Hakgojae Gallery,Gallery,sceglie,,2,2,1.0,0.504,1.65
+michele-didier,michèle didier,Gallery,sceglie,,2,2,1.0,0.504,1.65
+moca-cleveland,MOCA Cleveland,Institution,sceglie,,2,2,1.0,0.504,1.65
+tanya-leighton,Tanya Leighton,Gallery,sceglie,,2,2,1.0,0.504,1.65
+dell-pryor-gallery,Dell Pryor Gallery,Gallery,sceglie,Detroit,2,2,1.0,0.504,1.65
+galeria-senda,Galeria Senda,Gallery,sceglie,,2,2,1.0,0.504,1.65
+abact-photo-collection,ABACT Photo Collection,Institution,sceglie,São Paulo,2,2,1.0,0.504,1.65
+gwangju-biennale,Gwangju Biennale,Institution,sceglie,Gwangju,2,2,1.0,0.504,1.65
+the-fine-arts-work-center,The Fine Arts Work Center,Gallery,sceglie,Provincetown,2,2,1.0,0.504,1.65
+cylinder,CYLINDER,Gallery,sceglie,Seoul,2,2,1.0,0.504,1.65
+fort-makers,Fort Makers,Gallery,sceglie,Brooklyn,2,2,1.0,0.504,1.65
+kunstraum-innsbruck,Kunstraum Innsbruck,Institution,sceglie,Innsbruck,2,2,1.0,0.504,1.65
+lulu-1,Lulu,Institution,sceglie,"Colonia Roma, Cuauhtemoc",2,2,1.0,0.504,1.65
+max-goelitz,max goelitz,Gallery,sceglie,Munich,2,2,1.0,0.504,1.65
+rijksakademie-van-beeldende-kunsten,Rijksakademie van beeldende kunsten,Institution,sceglie,Amsterdam,2,2,1.0,0.504,1.65
+bartha-contemporary,Bartha Contemporary,Gallery,sceglie,London,2,2,1.0,0.504,1.65
+jane-lombard-gallery,Jane Lombard Gallery,Gallery,sceglie,New York,2,2,1.0,0.504,1.65
+carnegie-museum-of-art,Carnegie Museum of Art,Institution,sceglie,Pittsburgh,2,2,1.0,0.504,1.65
+galerie-claire-gastaud,Galerie Claire Gastaud,Gallery,sceglie,,2,2,1.0,0.504,1.65
+nina-menocal-gallery,Nina Menocal Gallery,Gallery,sceglie,Mexico City,2,2,1.0,0.504,1.65
+futura-centre-for-contemporary-art,FUTURA Centre for Contemporary Art,Institution,sceglie,Prague,2,2,1.0,0.504,1.65
+the-melrose-gallery,The Melrose Gallery,Gallery,sceglie,San Francisco,2,2,1.0,0.504,1.65
+ayala-museum,Ayala Museum,Institution,sceglie,Makati City,2,2,1.0,0.504,1.65
+p420,P420,Gallery,sceglie,,2,2,1.0,0.504,1.65
+high-line-art,High Line Art,Institution,sceglie,New York,2,2,1.0,0.504,1.65
+gormleys,Gormleys,Gallery,sceglie,Holywood,2,2,1.0,0.504,1.65
+dan-gallery,Dan Gallery,Gallery,sceglie,Tel Aviv,2,2,1.0,0.504,1.65
+taikang-space,Taikang Space,Institution,sceglie,Beijing,2,2,1.0,0.504,1.65
+baxter-street-at-the-camera-club-of-new-york,Baxter Street at the Camera Club of New York,Institution,sceglie,New York,2,2,1.0,0.504,1.65
+storm-king-art-center,Storm King Art Center,Institution,sceglie,New Windsor,4,3,0.75,0.503,1.65
+mai-36-galerie,Mai 36 Galerie,Gallery,sceglie,,4,3,0.75,0.503,1.65
+galeria-fernando-pradilla,Galería Fernando Pradilla,Gallery,sceglie,Madrid,4,3,0.75,0.503,1.65
+hieronymus,Hieronymus,Gallery,sceglie,,4,3,0.75,0.503,1.65
+louisiana-museum-of-modern-art,Louisiana Museum of Modern Art,Institution,sceglie,Humlebaek,4,3,0.75,0.503,1.65
+ujung-art-center,uJung Art Center,Gallery,sceglie,Seoul,4,3,0.75,0.503,1.65
+elgiz-museum,Elgiz Museum,Institution,sceglie,Istanbul,4,3,0.75,0.503,1.65
+fondazione-berengo,Fondazione Berengo,Institution,sceglie,Dordrecht,4,3,0.75,0.503,1.65
+baro-galeria,Baró Galeria,Gallery,sceglie,Abu Dhabi,4,3,0.75,0.503,1.65
+future-generation-art-prize,Future Generation Art Prize,Institution,sceglie,Kyiv,4,3,0.75,0.503,1.65
+the-brooklyn-rail-curatorial-projects,The Brooklyn Rail Curatorial Projects,Institution,sceglie,Brooklyn,4,3,0.75,0.503,1.65
+yarat-contemporary-art-space,Yarat Contemporary Art Space,Institution,sceglie,Venice,4,3,0.75,0.503,1.65
+max-weber-six-friedrich,Max Weber Six Friedrich,Gallery,sceglie,Munich,4,3,0.75,0.503,1.65
+francesco-pantaleone,Francesco Pantaleone,Gallery,sceglie,,4,3,0.75,0.503,1.65
+jessica-silverman,Jessica Silverman,Gallery,sceglie,,10,6,0.6,0.502,1.64
+mca-chicago,MCA Chicago,Institution,sceglie,Chicago,10,6,0.6,0.502,1.64
+catharine-clark-gallery,Catharine Clark Gallery,Gallery,sceglie,,8,5,0.625,0.502,1.64
+ica-philadelphia,ICA Philadelphia,Institution,sceglie,Philadelphia,8,5,0.625,0.502,1.64
+carlier-gebauer,carlier | gebauer,Gallery,sceglie,Berlin,6,4,0.667,0.502,1.65
+art-night-london,Art Night London,Gallery,sceglie,London,6,4,0.667,0.502,1.65
+palais-de-tokyo,Palais de Tokyo,Institution,sceglie,Paris,6,4,0.667,0.502,1.65
+zeitz-mocaa,Zeitz MOCAA,Institution,sceglie,Cape Town,6,4,0.667,0.502,1.65
+di-rosa,di Rosa,Institution,sceglie,Napa,6,4,0.667,0.502,1.65
+pierogi,Pierogi,Gallery,sceglie,Brooklyn,14,8,0.571,0.501,1.64
+aki-gallery,Aki Gallery,Gallery,sceglie,,15,8,0.533,0.476,1.56
+cantor-fitzgerald-gallery-haverford-college,"Cantor Fitzgerald Gallery, Haverford College",Institution,sceglie,Haverford ,11,6,0.545,0.47,1.54
+galerie-eigen-plus-art,Galerie EIGEN + ART,Gallery,sceglie,,9,5,0.556,0.466,1.53
+whatiftheworld,WHATIFTHEWORLD,Gallery,sceglie,,7,4,0.571,0.461,1.51
+galerie-greta-meert,Galerie Greta Meert,Gallery,sceglie,,7,4,0.571,0.461,1.51
+mendes-wood-dm,Mendes Wood DM,Gallery,sceglie,,5,3,0.6,0.453,1.48
+luisa-strina,Luisa Strina,Gallery,sceglie,,5,3,0.6,0.453,1.48
+sikkema-malloy-jenkins,Sikkema Malloy Jenkins,Gallery,sceglie,,5,3,0.6,0.453,1.48
+michael-kohn-gallery,Michael Kohn Gallery,Gallery,sceglie,Los Angeles,5,3,0.6,0.453,1.48
+gaa-gallery,Gaa Gallery,Gallery,sceglie,Provincetown,5,3,0.6,0.453,1.48
+miles-mcenery-gallery,Miles McEnery Gallery,Gallery,sceglie,New York,5,3,0.6,0.453,1.48
+boca-raton-museum-of-art,Boca Raton Museum of Art,Institution,sceglie,Boca Raton,3,2,0.667,0.441,1.44
+galleria-continua,GALLERIA CONTINUA,Gallery,sceglie,,3,2,0.667,0.441,1.44
+aurora-vigil-escalera-art-gallery,Aurora Vigil-Escalera Art Gallery,Gallery,sceglie,,3,2,0.667,0.441,1.44
+jack-shainman-gallery,Jack Shainman Gallery,Gallery,sceglie,,3,2,0.667,0.441,1.44
+moca,MOCA,Institution,sceglie,Los Angeles,3,2,0.667,0.441,1.44
+slewe-gallery,Slewe Gallery,Gallery,sceglie,,3,2,0.667,0.441,1.44
+arte-de-gema,Arte de Gema,Gallery,sceglie,,3,2,0.667,0.441,1.44
+international-manifesta-foundation,International Manifesta Foundation,Institution,sceglie,,3,2,0.667,0.441,1.44
+carbono-galeria,Carbono Galeria,Gallery,sceglie,,3,2,0.667,0.441,1.44
+instituto-de-vision,Instituto de Visión,Gallery,sceglie,,3,2,0.667,0.441,1.44
+hong-kong-arts-centre,Hong Kong Arts Centre,Institution,sceglie,Hong Kong,3,2,0.667,0.441,1.44
+keteleer-gallery,Keteleer Gallery,Gallery,sceglie,Antwerp,3,2,0.667,0.441,1.44
+galerie-les-filles-du-calvaire,Galerie Les filles du calvaire,Gallery,sceglie,Paris,3,2,0.667,0.441,1.44
+keene-arts,Keene Arts,Gallery,sceglie,Keene ,3,2,0.667,0.441,1.44
+frankfurter-kunstverein,Frankfurter Kunstverein,Institution,sceglie,Frankfurt am Main,3,2,0.667,0.441,1.44
+bhau-daji-lad-museum,Bhau Daji Lad Museum,Institution,sceglie,Mumbai,3,2,0.667,0.441,1.44
+gallery-archana,Gallery Archana,Gallery,sceglie,,3,2,0.667,0.441,1.44
+art-front-gallery,Art Front Gallery,Gallery,sceglie,Tokyo,3,2,0.667,0.441,1.44
+galeria-filomena-soares,Galeria Filomena Soares,Gallery,sceglie,Lisboa,3,2,0.667,0.441,1.44
+al-mamal-foundation-for-contemporary-art,Al Ma'mal Foundation for Contemporary Art,Institution,sceglie,Jerusalem,3,2,0.667,0.441,1.44
+friedman-benda,Friedman Benda,Gallery,sceglie,,10,5,0.5,0.435,1.42
+litvak-contemporary,Litvak Contemporary,Gallery,sceglie,Tel-Aviv,10,5,0.5,0.435,1.42
+lundgren-gallery,LUNDGREN GALLERY,Gallery,sceglie,Palma de Mallorca,10,5,0.5,0.435,1.42
+halsey-mckay-gallery,Halsey McKay Gallery,Gallery,sceglie,Brooklyn,24,11,0.458,0.432,1.41
+dieu-donne,Dieu Donné,Institution,sceglie,,22,10,0.455,0.427,1.4
+tang-teaching-museum-and-art-gallery,Tang Teaching Museum and Art Gallery,Institution,sceglie,Saratoga Springs ,8,4,0.5,0.425,1.39
+alex-daniels-reflex-amsterdam,Alex Daniels - Reflex Amsterdam,Gallery,sceglie,Amsterdam,8,4,0.5,0.425,1.39
+galerie-krinzinger,Galerie Krinzinger,Gallery,sceglie,Vienna,8,4,0.5,0.425,1.39
+templon,Templon,Gallery,sceglie,,8,4,0.5,0.425,1.39
+october-gallery,October Gallery,Gallery,sceglie,London,8,4,0.5,0.425,1.39
+galeria-vermelho,Galería Vermelho,Gallery,sceglie,São Paulo,1,1,1.0,0.421,1.38
+mattress-factory,Mattress Factory,Institution,sceglie,,1,1,1.0,0.421,1.38
+for-site-foundation,FOR-SITE Foundation,Institution,sceglie,,1,1,1.0,0.421,1.38
+oude-kerk,Oude Kerk,Institution,sceglie,Amsterdam,1,1,1.0,0.421,1.38
+random-institute,Random Institute,Institution,sceglie,Zürich,1,1,1.0,0.421,1.38
+vistamare,Vistamare,Gallery,sceglie,,1,1,1.0,0.421,1.38
+galerie-tschudi,Galerie Tschudi,Gallery,sceglie,Zuoz,1,1,1.0,0.421,1.38
+galleria-valentina-bonomo,Galleria Valentina Bonomo,Gallery,sceglie,,1,1,1.0,0.421,1.38
+radius-books,Radius Books,Institution,sceglie,,1,1,1.0,0.421,1.38
+arton-foundation,Arton Foundation,Gallery,sceglie,Warsaw,1,1,1.0,0.421,1.38
+gropius-bau,Gropius Bau,Institution,sceglie,,1,1,1.0,0.421,1.38
+galerie-gabriel-rolt,Galerie Gabriel Rolt,Gallery,sceglie,Amsterdam,1,1,1.0,0.421,1.38
+weng-contemporary,Weng Contemporary,Gallery,sceglie,Monheim am Rhein,1,1,1.0,0.421,1.38
+lumen-travo,Lumen Travo,Gallery,sceglie,,1,1,1.0,0.421,1.38
+cultural-avenue,Cultural Avenue,Institution,sceglie,Aschaffenburg,1,1,1.0,0.421,1.38
+jcamejo-art,JCamejo Art,Gallery,sceglie,,1,1,1.0,0.421,1.38
+mestre-projects,MESTRE PROJECTS,Gallery,sceglie,,1,1,1.0,0.421,1.38
+fondation-beyeler,Fondation Beyeler,Institution,sceglie,Riehen,1,1,1.0,0.421,1.38
+max54-gallery-the-global-fine-art,MAX54 Gallery | The Global Fine Art,Gallery,sceglie,Zürich,1,1,1.0,0.421,1.38
+58th-venice-biennale,58th Venice Biennale,Institution,sceglie,Venice,1,1,1.0,0.421,1.38
+schellmann-art,Schellmann Art,Gallery,sceglie,Munich,1,1,1.0,0.421,1.38
+para-site,Para Site,Institution,sceglie,Hong Kong,1,1,1.0,0.421,1.38
+arttable,ArtTable,Institution,sceglie,,1,1,1.0,0.421,1.38
+center-for-contemporary-art-tel-aviv,Center for Contemporary Art - Tel Aviv,Institution,sceglie,Tel Aviv,1,1,1.0,0.421,1.38
+fundacion-proa,Fundación Proa,Institution,sceglie,Buenos Aires,1,1,1.0,0.421,1.38
+3-punts-galeria,3 Punts Galeria,Gallery,sceglie,,1,1,1.0,0.421,1.38
+fridericianum,Fridericianum,Institution,sceglie,Kassel,1,1,1.0,0.421,1.38
+museum-kunstpalast,Museum Kunstpalast,Institution,sceglie,Düsseldorf,1,1,1.0,0.421,1.38
+kw-institute-for-contemporary-art,KW Institute for Contemporary Art,Institution,sceglie,Berlin,1,1,1.0,0.421,1.38
+christopher-grimes-projects,Christopher Grimes Projects,Gallery,sceglie,,1,1,1.0,0.421,1.38
+meliksetian-briggs,Meliksetian | Briggs,Gallery,sceglie,,1,1,1.0,0.421,1.38
+jack-kilgore-and-co,Jack Kilgore & Co.,Gallery,sceglie,,1,1,1.0,0.421,1.38
+eames-fine-art,Eames Fine Art,Gallery,sceglie,,1,1,1.0,0.421,1.38
+ica-boston,ICA Boston,Institution,sceglie,Boston,1,1,1.0,0.421,1.38
+suomei-gallery,Suomei Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+ica-la,ICA LA,Institution,sceglie,Los Angeles,1,1,1.0,0.421,1.38
+la-casa-encendida,La Casa Encendida,Institution,sceglie,Madrid,1,1,1.0,0.421,1.38
+depaul-art-museum,DePaul Art Museum,Institution,sceglie,,1,1,1.0,0.421,1.38
+wiels,WIELS,Institution,sceglie,Brussels,1,1,1.0,0.421,1.38
+management,Management,Gallery,sceglie,New York City,1,1,1.0,0.421,1.38
+hayward-gallery-at-southbank-centre,Hayward Gallery at Southbank Centre,Institution,sceglie,London,1,1,1.0,0.421,1.38
+ballroom-marfa,Ballroom Marfa,Institution,sceglie,Marfa,1,1,1.0,0.421,1.38
+arken-museum-of-modern-art,Arken Museum of Modern Art,Institution,sceglie,Ishøj,1,1,1.0,0.421,1.38
+galerie-michaela-stock,Galerie Michaela Stock,Gallery,sceglie,Vienna,1,1,1.0,0.421,1.38
+waterside-contemporary,waterside contemporary,Gallery,sceglie,,1,1,1.0,0.421,1.38
+fondation-dentreprise-galeries-lafayette,Fondation d'Entreprise Galeries Lafayette,Institution,sceglie,Paris,1,1,1.0,0.421,1.38
+copenhagen-contemporary,Copenhagen Contemporary,Institution,sceglie,Copenhagen K,1,1,1.0,0.421,1.38
+neon-parc,Neon Parc,Gallery,sceglie,Melbourne,1,1,1.0,0.421,1.38
+total-museum-of-contemporary-art,Total Museum of Contemporary Art,Institution,sceglie,Seoul,1,1,1.0,0.421,1.38
+institute-of-arab-and-islamic-art,Institute of Arab and Islamic Art,Institution,sceglie,New York,1,1,1.0,0.421,1.38
+kube-gallery,Kube Gallery,Gallery,sceglie,Poznań,1,1,1.0,0.421,1.38
+zagut,Zagut,Gallery,sceglie,,1,1,1.0,0.421,1.38
+casanova-1,CASANOVA,Institution,sceglie,,1,1,1.0,0.421,1.38
+galerie-benjamin-eck,GALERIE BENJAMIN ECK,Gallery,sceglie,München,1,1,1.0,0.421,1.38
+gallery-1871,gallery 1871,Gallery,sceglie,Chicago,1,1,1.0,0.421,1.38
+galerie-barbara-von-stechow,Galerie Barbara von Stechow,Gallery,sceglie,Frankfurt am Main,1,1,1.0,0.421,1.38
+art-labor-gallery,ART LABOR Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+galerie-pixi-marie-victoire-poliakoff,Galerie Pixi - Marie Victoire Poliakoff,Gallery,sceglie,Paris,1,1,1.0,0.421,1.38
+portland-art-museum,Portland Art Museum,Institution,sceglie,Portland,1,1,1.0,0.421,1.38
+galerist,Galerist,Gallery,sceglie,İstanbul,1,1,1.0,0.421,1.38
+martin-asbaek-gallery,Martin Asbæk Gallery,Gallery,sceglie,Copenhagen,1,1,1.0,0.421,1.38
+bernier-slash-eliades,Bernier/Eliades,Gallery,sceglie,,1,1,1.0,0.421,1.38
+museum-fur-fotografie,Museum für Fotografie,Institution,sceglie,Berlin,1,1,1.0,0.421,1.38
+piero-atchugarry-gallery,Piero Atchugarry Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+fondation-phi,Fondation Phi,Institution,sceglie,Montreal,1,1,1.0,0.421,1.38
+mathaf-arab-museum-of-modern-art,Mathaf: Arab Museum of Modern Art,Institution,sceglie,Doha,1,1,1.0,0.421,1.38
+il-chiostro-arte-contemporanea,Il Chiostro Arte Contemporanea,Gallery,sceglie,,1,1,1.0,0.421,1.38
+exhibit-a-london,Exhibit A London,Gallery,sceglie,London,1,1,1.0,0.421,1.38
+josegarcia-mx,"joségarcía ,mx",Gallery,sceglie,Mexico City,1,1,1.0,0.421,1.38
+galerie-de-souzy,Galerie de Souzy,Gallery,sceglie,,1,1,1.0,0.421,1.38
+wizard-gallery,Wizard Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+museo-nacional-del-prado,Museo Nacional del Prado,Institution,sceglie,Madrid,1,1,1.0,0.421,1.38
+o-v-project,o v project,Gallery,sceglie,Brussels,1,1,1.0,0.421,1.38
+institut-culturel-italien,Institut Culturel Italien,Institution,sceglie,Paris,1,1,1.0,0.421,1.38
+galerie-bordas,Galerie Bordas,Gallery,sceglie,Venezia,1,1,1.0,0.421,1.38
+rolando-anselmi,Rolando Anselmi,Gallery,sceglie,,1,1,1.0,0.421,1.38
+david-leonardis-gallery,David Leonardis Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+durst-britt-and-mayhew,Dürst Britt & Mayhew,Gallery,sceglie,,1,1,1.0,0.421,1.38
+edward-hopper-house,Edward Hopper House,Institution,sceglie,Nyack,1,1,1.0,0.421,1.38
+m-museum-leuven,M - Museum Leuven,Institution,sceglie,Leuven,1,1,1.0,0.421,1.38
+new-art-exchange,New Art Exchange,Institution,sceglie,Nottingham,1,1,1.0,0.421,1.38
+anthony-brunelli-fine-arts,Anthony Brunelli Fine Arts,Gallery,sceglie,Binghamton ,1,1,1.0,0.421,1.38
+marta-moriarty,Marta Moriarty,Gallery,sceglie,,1,1,1.0,0.421,1.38
+leehwaik-gallery,Leehwaik Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+east-gallery-at-norwich-university-of-the-arts-nua,East Gallery at Norwich University of the Arts (NUA),Institution,sceglie,,1,1,1.0,0.421,1.38
+herald-st,Herald St,Gallery,sceglie,,1,1,1.0,0.421,1.38
+museum-fur-moderne-kunst-mmk,Museum fur Moderne Kunst (MMK),Institution,sceglie,Frankfurt am Main,1,1,1.0,0.421,1.38
+de-appel-arts-centre,de Appel arts centre,Institution,sceglie,Amsterdam,1,1,1.0,0.421,1.38
+lions-gallery,Lions Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+rocket,ROCKET,Gallery,sceglie,,1,1,1.0,0.421,1.38
+dvir-gallery,Dvir Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+west-den-haag,West Den Haag,Institution,sceglie,Den Haag,1,1,1.0,0.421,1.38
+anita-shapolsky-gallery,Anita Shapolsky Gallery,Gallery,sceglie,New York,1,1,1.0,0.421,1.38
+capri,CAPRI,Institution,sceglie,Düsseldorf,1,1,1.0,0.421,1.38
+wentrup,Wentrup,Gallery,sceglie,,1,1,1.0,0.421,1.38
+galleria-michela-negrini,Galleria Michela Negrini,Gallery,sceglie,Lugano,1,1,1.0,0.421,1.38
+ov-project,OV Project,Gallery,sceglie,,1,1,1.0,0.421,1.38
+redcat,REDCAT,Institution,sceglie,Los Angeles,1,1,1.0,0.421,1.38
+galerie-patrick-seguin,Galerie Patrick Seguin,Gallery,sceglie,,1,1,1.0,0.421,1.38
+galerie-deza,Galerie Deza,Gallery,sceglie,Roanne,1,1,1.0,0.421,1.38
+madison-gallery,Madison Gallery,Gallery,sceglie,,1,1,1.0,0.421,1.38
+lower-east-side-printshop,Lower East Side Printshop,Institution,sceglie,,1,1,1.0,0.421,1.38
+kunsthall-stavanger,Kunsthall Stavanger,Institution,sceglie,Stavanger,1,1,1.0,0.421,1.38
+romer-young-gallery,Romer Young Gallery,Gallery,sceglie,San Francisco,1,1,1.0,0.421,1.38
+edji-gallery,EDJI Gallery,Gallery,sceglie,Paris,1,1,1.0,0.421,1.38
+materia,Matèria,Gallery,sceglie,Rome,1,1,1.0,0.421,1.38
+museum-of-contemporary-photography-mocp,Museum of Contemporary Photography (MoCP),Institution,sceglie,Chicago,1,1,1.0,0.421,1.38
+dohing-art,Dohing Art,Gallery,sceglie,Seoul,1,1,1.0,0.421,1.38
+nederlands-fotomuseum,Nederlands Fotomuseum,Institution,sceglie,Rotterdam,1,1,1.0,0.421,1.38
+ucca,UCCA,Institution,sceglie,,1,1,1.0,0.421,1.38
+kreemart,Kreëmart,Institution,sceglie,New York,1,1,1.0,0.421,1.38
+the-aldrich-contemporary-art-museum,The Aldrich Contemporary Art Museum,Institution,sceglie,Ridgefield,6,3,0.5,0.412,1.35
+mark-moore-fine-art,Mark Moore Fine Art,Gallery,sceglie,Los Angeles,6,3,0.5,0.412,1.35
+kadel-willborn,Kadel Willborn,Gallery,sceglie,,6,3,0.5,0.412,1.35
+white-cube,White Cube,Gallery,sceglie,,6,3,0.5,0.412,1.35
+hang-up-gallery,Hang-Up Gallery,Gallery,sceglie,London,6,3,0.5,0.412,1.35
+roberts-projects,Roberts Projects,Gallery,sceglie,Los Angeles,6,3,0.5,0.412,1.35
+wingate-studio,Wingate Studio,Gallery,sceglie,,6,3,0.5,0.412,1.35
+galerie-andrea-caratsch,Galerie Andrea Caratsch,Gallery,sceglie,St. Moritz,6,3,0.5,0.412,1.35
+mcevoy-foundation-for-the-arts,McEvoy Foundation for the Arts,Institution,sceglie,San Francisco,9,4,0.444,0.395,1.29
+rosegallery,ROSEGALLERY,Gallery,sceglie,Los Angeles,9,4,0.444,0.395,1.29
+oliver-clatworthy,Oliver Clatworthy,Gallery,sceglie,,9,4,0.444,0.395,1.29
+p-dot-p-o-dot-w,P.P.O.W,Gallery,sceglie,,9,4,0.444,0.395,1.29
+maison-particuliere,Maison Particulière,Institution,sceglie,Brussels,4,2,0.5,0.392,1.28
+luis-de-jesus-los-angeles,Luis De Jesus Los Angeles,Gallery,sceglie,,4,2,0.5,0.392,1.28
+flowers,Flowers,Gallery,sceglie,,4,2,0.5,0.392,1.28
+ideelart,IdeelArt,Gallery,sceglie,,4,2,0.5,0.392,1.28
+david-kordansky-gallery,David Kordansky Gallery,Gallery,sceglie,New York,4,2,0.5,0.392,1.28
+galerie-kluser,Galerie Klüser,Gallery,sceglie,Munich,4,2,0.5,0.392,1.28
+fondation-louis-vuitton,Fondation Louis Vuitton,Institution,sceglie,Paris ,4,2,0.5,0.392,1.28
+galeria-hilario-galguera,Galería Hilario Galguera,Gallery,sceglie,,4,2,0.5,0.392,1.28
+mona-bismarck-american-center,Mona Bismarck American Center,Institution,sceglie,,4,2,0.5,0.392,1.28
+bienvenu-steinberg-and-c,Bienvenu Steinberg & C,Gallery,sceglie,,4,2,0.5,0.392,1.28
+vsop-projects,VSOP Projects,Gallery,sceglie,Greenport,4,2,0.5,0.392,1.28
+peana,PEANA,Gallery,sceglie,Mexico City,4,2,0.5,0.392,1.28
+travesia-cuatro,Travesia Cuatro,Gallery,sceglie,,4,2,0.5,0.392,1.28
+curator-style,Curator Style,Gallery,sceglie,,4,2,0.5,0.392,1.28
+50-golborne,50 Golborne,Gallery,sceglie,,4,2,0.5,0.392,1.28
+masa-galeria,MASA Galeria,Gallery,sceglie,Mexico City,7,3,0.429,0.377,1.24
+strouk-gallery,Strouk Gallery,Gallery,sceglie,,7,3,0.429,0.377,1.24
+david-krut-projects,David Krut Projects,Gallery,sceglie,,7,3,0.429,0.377,1.24
+nara-roesler,Nara Roesler,Gallery,sceglie,,7,3,0.429,0.377,1.24
+robischon-gallery,Robischon Gallery,Gallery,sceglie,Denver,10,4,0.4,0.368,1.21
+atrium-gallery,Atrium Gallery,Gallery,sceglie,St. Louis,10,4,0.4,0.368,1.21
+nina-johnson,Nina Johnson,Gallery,sceglie,,10,4,0.4,0.368,1.21
+galerie-jocelyn-wolff,Galerie Jocelyn Wolff,Gallery,sceglie,Romainville (Grand Paris),2,1,0.5,0.361,1.18
+gallery-nosco,Gallery Nosco,Gallery,sceglie,Brussels,2,1,0.5,0.361,1.18
+walking-house-new-york,Walking House New York,Gallery,sceglie,Busan,2,1,0.5,0.361,1.18
+ferrara-showman-gallery,Ferrara Showman Gallery,Gallery,sceglie,New Orleans,2,1,0.5,0.361,1.18
+rhona-hoffman-gallery,Rhona Hoffman Gallery,Gallery,sceglie,,2,1,0.5,0.361,1.18
+castle-fine-art,Castle Fine Art,Gallery,sceglie,,2,1,0.5,0.361,1.18
+qualia-contemporary-art,Qualia Contemporary Art,Gallery,sceglie,Palo Alto,2,1,0.5,0.361,1.18
+wilde,Wilde,Gallery,sceglie,Genève,2,1,0.5,0.361,1.18
+depart-foundation,Depart Foundation,Institution,sceglie,Malibu,2,1,0.5,0.361,1.18
+faurschou-foundation,Faurschou Foundation,Institution,sceglie,Beijing,2,1,0.5,0.361,1.18
+galeria-artizar,Galería Artizar,Gallery,sceglie,,2,1,0.5,0.361,1.18
+twentieth-gallery,Twentieth Gallery,Gallery,sceglie,Los Angeles,2,1,0.5,0.361,1.18
+ifac-arts,IFAC Arts,Gallery,sceglie,New York City,2,1,0.5,0.361,1.18
+gagosian,Gagosian,Gallery,sceglie,,2,1,0.5,0.361,1.18
+shoshana-wayne-gallery,Shoshana Wayne Gallery,Gallery,sceglie,,2,1,0.5,0.361,1.18
+chase-contemporary,Chase Contemporary,Gallery,sceglie,,2,1,0.5,0.361,1.18
+adamson-gallery,Adamson Gallery,Gallery,sceglie,Lorton,2,1,0.5,0.361,1.18
+the-glass-house,The Glass House,Institution,sceglie,,2,1,0.5,0.361,1.18
+hans-alf-gallery,Hans Alf Gallery,Gallery,sceglie,,2,1,0.5,0.361,1.18
+jenkins-johnson-gallery,Jenkins Johnson Gallery,Gallery,sceglie,,2,1,0.5,0.361,1.18
+m-hka-museum-of-modern-art-antwerp,M HKA – Museum of Modern Art Antwerp,Institution,sceglie,Antwerp ,2,1,0.5,0.361,1.18
+bard-graduate-center-gallery,Bard Graduate Center Gallery,Institution,sceglie,New York,2,1,0.5,0.361,1.18
+weinberger-fine-art,Weinberger Fine Art,Gallery,sceglie,Kansas City,2,1,0.5,0.361,1.18
+anthony-wilkinson-gallery,Anthony Wilkinson Gallery,Gallery,sceglie,Oslo,2,1,0.5,0.361,1.18
+osmos,OSMOS,Gallery,sceglie,New York,2,1,0.5,0.361,1.18
+persons-projects,Persons Projects,Gallery,sceglie,,2,1,0.5,0.361,1.18
+christopher-bishop-fine-art,Christopher Bishop Fine Art,Gallery,sceglie,New York,2,1,0.5,0.361,1.18
+mc2gallery,MC2Gallery,Gallery,sceglie,Padova,2,1,0.5,0.361,1.18
+george-thornton-art,George Thornton Art,Gallery,sceglie,,2,1,0.5,0.361,1.18
+plus-one-gallery,Plus One Gallery,Gallery,sceglie,London,2,1,0.5,0.361,1.18
+in-camera-galerie,In Camera Galerie,Gallery,sceglie,Paris,2,1,0.5,0.361,1.18
+nirox-foundation,Nirox Foundation,Institution,sceglie,Krugersdorp,2,1,0.5,0.361,1.18
+kalkman-gallery,Kalkman Gallery,Gallery,sceglie,,2,1,0.5,0.361,1.18
+bendana-pinel-art-contemporain,Bendana | Pinel Art Contemporain,Gallery,sceglie,,2,1,0.5,0.361,1.18
+library-street-collective,Library Street Collective,Gallery,sceglie,Detroit,2,1,0.5,0.361,1.18
+national-portrait-gallery,National Portrait Gallery,Institution,sceglie,London,2,1,0.5,0.361,1.18
+coppejans-gallery,Coppejans Gallery,Gallery,sceglie,Antwerpen,2,1,0.5,0.361,1.18
+galerie-kleindienst,Galerie Kleindienst,Gallery,sceglie,,2,1,0.5,0.361,1.18
+cristin-tierney,Cristin Tierney,Gallery,sceglie,,2,1,0.5,0.361,1.18
+galerie-vivendi,Galerie Vivendi,Gallery,sceglie,,2,1,0.5,0.361,1.18
+station,STATION,Gallery,sceglie,,2,1,0.5,0.361,1.18
+bernhard-knaus-fine-art,Bernhard Knaus Fine Art,Gallery,sceglie,,2,1,0.5,0.361,1.18
+geuer-and-geuer-art,Geuer & Geuer Art,Gallery,sceglie,Duesseldorf,2,1,0.5,0.361,1.18
+monica-de-cardenas,Monica De Cardenas,Gallery,sceglie,Zuoz,2,1,0.5,0.361,1.18
+koninklijk-royal-museum-of-fine-arts,Koninklijk Royal Museum of Fine Arts,Institution,sceglie,Antwerp,2,1,0.5,0.361,1.18
+yossi-milo-gallery,Yossi Milo Gallery,Gallery,sceglie,,2,1,0.5,0.361,1.18
+modern-art-gallery-xian-dai-hua-lang,Modern Art Gallery 現代畫廊,Gallery,sceglie,Taichung,2,1,0.5,0.361,1.18
+matney-gallery,Matney Gallery,Gallery,sceglie,,2,1,0.5,0.361,1.18
+brigade,Brigade,Gallery,sceglie,Copenhagen,2,1,0.5,0.361,1.18
+iaia-museum-of-contemporary-native-arts,IAIA Museum of Contemporary Native Arts,Institution,sceglie,,2,1,0.5,0.361,1.18
+helsinki-contemporary,Helsinki Contemporary,Gallery,sceglie,Helsinki,2,1,0.5,0.361,1.18
+bronx-museum-of-the-arts,Bronx Museum of the Arts,Institution,sceglie,Bronx,2,1,0.5,0.361,1.18
+modern-art-museum-of-fort-worth,Modern Art Museum of Fort Worth,Institution,sceglie,Fort Worth,2,1,0.5,0.361,1.18
+artistellar,Artistellar,Gallery,sceglie,,2,1,0.5,0.361,1.18
+makasiini-contemporary,MAKASIINI CONTEMPORARY,Gallery,sceglie,,2,1,0.5,0.361,1.18
+elizabeth-harris-gallery,Elizabeth Harris Gallery,Gallery,sceglie,New York,2,1,0.5,0.361,1.18
+lia-rumma,Lia Rumma,Gallery,sceglie,,2,1,0.5,0.361,1.18
+nunu-fine-art,NUNU FINE ART,Gallery,sceglie, Taipei City,2,1,0.5,0.361,1.18
+gallery-baton,Gallery Baton,Gallery,sceglie,Seoul,2,1,0.5,0.361,1.18
+galeria-daniel-cardani,Galería Daniel Cardani,Gallery,sceglie,,5,2,0.4,0.353,1.15
+the-current-museum,The Current Museum,Institution,sceglie,New York,5,2,0.4,0.353,1.15
+mimmo-scognamiglio,Mimmo Scognamiglio,Gallery,sceglie,Milano,5,2,0.4,0.353,1.15
+margot-samel,Margot Samel,Gallery,sceglie,New York,5,2,0.4,0.353,1.15
+sean-kelly-gallery,Sean Kelly Gallery,Gallery,sceglie,New York,5,2,0.4,0.353,1.15
+priska-pasquer,PRISKA PASQUER,Gallery,sceglie,Cologne,5,2,0.4,0.353,1.15
+rosenfeld-1,rosenfeld,Gallery,sceglie,London,5,2,0.4,0.353,1.15
+paul-stolper-gallery,Paul Stolper Gallery,Gallery,sceglie,,5,2,0.4,0.353,1.15
+museum-of-african-design-moad,Museum of African Design (MOAD),Institution,sceglie,Johannesburg,5,2,0.4,0.353,1.15
+akka-project,AKKA Project,Gallery,sceglie,,5,2,0.4,0.353,1.15
+droste-gallade,Droste Galladé,Gallery,sceglie,Wuppertal,5,2,0.4,0.353,1.15
+aperture,Aperture,Gallery,sceglie,,8,3,0.375,0.348,1.14
+eli-klein-gallery,Eli Klein Gallery,Gallery,sceglie,New York,8,3,0.375,0.348,1.14
+projects-plus-gallery,projects+gallery,Gallery,sceglie,,8,3,0.375,0.348,1.14
+dru-arstark-fine-art,Dru Arstark Fine Art,Gallery,sceglie,,8,3,0.375,0.348,1.14
+kavi-gupta,Kavi Gupta,Gallery,sceglie,,11,4,0.364,0.345,1.13
+winston-wachter-fine-art,Winston Wächter Fine Art,Gallery,sceglie,New York,15,5,0.333,0.326,1.07
+bitforms-gallery,bitforms gallery,Gallery,sceglie,New York ,12,4,0.333,0.325,1.06
+patrick-jones-gallery,Patrick Jones Gallery,Gallery,sceglie,,9,3,0.333,0.323,1.06
+pulpo-gallery,PULPO GALLERY,Gallery,sceglie,,9,3,0.333,0.323,1.06
+mizuma-art-gallery,Mizuma Art Gallery,Gallery,sceglie,Tokyo,9,3,0.333,0.323,1.06
+island,island,Gallery,sceglie,New York,9,3,0.333,0.323,1.06
+albertz-benda,Albertz Benda,Gallery,sceglie,New York,6,2,0.333,0.321,1.05
+freight-plus-volume,Freight + Volume,Gallery,sceglie,,6,2,0.333,0.321,1.05
+gallery-odyssey,Gallery Odyssey,Gallery,sceglie,Mumbai,6,2,0.333,0.321,1.05
+lougher-contemporary,Lougher Contemporary,Gallery,sceglie,,6,2,0.333,0.321,1.05
+bau-xi-gallery,Bau-Xi Gallery,Gallery,sceglie,,6,2,0.333,0.321,1.05
+coleccion-solo,Coleccion SOLO,Institution,sceglie,Madrid,6,2,0.333,0.321,1.05
+galerie-du-monde,Galerie du Monde,Gallery,sceglie,"Central, Hong Kong",6,2,0.333,0.321,1.05
+enter-gallery,Enter Gallery,Gallery,sceglie,,6,2,0.333,0.321,1.05
+lawrie-shabibi,Lawrie Shabibi,Gallery,sceglie,,6,2,0.333,0.321,1.05
+arte-fundamental,Arte Fundamental,Gallery,sceglie,,3,1,0.333,0.316,1.03
+denk-gallery,DENK Gallery,Gallery,sceglie,,3,1,0.333,0.316,1.03
+pen-plus-brush,Pen + Brush,Institution,sceglie,New York,3,1,0.333,0.316,1.03
+m-woods,M WOODS,Institution,sceglie,Beijing,3,1,0.333,0.316,1.03
+k-contemporary,K Contemporary,Gallery,sceglie,Denver,3,1,0.333,0.316,1.03
+bric,BRIC,Institution,sceglie,Brooklyn,3,1,0.333,0.316,1.03
+aurora,Aurora,Institution,sceglie,Dallas,3,1,0.333,0.316,1.03
+the-dot-project,The Dot Project,Gallery,sceglie,  Moreton-In-Marsh,3,1,0.333,0.316,1.03
+galerie-wolfgang-jahn,Galerie Wolfgang Jahn,Gallery,sceglie,,3,1,0.333,0.316,1.03
+new-york-academy-of-art,New York Academy of Art,Institution,sceglie,New York ,3,1,0.333,0.316,1.03
+buchmann-galerie,Buchmann Galerie,Gallery,sceglie,Berlin,3,1,0.333,0.316,1.03
+japan-art-galerie-friedrich-mueller,Japan Art - Galerie Friedrich Mueller,Gallery,sceglie,Frankfurt am Main,3,1,0.333,0.316,1.03
+grieder-contemporary,Grieder Contemporary,Gallery,sceglie,Kusnacht,3,1,0.333,0.316,1.03
+toth-gallery,TOTH GALLERY,Gallery,sceglie,,3,1,0.333,0.316,1.03
+bam,BAM,Institution,sceglie,,3,1,0.333,0.316,1.03
+eternity-gallery,Eternity Gallery,Gallery,sceglie,Geneva,3,1,0.333,0.316,1.03
+spinello-projects,Spinello Projects,Gallery,sceglie,Miami,3,1,0.333,0.316,1.03
+spazio-nobile,Spazio Nobile,Gallery,sceglie,Brussels,3,1,0.333,0.316,1.03
+galerie-nikolaus-ruzicska,Galerie Nikolaus Ruzicska,Gallery,sceglie,Salzburg,3,1,0.333,0.316,1.03
+galerie-nachst-st-stephan-rosemarie-schwarzwalder,Galerie nächst St. Stephan Rosemarie Schwarzwälder,Gallery,sceglie,,3,1,0.333,0.316,1.03
+daniel-faria-gallery,Daniel Faria Gallery,Gallery,sceglie,Toronto,3,1,0.333,0.316,1.03
+ruttkowski-68,Ruttkowski;68,Gallery,sceglie,New York,3,1,0.333,0.316,1.03
+gallery-1957,Gallery 1957,Gallery,sceglie,,3,1,0.333,0.316,1.03
+galerie-ernst-hilger,Galerie Ernst Hilger,Gallery,sceglie,,3,1,0.333,0.316,1.03
+patel-brown,Patel Brown,Gallery,sceglie,Toronto,3,1,0.333,0.316,1.03
+hdm-gallery,HdM GALLERY,Gallery,sceglie,,3,1,0.333,0.316,1.03
+matthew-liu-fine-arts,Matthew Liu Fine Arts,Gallery,sceglie,,3,1,0.333,0.316,1.03
+new-orleans-museum-of-art,New Orleans Museum of Art,Institution,sceglie,New Orleans,3,1,0.333,0.316,1.03
+nyfa,NYFA,Institution,sceglie,,3,1,0.333,0.316,1.03
+newzones,Newzones,Gallery,sceglie,,3,1,0.333,0.316,1.03
+peter-frey-gallery,Peter Frey Gallery,Gallery,sceglie,Salzburg,3,1,0.333,0.316,1.03
+eclectica-contemporary,Eclectica Contemporary,Gallery,sceglie,,3,1,0.333,0.316,1.03
+andy-warhol-museum,Andy Warhol Museum,Institution,sceglie,Pittsburgh,3,1,0.333,0.316,1.03
+red-eight-gallery,Red Eight Gallery,Gallery,sceglie,London,3,1,0.333,0.316,1.03
+kristof-de-clercq-gallery,Kristof De Clercq Gallery,Gallery,sceglie,,3,1,0.333,0.316,1.03
+art-museum-of-the-chinese-university-of-hong-kong,Art Museum of the Chinese University of Hong Kong,Institution,sceglie,Hong Kong,3,1,0.333,0.316,1.03
+baterbys,Baterbys,Gallery,sceglie,Orlando,3,1,0.333,0.316,1.03
+galleria-punto-sullarte,Galleria Punto Sull'Arte,Gallery,sceglie,Varese,3,1,0.333,0.316,1.03
+wasserman-projects,Wasserman Projects,Gallery,sceglie,Detroit,3,1,0.333,0.316,1.03
+goodman-gallery,Goodman Gallery,Gallery,sceglie,,3,1,0.333,0.316,1.03
+shibunkaku,Shibunkaku,Gallery,sceglie,,3,1,0.333,0.316,1.03
+aicon-contemporary-1,Aicon Contemporary,Gallery,sceglie,New York,13,4,0.308,0.307,1.01
+tatjana-pieters,Tatjana Pieters,Gallery,sceglie,Kortrijk,10,3,0.3,0.302,0.99
+vigo-gallery,Vigo Gallery,Gallery,sceglie,,10,3,0.3,0.302,0.99
+anat-ebgi,Anat Ebgi,Gallery,sceglie,Los Angeles,20,6,0.3,0.301,0.99
+tracey-morgan-gallery,Tracey Morgan Gallery,Gallery,sceglie,Asheville,7,2,0.286,0.294,0.96
+larkin-durey,Larkin Durey,Gallery,sceglie,London,7,2,0.286,0.294,0.96
+perrotin,Perrotin,Gallery,sceglie,Paris,7,2,0.286,0.294,0.96
+national-museum-of-women-in-the-arts,National Museum of Women in the Arts,Institution,sceglie,Washington,7,2,0.286,0.294,0.96
+chart,CHART,Gallery,sceglie,New York,11,3,0.273,0.283,0.93
+new-discretions,New Discretions,Gallery,sceglie,Catskill,4,1,0.25,0.281,0.92
+galerie-knust-kunz,Galerie Knust Kunz,Gallery,sceglie,,4,1,0.25,0.281,0.92
+haines-gallery,Haines Gallery,Gallery,sceglie,San Francisco,4,1,0.25,0.281,0.92
+sharks-ink,Shark's Ink.,Gallery,sceglie,,4,1,0.25,0.281,0.92
+david-pluskwa,David Pluskwa,Gallery,sceglie,,4,1,0.25,0.281,0.92
+everard-read,Everard Read,Gallery,sceglie,,4,1,0.25,0.281,0.92
+oblong-contemporary,Oblong Contemporary,Gallery,sceglie,Dubai,4,1,0.25,0.281,0.92
+chambers-fine-art,Chambers Fine Art,Gallery,sceglie,New York,4,1,0.25,0.281,0.92
+richard-levy-gallery,Richard Levy Gallery,Gallery,sceglie,,4,1,0.25,0.281,0.92
+padiglione-darte-contemporanea-pac,Padiglione d'Arte Contemporanea (PAC),Institution,sceglie,Milan,4,1,0.25,0.281,0.92
+casa-triangulo,Casa Triângulo,Gallery,sceglie,,4,1,0.25,0.281,0.92
+off-the-wall-gallery,Off The Wall Gallery,Gallery,sceglie,Houston,4,1,0.25,0.281,0.92
+catto-gallery,Catto Gallery,Gallery,sceglie,,4,1,0.25,0.281,0.92
+traver-gallery,Traver Gallery,Gallery,sceglie,Seattle,4,1,0.25,0.281,0.92
+von-lintel-gallery,Von Lintel Gallery,Gallery,sceglie,Los Angeles,4,1,0.25,0.281,0.92
+contemporary-art-platform-kuwait,Contemporary Art Platform Kuwait,Institution,sceglie,Kuwait,4,1,0.25,0.281,0.92
+gail-severn-gallery,Gail Severn Gallery,Gallery,sceglie,Ketchum,4,1,0.25,0.281,0.92
+lisa-sette-gallery,Lisa Sette Gallery,Gallery,sceglie,Phoenix,8,2,0.25,0.271,0.89
+10-chancery-lane-gallery,10 Chancery Lane Gallery,Gallery,sceglie,,8,2,0.25,0.271,0.89
+galerie-ron-mandos,Galerie Ron Mandos,Gallery,sceglie,Amsterdam,8,2,0.25,0.271,0.89
+marion-gallery,Marion Gallery,Gallery,sceglie,Panamá,8,2,0.25,0.271,0.89
+tang-contemporary-art,Tang Contemporary Art,Gallery,sceglie,Beijing,40,10,0.25,0.256,0.84
+cmay-gallery,CMay Gallery,Gallery,sceglie,Los Angeles,1,0,0.0,0.255,0.83
+chisenhale-gallery,Chisenhale Gallery,Institution,sceglie,,1,0,0.0,0.255,0.83
+galerie-lilja-zakirova,Galerie Lilja Zakirova,Gallery,sceglie,Heusden,1,0,0.0,0.255,0.83
+liliana-bloch-gallery,Liliana Bloch Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+andriesse-eyck-galerie,andriesse eyck galerie,Gallery,sceglie,,1,0,0.0,0.255,0.83
+musee-du-quai-branly,Musée du quai Branly,Institution,sceglie,Paris,1,0,0.0,0.255,0.83
+aldo-castillo-gallery,Aldo Castillo Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galeria-contrast,Galeria Contrast,Gallery,sceglie,,1,0,0.0,0.255,0.83
+up-gallery,UP Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+pilar-serra,Pilar Serra,Gallery,sceglie,,1,0,0.0,0.255,0.83
+launch-la,LAUNCH LA,Institution,sceglie,Los Angeles,1,0,0.0,0.255,0.83
+galerie-voss,Galerie Voss,Gallery,sceglie,,1,0,0.0,0.255,0.83
+arteeast,ArteEast,Institution,sceglie,,1,0,0.0,0.255,0.83
+kolnischer-kunstverein,Kölnischer Kunstverein,Institution,sceglie,Cologne,1,0,0.0,0.255,0.83
+arsculture,ArsCulture,Institution,sceglie,,1,0,0.0,0.255,0.83
+galerie-brugier-rigail,Galerie Brugier-Rigail,Gallery,sceglie,Paris 03,1,0,0.0,0.255,0.83
+alvaro-alcazar,Álvaro Alcázar,Gallery,sceglie,Madrid,1,0,0.0,0.255,0.83
+galerie-fahid-taghavi,Galerie Fahid Taghavi,Gallery,sceglie,Geneva,1,0,0.0,0.255,0.83
+vart-space,V'Art Space,Gallery,sceglie,,1,0,0.0,0.255,0.83
+art-supermarket,Art Supermarket,Gallery,sceglie,Hong Kong,1,0,0.0,0.255,0.83
+hales,Hales,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+terreno-baldio,Terreno Baldío,Gallery,sceglie,,1,0,0.0,0.255,0.83
+uprise-art,Uprise Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+the-fame-collective-gallery,The Fame Collective Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+pictura-gallery,Pictura Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+trendy-gallery,Trendy Gallery,Gallery,sceglie,"299 Soi Charoen Nakhon 5 Charoen Nakhon Road  Khlong Ton Sai, Khlong San,Bangkok ",1,0,0.0,0.255,0.83
+rafael-perez-hernando-arte-contemporaneo,Rafael Pérez Hernando Arte Contemporáneo,Gallery,sceglie,Madrid ,1,0,0.0,0.255,0.83
+verena-kerfin-gallery,Verena Kerfin Gallery,Gallery,sceglie,Berlin,1,0,0.0,0.255,0.83
+mkg127,MKG127,Gallery,sceglie,Toronto,1,0,0.0,0.255,0.83
+bode,Bode,Gallery,sceglie,Berlin,1,0,0.0,0.255,0.83
+le-salon-vert,Le Salon Vert,Gallery,sceglie,Carouge,1,0,0.0,0.255,0.83
+gana-art,Gana Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+tokyo-international-gallery,Tokyo International Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+bkhz-gallery,BKhz Gallery,Gallery,sceglie,Johannesburg ,1,0,0.0,0.255,0.83
+galleria-13,Galleria 13,Gallery,sceglie,Reggio Emilia,1,0,0.0,0.255,0.83
+kaikai-kiki-gallery,Kaikai Kiki Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+dot-fiftyone-gallery,Dot Fiftyone Gallery,Gallery,sceglie,Miami,1,0,0.0,0.255,0.83
+topcos,TOPCOS,Gallery,sceglie,,1,0,0.0,0.255,0.83
+bernay-fine-art,Bernay Fine Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+artadia,Artadia,Institution,sceglie,,1,0,0.0,0.255,0.83
+dstassi-art,D'Stassi Art,Gallery,sceglie,London,1,0,0.0,0.255,0.83
+the-trinity-gallery,The Trinity Gallery,Gallery,sceglie,Seoul,1,0,0.0,0.255,0.83
+44309-slash-slash-gallery,44309//GALLERY,Gallery,sceglie,,1,0,0.0,0.255,0.83
+pdp-gallery,PDP Gallery,Gallery,sceglie,Pezenas,1,0,0.0,0.255,0.83
+morton-fine-art,Morton Fine Art,Gallery,sceglie,Washington DC,1,0,0.0,0.255,0.83
+bwa-warszawa,BWA Warszawa,Gallery,sceglie,Warsaw,1,0,0.0,0.255,0.83
+winfield-gallery,Winfield Gallery,Gallery,sceglie,Carmel-by-the-Sea,1,0,0.0,0.255,0.83
+henning-fine-art,Henning Fine Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+musee-du-luxembourg,Musée du Luxembourg,Institution,sceglie,Paris,1,0,0.0,0.255,0.83
+cca-andratx,CCA Andratx,Gallery,sceglie,Andratx,1,0,0.0,0.255,0.83
+rob-smeets-old-master-paintings,Rob Smeets Old Master Paintings,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galeria-jordi-barnadas,Galeria Jordi Barnadas,Gallery,sceglie,,1,0,0.0,0.255,0.83
+laurent-marthaler-contemporary,Laurent Marthaler Contemporary,Gallery,sceglie,,1,0,0.0,0.255,0.83
+anna-zorina-gallery,Anna Zorina Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galleria-doris-ghetta,Galleria Doris Ghetta,Gallery,sceglie,Milano,1,0,0.0,0.255,0.83
+galerie-von-and-von,GALERIE VON&VON,Gallery,sceglie,Nürnberg,1,0,0.0,0.255,0.83
+ff-1051-gallery,FF-1051 Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+detroit-institute-of-arts,Detroit Institute of Arts,Institution,sceglie,Detroit,1,0,0.0,0.255,0.83
+galeria-estacao,Galeria Estação,Gallery,sceglie,,1,0,0.0,0.255,0.83
+ellen-miller-gallery,Ellen Miller Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+looiersgracht-60,Looiersgracht 60,Institution,sceglie,Amsterdam,1,0,0.0,0.255,0.83
+lemos-de-sa-galeria,Lemos de Sá Galeria,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-bonheur,Galerie Bonheur,Gallery,sceglie,,1,0,0.0,0.255,0.83
+kapp-kapp,Kapp Kapp,Gallery,sceglie,Philadelphia,1,0,0.0,0.255,0.83
+galeria-miguel-nabinho,Galeria Miguel Nabinho,Gallery,sceglie,,1,0,0.0,0.255,0.83
+carbon-12,Carbon 12,Gallery,sceglie,,1,0,0.0,0.255,0.83
+whitehouse-gallery,Whitehouse Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-alain-marcelpoil,Galerie Alain Marcelpoil,Gallery,sceglie,,1,0,0.0,0.255,0.83
+oba-slash-art,OBA/ART,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-floss-and-schultz,Galerie Floss & Schultz,Gallery,sceglie,Cologne,1,0,0.0,0.255,0.83
+meierbach,Meierbach,Gallery,sceglie,Düsseldorf,1,0,0.0,0.255,0.83
+galerie-claire-corcia,Galerie Claire Corcia,Gallery,sceglie,75003,1,0,0.0,0.255,0.83
+galerie-kandlhofer,Galerie Kandlhofer,Gallery,sceglie,Vienna,1,0,0.0,0.255,0.83
+asya-geisberg-gallery,Asya Geisberg Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+rice-university-art-gallery,Rice University Art Gallery,Institution,sceglie,Houston,1,0,0.0,0.255,0.83
+chloe-gallery,Chloe Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+contemporary-arts-museum-houston,Contemporary Arts Museum Houston,Institution,sceglie,Houston,1,0,0.0,0.255,0.83
+dilecta-1,Dilecta,Gallery,sceglie,,1,0,0.0,0.255,0.83
+ellen-de-bruijne-projects,Ellen de Bruijne Projects,Gallery,sceglie,,1,0,0.0,0.255,0.83
+make-a-wish-uk,Make A Wish UK,Institution,sceglie,,1,0,0.0,0.255,0.83
+galerie-jo-van-de-loo,Galerie Jo van de Loo,Gallery,sceglie,Munich,1,0,0.0,0.255,0.83
+era-gallery,ERA Gallery,Gallery,sceglie,Milan,1,0,0.0,0.255,0.83
+detay-art-gallery,Detay Art Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+priveekollektie-contemporary-art-design,Priveekollektie Contemporary Art | Design,Gallery,sceglie,,1,0,0.0,0.255,0.83
+podgorny-gallery,Podgorny Gallery,Gallery,sceglie,Saint-Paul de Vence,1,0,0.0,0.255,0.83
+baga-06-art-gallery,Baga 06 Art Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-arcturus,Galerie Arcturus,Gallery,sceglie,,1,0,0.0,0.255,0.83
+beardsmore-gallery,Beardsmore Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+connecting-myanmar,Connecting Myanmar,Institution,sceglie,Hong Kong,1,0,0.0,0.255,0.83
+mucciaccia-gallery,Mucciaccia Gallery,Gallery,sceglie,Rome,1,0,0.0,0.255,0.83
+calm-and-punk-gallery-slash-gasbon-metabolism,CALM & PUNK GALLERY / GASBON METABOLISM,Gallery,sceglie,Shibuyaku,1,0,0.0,0.255,0.83
+nych-gallery,NYCH Gallery,Gallery,sceglie,Chicago,1,0,0.0,0.255,0.83
+artyli-dot-com,Artyli.com,Gallery,sceglie,,1,0,0.0,0.255,0.83
+j-lohmann-gallery,J. Lohmann Gallery,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+oooit-art,Oooit Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galeria-arteconsult,Galería Arteconsult,Gallery,sceglie,Panama City,1,0,0.0,0.255,0.83
+samuel-maenhoudt-gallery,Samuel Maenhoudt Gallery,Gallery,sceglie,Brussels,1,0,0.0,0.255,0.83
+gravis-art-project,Gravis Art Project,Gallery,sceglie,,1,0,0.0,0.255,0.83
+attollo-art,Attollo Art,Gallery,sceglie,London,1,0,0.0,0.255,0.83
+restelliartco,RestelliArtCo.,Gallery,sceglie,Roma,1,0,0.0,0.255,0.83
+lehmann-maupin,Lehmann Maupin,Gallery,sceglie,,1,0,0.0,0.255,0.83
+sade,SADE,Gallery,sceglie,Los Angeles,1,0,0.0,0.255,0.83
+feuer-slash-mesler,Feuer/Mesler,Gallery,sceglie,,1,0,0.0,0.255,0.83
+bahamas-biennale,Bahamas Biennale,Gallery,sceglie, detroit,1,0,0.0,0.255,0.83
+rule-gallery,Rule Gallery,Gallery,sceglie,Marfa,1,0,0.0,0.255,0.83
+musee-dorsay,Musée d'Orsay,Institution,sceglie,Paris,1,0,0.0,0.255,0.83
+jf-gallery,JF Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+laura-rathe-fine-art,Laura Rathe Fine Art,Gallery,sceglie,Houston,1,0,0.0,0.255,0.83
+makk-museum-fur-angewandte-kunst-koln,MAKK – Museum für Angewandte Kunst Köln,Institution,sceglie,Cologne,1,0,0.0,0.255,0.83
+mate,MATE,Institution,sceglie,Lima,1,0,0.0,0.255,0.83
+kunstgewerbemuseum,Kunstgewerbemuseum,Institution,sceglie,Berlin,1,0,0.0,0.255,0.83
+kornfeld-galerie-berlin,KORNFELD Galerie Berlin,Gallery,sceglie,,1,0,0.0,0.255,0.83
+gallery-211,Gallery 211,Gallery,sceglie,Gustavia,1,0,0.0,0.255,0.83
+izolyatsia,Izolyatsia,Institution,sceglie,,1,0,0.0,0.255,0.83
+provocateur-gallery,Provocateur Gallery,Gallery,sceglie,Park City,1,0,0.0,0.255,0.83
+taipei-fine-arts-museum,Taipei Fine Arts Museum,Institution,sceglie, Taipei City ,1,0,0.0,0.255,0.83
+space776,Space776,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+cindy-rucker-gallery,Cindy Rucker Gallery,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+galerie-fontana,Galerie Fontana,Gallery,sceglie,Brussels,1,0,0.0,0.255,0.83
+bentley-gallery,Bentley Gallery,Gallery,sceglie,Phoenix,1,0,0.0,0.255,0.83
+upstream-gallery,Upstream Gallery,Gallery,sceglie,Amsterdam,1,0,0.0,0.255,0.83
+western-front,Western Front,Institution,sceglie,Vancouver,1,0,0.0,0.255,0.83
+ro2-art,Ro2 Art,Gallery,sceglie,Dallas,1,0,0.0,0.255,0.83
+peter-robertson-gallery,Peter Robertson Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+wooson-gallery,Wooson Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+alexis-galleries,Alexis Galleries,Gallery,sceglie,,1,0,0.0,0.255,0.83
+louisimone-guirandou-gallery,LouiSimone Guirandou Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+dyman-gallery,Dyman Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+new-york-city-ballet,New York City Ballet,Institution,sceglie,New York ,1,0,0.0,0.255,0.83
+melanie-rio-fluency,MELANIE RIO FLUENCY,Gallery,sceglie,Nantes,1,0,0.0,0.255,0.83
+beatriz-esguerra-art,Beatriz Esguerra Art,Gallery,sceglie,Miami,1,0,0.0,0.255,0.83
+galleria-patricia-armocida,Galleria Patricia Armocida,Gallery,sceglie,Milan,1,0,0.0,0.255,0.83
+royal-scottish-academy,Royal Scottish Academy,Gallery,sceglie,Edinburgh,1,0,0.0,0.255,0.83
+los-angeles-center-of-photography,Los Angeles Center of Photography,Institution,sceglie,,1,0,0.0,0.255,0.83
+fotografiska-new-york,Fotografiska New York,Institution,sceglie,New York,1,0,0.0,0.255,0.83
+gbs-fine-art,GBS Fine Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+high-museum-of-art,High Museum of Art,Institution,sceglie,Atlanta,1,0,0.0,0.255,0.83
+julie-zener-gallery,Julie Zener Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+istanbul-modern,Istanbul Modern,Institution,sceglie,,1,0,0.0,0.255,0.83
+the-wende-museum,The Wende Museum,Institution,sceglie,,1,0,0.0,0.255,0.83
+gallery-common,Gallery Common,Gallery,sceglie,Tokyo,1,0,0.0,0.255,0.83
+artmenow,ArtMeNow!,Gallery,sceglie,,1,0,0.0,0.255,0.83
+thompson-landry-gallery,Thompson Landry Gallery,Gallery,sceglie,Toronto,1,0,0.0,0.255,0.83
+lily-pad-galleries,Lily Pad Galleries,Gallery,sceglie,Milwaukee,1,0,0.0,0.255,0.83
+tai-modern,TAI Modern,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+minus-space,Minus Space,Gallery,sceglie,Brooklyn,1,0,0.0,0.255,0.83
+gerald-peters-contemporary,Gerald Peters Contemporary,Gallery,sceglie,Santa Fe,1,0,0.0,0.255,0.83
+andra-norris-gallery,Andra Norris Gallery,Gallery,sceglie,Burlingame ,1,0,0.0,0.255,0.83
+bonner-david-galleries,Bonner David Galleries,Gallery,sceglie,Scottsdale,1,0,0.0,0.255,0.83
+ministry-of-nomads,MINISTRY OF NOMADS,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-a-and-r-fleury,Galerie A&R Fleury,Gallery,sceglie,Paris,1,0,0.0,0.255,0.83
+soho-revue,Soho Revue,Gallery,sceglie,London,1,0,0.0,0.255,0.83
+1969-gallery,1969 Gallery,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+movart,MOVART,Gallery,sceglie,Lisbon,1,0,0.0,0.255,0.83
+immagis-fine-arts,IMMAGIS FINE ARTS,Gallery,sceglie,,1,0,0.0,0.255,0.83
+craig-krull-gallery,Craig Krull Gallery,Gallery,sceglie,Santa Monica,1,0,0.0,0.255,0.83
+creatie-art,CREATIE ART,Gallery,sceglie,,1,0,0.0,0.255,0.83
+anonymous-gallery,Anonymous Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+fomu-photo-museum,FOMU - Photo Museum,Institution,sceglie,Antwerp,1,0,0.0,0.255,0.83
+maraya-art-centre,Maraya Art Centre,Institution,sceglie,Sharjah,1,0,0.0,0.255,0.83
+stigter-van-doesburg,Stigter Van Doesburg,Gallery,sceglie,,1,0,0.0,0.255,0.83
+firetti-contemporary,Firetti Contemporary,Gallery,sceglie,,1,0,0.0,0.255,0.83
+proyectos-monclova-gallery,Proyectos Monclova Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+mxm-galeria,MXM Galeria,Gallery,sceglie,,1,0,0.0,0.255,0.83
+akio-nagasawa-gallery,Akio Nagasawa Gallery,Gallery,sceglie, Tokyo,1,0,0.0,0.255,0.83
+jrb-art-at-the-elms,JRB Art at The Elms,Gallery,sceglie,Oklahoma City,1,0,0.0,0.255,0.83
+contemporary-by-angela-li,Contemporary by Angela Li,Gallery,sceglie,,1,0,0.0,0.255,0.83
+chateau-de-fontainebleau,Château de Fontainebleau,Institution,sceglie,Fontainebleau,1,0,0.0,0.255,0.83
+mana-contemporary,Mana Contemporary,Gallery,sceglie,Jersey City,1,0,0.0,0.255,0.83
+inliquid,InLiquid,Gallery,sceglie,,1,0,0.0,0.255,0.83
+rjd-gallery,RJD Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+anemona-editores,Anémona Editores,Gallery,sceglie,,1,0,0.0,0.255,0.83
+forwart-gallery-1,Forwart Gallery,Gallery,sceglie,Antwerp,1,0,0.0,0.255,0.83
+thaddaeus-ropac,Thaddaeus Ropac,Gallery,sceglie,,1,0,0.0,0.255,0.83
+willow-gallery,Willow Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+extraordinary-objects,EXTRAORDINARY OBJECTS,Gallery,sceglie,,1,0,0.0,0.255,0.83
+william-havu-gallery,William Havu Gallery,Gallery,sceglie,Denver,1,0,0.0,0.255,0.83
+savina-museum-of-contemporary-art,Savina Museum of Contemporary Art,Institution,sceglie,,1,0,0.0,0.255,0.83
+visual-artists-group,Visual Artists Group,Gallery,sceglie,Los Angeles,1,0,0.0,0.255,0.83
+artlabbe-gallery,ArtLabbé Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+aroundspace-gallery,AROUNDSPACE GALLERY,Gallery,sceglie,,1,0,0.0,0.255,0.83
+james-fuentes,James Fuentes,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+koelsch-gallery,Koelsch Gallery,Gallery,sceglie,houston,1,0,0.0,0.255,0.83
+sojourner,Sojourner,Gallery,sceglie,New York ,1,0,0.0,0.255,0.83
+maurice-verbaet-gallery,Maurice Verbaet Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+yang-gallery,Yang Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+casa-quien,Casa Quien,Gallery,sceglie,,1,0,0.0,0.255,0.83
+black-box-projects,Black Box Projects,Gallery,sceglie,,1,0,0.0,0.255,0.83
+circle-contemporary,Circle Contemporary,Gallery,sceglie,,1,0,0.0,0.255,0.83
+lyle-o-reitzel,Lyle O. Reitzel,Gallery,sceglie,,1,0,0.0,0.255,0.83
+gallerylabs,GALLERyLABs,Gallery,sceglie,Miami ,1,0,0.0,0.255,0.83
+talley-dunn-gallery,Talley Dunn Gallery,Gallery,sceglie,Dallas,1,0,0.0,0.255,0.83
+eisele-gallery-of-fine-art,Eisele Gallery of Fine Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+ground-floor-gallery,Ground Floor Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+clifton-benevento,Clifton Benevento,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+pbg-1,PBG,Gallery,sceglie,,1,0,0.0,0.255,0.83
+art-musings,Art Musings,Gallery,sceglie,Mumbai,1,0,0.0,0.255,0.83
+autographes-des-siecles,AUTOGRAPHES DES SIECLES,Gallery,sceglie,,1,0,0.0,0.255,0.83
+the-spaceless-gallery,The Spaceless Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-duret,Galerie Duret,Gallery,sceglie,,1,0,0.0,0.255,0.83
+primo-marella-gallery,Primo Marella Gallery,Gallery,sceglie,Milano,1,0,0.0,0.255,0.83
+gallery-38,Gallery 38,Gallery,sceglie,Shibuya-ku,1,0,0.0,0.255,0.83
+alfa-gallery,Alfa Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+intuit-the-center-for-intuitive-and-outsider-art,Intuit: The Center for Intuitive and Outsider Art,Institution,sceglie,Chicago,1,0,0.0,0.255,0.83
+set-espai-dart,SET ESPAI D'ART,Gallery,sceglie,,1,0,0.0,0.255,0.83
+villageoneart,VillageOneArt,Gallery,sceglie,,1,0,0.0,0.255,0.83
+baldoni-contemporary-art-and-design,Baldoni Contemporary Art & Design,Gallery,sceglie,Toledo,1,0,0.0,0.255,0.83
+london-zurich-art-holdings,London Zurich Art Holdings,Gallery,sceglie,,1,0,0.0,0.255,0.83
+red-arrow-gallery,Red Arrow Gallery,Gallery,sceglie,Nashville,1,0,0.0,0.255,0.83
+shanghart,ShanghART,Gallery,sceglie,,1,0,0.0,0.255,0.83
+myriam-nader-art-gallery,Myriam Nader Art Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+tinny-art-house,Tinny Art House,Gallery,sceglie,,1,0,0.0,0.255,0.83
+horus-gallery,Horus Gallery,Gallery,sceglie,Sint-Martens-Latem,1,0,0.0,0.255,0.83
+curio-tokyo-gallery,CURIO Tokyo Gallery,Gallery,sceglie,Tokyo,1,0,0.0,0.255,0.83
+rubine-red-gallery,Rubine Red Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-oriane-red-zone-arts,Galerie ORIANE (Red Zone arts),Gallery,sceglie,München,1,0,0.0,0.255,0.83
+artrue-gallery,Artrue Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+dam-projects,DAM Projects,Gallery,sceglie,Berlin ,1,0,0.0,0.255,0.83
+manabia-fine-arts,Manabia Fine Arts,Gallery,sceglie,,1,0,0.0,0.255,0.83
+bode-galerie,Bode Galerie,Gallery,sceglie,Nürnberg,1,0,0.0,0.255,0.83
+a-plus-b-gallery,A+B Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+berthold-pott,Berthold Pott,Gallery,sceglie,,1,0,0.0,0.255,0.83
+glenn-green-galleries,Glenn Green Galleries,Gallery,sceglie,Santa Fe,1,0,0.0,0.255,0.83
+deodato-arte,Deodato Arte,Gallery,sceglie,,1,0,0.0,0.255,0.83
+diana-lowenstein-gallery,Diana Lowenstein Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+maki,MAKI,Gallery,sceglie,,1,0,0.0,0.255,0.83
+la-bibi-gallery,LA BIBI GALLERY,Gallery,sceglie,,1,0,0.0,0.255,0.83
+m-fine-arts-galerie,M Fine Arts Galerie,Gallery,sceglie,Boston,1,0,0.0,0.255,0.83
+hill-art-foundation,Hill Art Foundation,Institution,sceglie,New York,1,0,0.0,0.255,0.83
+instantdreams,Instantdreams,Gallery,sceglie,Morongo Valley,1,0,0.0,0.255,0.83
+bis-oficina-de-proyectos,(bis) oficina de proyectos,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-myrtis,Galerie Myrtis,Gallery,sceglie,,1,0,0.0,0.255,0.83
+lysenko,Lysenko,Gallery,sceglie,,1,0,0.0,0.255,0.83
+triptych-art-gallery,Triptych Art Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+de-boer,de boer,Gallery,sceglie,Antwerp,1,0,0.0,0.255,0.83
+galerie-bacqueville,Galerie Bacqueville,Gallery,sceglie,,1,0,0.0,0.255,0.83
+kanbi-projects,Kanbi Projects,Gallery,sceglie,,1,0,0.0,0.255,0.83
+someday-gallery-closed,Someday Gallery [CLOSED],Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+taag-gallery,TAAG Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-xii,Galerie XII,Gallery,sceglie,,1,0,0.0,0.255,0.83
+bugno-art-gallery,Bugno Art Gallery,Gallery,sceglie,Venice,1,0,0.0,0.255,0.83
+mca-gallery-madlozi-contemporary-art,MCA Gallery - Madlozi Contemporary Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+zeno-x-gallery,Zeno X Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+cadogan-gallery,Cadogan Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+vohn-gallery,Vohn Gallery,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+krystel-ann-art,Krystel Ann Art,Gallery,sceglie,Lisbon,1,0,0.0,0.255,0.83
+11-columbia,11 Columbia,Gallery,sceglie,Monaco,1,0,0.0,0.255,0.83
+crossing-art,Crossing Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+the-chambers-project,The Chambers Project,Gallery,sceglie,,1,0,0.0,0.255,0.83
+dtth-gallery,DTTH Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+kouri-plus-corrao-gallery,Kouri + Corrao Gallery,Gallery,sceglie,Santa Fe,1,0,0.0,0.255,0.83
+galleri-opdahl,Galleri Opdahl,Gallery,sceglie,,1,0,0.0,0.255,0.83
+artmarket-gallery,Artmarket Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+markowicz-fine-art,Markowicz Fine Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+inception-gallery,Inception Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+brutto-gusto,Brutto Gusto,Gallery,sceglie,,1,0,0.0,0.255,0.83
+pierre-marie-giraud,Pierre Marie Giraud,Gallery,sceglie,Brussels,1,0,0.0,0.255,0.83
+saenger-galeria,Saenger Galería,Gallery,sceglie,Mexico City,1,0,0.0,0.255,0.83
+moises-valdes-gallery,Moises Valdes Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+the-walther-collection,The Walther Collection,Institution,sceglie,New York,1,0,0.0,0.255,0.83
+fuchs-projects,Fuchs Projects,Gallery,sceglie,Brooklyn,1,0,0.0,0.255,0.83
+zk-gallery,ZK Gallery,Gallery,sceglie,San Francisco,1,0,0.0,0.255,0.83
+swivel-gallery,Swivel Gallery,Gallery,sceglie,Brooklyn,1,0,0.0,0.255,0.83
+etage-projects,Etage Projects,Gallery,sceglie,,1,0,0.0,0.255,0.83
+gallery-nao-masaki,Gallery NAO MASAKI,Gallery,sceglie,,1,0,0.0,0.255,0.83
+accesso-galleria,Accesso Galleria,Gallery,sceglie,Pietrasanta (Lucca),1,0,0.0,0.255,0.83
+lightworks,LIGHTWORKS,Gallery,sceglie,,1,0,0.0,0.255,0.83
+c24-gallery,C24 Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+qode-art-space,QODE Art Space,Gallery,sceglie,,1,0,0.0,0.255,0.83
+cheryl-numark-fine-art,Cheryl Numark Fine Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+johansson-projects,Johansson Projects,Gallery,sceglie,Oakland,1,0,0.0,0.255,0.83
+chelsea-space,CHELSEA space,Institution,sceglie,London,1,0,0.0,0.255,0.83
+in-the-gallery,In The Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+sage-culture,Sage Culture,Gallery,sceglie,,1,0,0.0,0.255,0.83
+capitain-petzel-1,Capitain Petzel,Gallery,sceglie,,1,0,0.0,0.255,0.83
+durchgang,Durchgang,Gallery,sceglie,Basel,1,0,0.0,0.255,0.83
+museum-of-arts-and-design,Museum of Arts and Design,Institution,sceglie,New York,1,0,0.0,0.255,0.83
+1x1-art-gallery,1X1 Art Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+thomsen-gallery,Thomsen Gallery,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+rice-polak-gallery,Rice Polak Gallery,Gallery,sceglie,Provincetown,1,0,0.0,0.255,0.83
+taubert-contemporary,Taubert Contemporary,Gallery,sceglie,Berlin,1,0,0.0,0.255,0.83
+grounds-for-sculpture,Grounds For Sculpture,Institution,sceglie,Hamilton,1,0,0.0,0.255,0.83
+cuturi-gallery,Cuturi Gallery,Gallery,sceglie,Singapore,1,0,0.0,0.255,0.83
+veronique-bamps,Véronique Bamps,Gallery,sceglie,,1,0,0.0,0.255,0.83
+sladers-yard,Sladers Yard,Gallery,sceglie,Bridport,1,0,0.0,0.255,0.83
+galerie-da-end,Galerie DA-END,Gallery,sceglie,,1,0,0.0,0.255,0.83
+galerie-retelet,Galerie Retelet,Gallery,sceglie,,1,0,0.0,0.255,0.83
+icp-museum,ICP Museum,Institution,sceglie,New York,1,0,0.0,0.255,0.83
+hammelehle-und-ahrens,Hammelehle und Ahrens,Gallery,sceglie,,1,0,0.0,0.255,0.83
+ko,kó,Gallery,sceglie,,1,0,0.0,0.255,0.83
+redsea-gallery,REDSEA Gallery,Gallery,sceglie,Singapore ,1,0,0.0,0.255,0.83
+jaloe-art-gallery,Jaloe Art Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+meessen,Meessen,Gallery,sceglie,,1,0,0.0,0.255,0.83
+pdx-contemporary-art,PDX CONTEMPORARY ART,Gallery,sceglie,,1,0,0.0,0.255,0.83
+jeeum-gallery,Jeeum Gallery,Gallery,sceglie,Hong Kong,1,0,0.0,0.255,0.83
+aye-gallery,Aye Gallery,Gallery,sceglie,,1,0,0.0,0.255,0.83
+onishi-gallery,Onishi Gallery,Gallery,sceglie,New York,1,0,0.0,0.255,0.83
+donna-art,Donna Art,Gallery,sceglie,,1,0,0.0,0.255,0.83
+art-plus-nft-by-dtms,ART+NFT by DTMS,Gallery,sceglie,Washington,1,0,0.0,0.255,0.83
+southern-guild,Southern Guild,Gallery,sceglie,Los Angeles,1,0,0.0,0.255,0.83
+culturaldc,CulturalDC,Gallery,sceglie,Washington,1,0,0.0,0.255,0.83
+af-projects-slash-louise-alexander-gallery,AF Projects/Louise Alexander Gallery,Gallery,sceglie,Porto Cervo,5,1,0.2,0.253,0.83
+the-time-in-childrens-arts-initiative,The Time In Children's Arts Initiative,Institution,sceglie,,5,1,0.2,0.253,0.83
+subliminal-projects,Subliminal Projects,Gallery,sceglie,Los Angeles,5,1,0.2,0.253,0.83
+dopeness-art-lab,Dopeness Art Lab,Gallery,sceglie,,5,1,0.2,0.253,0.83
+christine-konig-galerie,Christine König Galerie,Gallery,sceglie,,5,1,0.2,0.253,0.83
+colombos-gallery,Colombo’s gallery,Gallery,sceglie,,5,1,0.2,0.253,0.83
+arc-fine-art-llc,ARC Fine Art LLC,Gallery,sceglie,,5,1,0.2,0.253,0.83
+collezione-maramotti,Collezione Maramotti,Institution,sceglie,Reggio Emilia,5,1,0.2,0.253,0.83
+alice-gallery,ALICE Gallery,Gallery,sceglie,Brussels,5,1,0.2,0.253,0.83
+tumo-gallery,Tumo Gallery,Gallery,sceglie,Vilnius,5,1,0.2,0.253,0.83
+jarilager-gallery,JARILAGER Gallery,Gallery,sceglie,,13,3,0.231,0.252,0.82
+x-museum,X Museum,Institution,sceglie,Beijing,9,2,0.222,0.252,0.82
+timothy-taylor,Timothy Taylor,Gallery,sceglie,London,9,2,0.222,0.252,0.82
+jd-malat-gallery,JD Malat Gallery,Gallery,sceglie,,9,2,0.222,0.252,0.82
+artaflo-collective-ltd,Artaflo Collective Ltd,Gallery,sceglie,,9,2,0.222,0.252,0.82
+corridor-contemporary,Corridor Contemporary,Gallery,sceglie,Palm Beach,17,4,0.235,0.251,0.82
+ethan-cohen-gallery,Ethan Cohen Gallery,Gallery,sceglie,,18,4,0.222,0.24,0.79
+v1-gallery,V1 Gallery,Gallery,sceglie,Copenhagen V,18,4,0.222,0.24,0.79
+christophe-guye-galerie,CHRISTOPHE GUYE GALERIE,Gallery,sceglie,Zurich,10,2,0.2,0.235,0.77
+alisan-fine-arts,Alisan Fine Arts,Gallery,sceglie,,10,2,0.2,0.235,0.77
+pasqui-galerie,Pasqui Galerie,Gallery,sceglie,,6,1,0.167,0.23,0.75
+linda-gallery,Linda Gallery,Gallery,sceglie,,6,1,0.167,0.23,0.75
+exclusive-urban-art,Exclusive Urban Art,Gallery,sceglie,Rome,6,1,0.167,0.23,0.75
+2b-art-gallery,2B Art Gallery,Gallery,sceglie,,6,1,0.167,0.23,0.75
+victoria-miro,Victoria Miro,Gallery,sceglie,,6,1,0.167,0.23,0.75
+qiao-space,Qiao Space,Institution,sceglie,,6,1,0.167,0.23,0.75
+public-gallery,Public Gallery,Gallery,sceglie,London,6,1,0.167,0.23,0.75
+euqinom-gallery-1,EUQINOM Gallery,Gallery,sceglie,San Francisco,2,0,0.0,0.218,0.71
+art-alive-gallery,Art Alive Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+kathryn-markel-fine-arts,Kathryn Markel Fine Arts,Gallery,sceglie,New York,2,0,0.0,0.218,0.71
+barakat-contemporary,Barakat Contemporary,Gallery,sceglie,Seoul,2,0,0.0,0.218,0.71
+flatland,FLATLAND,Gallery,sceglie,Amsterdam,2,0,0.0,0.218,0.71
+galerie-studer,Galerie Studer,Gallery,sceglie,Paris,2,0,0.0,0.218,0.71
+veta,VETA,Gallery,sceglie,Madrid,2,0,0.0,0.218,0.71
+east-wing,East Wing,Gallery,sceglie,,2,0,0.0,0.218,0.71
+pellas-gallery,Pellas Gallery,Gallery,sceglie,Boston,2,0,0.0,0.218,0.71
+coma,COMA,Gallery,sceglie,"Darlinghurst, Sydney",2,0,0.0,0.218,0.71
+latitude-gallery-new-york,LATITUDE Gallery New York,Gallery,sceglie,New York,2,0,0.0,0.218,0.71
+flux-factory,Flux Factory,Institution,sceglie,,2,0,0.0,0.218,0.71
+everyday-gallery,Everyday Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+montague-contemporary,Montague Contemporary,Gallery,sceglie,,2,0,0.0,0.218,0.71
+duarte-sequeira,Duarte Sequeira,Gallery,sceglie,Braga,2,0,0.0,0.218,0.71
+art-degypte,Art D'Egypte,Gallery,sceglie,,2,0,0.0,0.218,0.71
+bryce-wolkowitz-gallery,Bryce Wolkowitz Gallery,Gallery,sceglie,New York,2,0,0.0,0.218,0.71
+light-work,Light Work,Institution,sceglie,,2,0,0.0,0.218,0.71
+arts-of-life-circle-contemporary,Arts of Life Circle Contemporary,Gallery,sceglie,Glenview,2,0,0.0,0.218,0.71
+ma-doran-gallery,M.A. Doran Gallery,Gallery,sceglie,Tulsa,2,0,0.0,0.218,0.71
+museum-of-modern-art-dubrovnik,Museum of Modern Art Dubrovnik,Institution,sceglie,Dubrovnik,2,0,0.0,0.218,0.71
+micheko-galerie,Micheko Galerie,Gallery,sceglie,,2,0,0.0,0.218,0.71
+galerie-jacob-paulett,Galerie Jacob Paulett,Gallery,sceglie,PARIS,2,0,0.0,0.218,0.71
+rofa-projects,RoFa Projects,Gallery,sceglie,Kentlands Gaithersburg,2,0,0.0,0.218,0.71
+193-gallery,193 Gallery,Gallery,sceglie,Paris,2,0,0.0,0.218,0.71
+carwan-gallery,Carwan Gallery,Gallery,sceglie,Athens,2,0,0.0,0.218,0.71
+iomo-gallery,IOMO Gallery,Gallery,sceglie,Bucharest,2,0,0.0,0.218,0.71
+jane-hartsook-gallery,Jane Hartsook Gallery,Institution,sceglie,New York,2,0,0.0,0.218,0.71
+jill-george-gallery,Jill George Gallery,Gallery,sceglie,London,2,0,0.0,0.218,0.71
+galeria-marilia-razuk,Galeria Marília Razuk,Gallery,sceglie,,2,0,0.0,0.218,0.71
+joanne-artman-gallery,JoAnne Artman Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+oh-gallery,OH GALLERY,Gallery,sceglie,Dakar ,2,0,0.0,0.218,0.71
+laney-contemporary,Laney Contemporary,Gallery,sceglie,Savannah,2,0,0.0,0.218,0.71
+anima-mundi,Anima Mundi,Gallery,sceglie,St Ives,2,0,0.0,0.218,0.71
+nancy-toomey-fine-art,Nancy Toomey Fine Art,Gallery,sceglie,San Francisco,2,0,0.0,0.218,0.71
+blackbird-rook,Blackbird Rook,Gallery,sceglie,,2,0,0.0,0.218,0.71
+mckenzie-fine-art,McKenzie Fine Art,Gallery,sceglie,New York,2,0,0.0,0.218,0.71
+koplin-del-rio,Koplin Del Rio,Gallery,sceglie, Seattle,2,0,0.0,0.218,0.71
+gagliardi-e-domke,Gagliardi e Domke,Gallery,sceglie,,2,0,0.0,0.218,0.71
+karin-weber-gallery,Karin Weber Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+everyday-mooonday,EVERYDAY MOOONDAY,Gallery,sceglie,Seoul,2,0,0.0,0.218,0.71
+espace-lally,ESPACE LALLY,Gallery,sceglie,,2,0,0.0,0.218,0.71
+saatchi-yates,Saatchi Yates,Gallery,sceglie,New York,2,0,0.0,0.218,0.71
+thierry-goldberg-gallery,Thierry Goldberg Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+smack-mellon,Smack Mellon,Institution,sceglie,Brooklyn,2,0,0.0,0.218,0.71
+david-b-smith-gallery,David B. Smith Gallery,Gallery,sceglie,Denver,2,0,0.0,0.218,0.71
+louis-buhl-and-co,Louis Buhl & Co.,Gallery,sceglie,Detroit,2,0,0.0,0.218,0.71
+kunsthal-rotterdam,Kunsthal Rotterdam,Institution,sceglie,Rotterdam,2,0,0.0,0.218,0.71
+deep-space-gallery,Deep Space Gallery,Gallery,sceglie,Jersey City,2,0,0.0,0.218,0.71
+galerie-de-bellefeuille,Galerie de Bellefeuille,Gallery,sceglie,,2,0,0.0,0.218,0.71
+montague-gallery,Montague Gallery,Gallery,sceglie,San Francisco,2,0,0.0,0.218,0.71
+smithsonian-freer-and-sackler-galleries,Smithsonian Freer and Sackler Galleries,Institution,sceglie,Washington,2,0,0.0,0.218,0.71
+fousion-gallery,Fousion Gallery,Gallery,sceglie,Barcelona,2,0,0.0,0.218,0.71
+pilar-corrias-gallery,Pilar Corrias Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+half-gallery,Half Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+irwin-house-gallery,Irwin House Gallery,Gallery,sceglie,New York,2,0,0.0,0.218,0.71
+jean-marie-oger,Jean-Marie Oger,Gallery,sceglie,Paris,2,0,0.0,0.218,0.71
+quidley-and-company,Quidley & Company,Gallery,sceglie,,2,0,0.0,0.218,0.71
+walter-wickiser-gallery,Walter Wickiser Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+galleri-brandstrup,Galleri Brandstrup,Gallery,sceglie,,2,0,0.0,0.218,0.71
+galerie-markus-doebele,Galerie Markus Doebele,Gallery,sceglie,Dettelbach,2,0,0.0,0.218,0.71
+eye-for-art-houston,Eye For Art Houston,Gallery,sceglie,Sugarland,2,0,0.0,0.218,0.71
+sebastian-izzard-llc-asian-art,Sebastian Izzard LLC Asian Art,Gallery,sceglie,,2,0,0.0,0.218,0.71
+maya-frodeman-gallery,Maya Frodeman Gallery,Gallery,sceglie,Jackson Hole,2,0,0.0,0.218,0.71
+rhodes,Rhodes,Gallery,sceglie,,2,0,0.0,0.218,0.71
+bradley-ertaskiran,Bradley Ertaskiran,Gallery,sceglie,,2,0,0.0,0.218,0.71
+purdy-hicks-gallery,Purdy Hicks Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+feuteu,[FEUTEU],Gallery,sceglie,,2,0,0.0,0.218,0.71
+eastern-projects,Eastern Projects,Gallery,sceglie,Los Angeles ,2,0,0.0,0.218,0.71
+better-go-south,Better Go South,Gallery,sceglie,Stuttgart,2,0,0.0,0.218,0.71
+haw-contemporary,Haw Contemporary,Gallery,sceglie,Kansas City,2,0,0.0,0.218,0.71
+sun-art-space-gallery,Sun Art Space Gallery,Gallery,sceglie,Beijing,2,0,0.0,0.218,0.71
+galerie-commeter-slash-persiehl-and-heine,Galerie Commeter / Persiehl & Heine,Gallery,sceglie,,2,0,0.0,0.218,0.71
+bardola,bardoLA,Institution,sceglie,Venice,2,0,0.0,0.218,0.71
+lisson-gallery,Lisson Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+galeria-pelaires,Galería Pelaires,Gallery,sceglie,,2,0,0.0,0.218,0.71
+soemo-fine-arts,Soemo Fine Arts,Gallery,sceglie,,2,0,0.0,0.218,0.71
+a2z-art-gallery,A2Z Art Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+mitochondria,Mitochondria,Gallery,sceglie,Houston,2,0,0.0,0.218,0.71
+duran-contemporain,Duran Contemporain,Gallery,sceglie,,2,0,0.0,0.218,0.71
+the-white-room-gallery,THE WHITE ROOM GALLERY,Gallery,sceglie,East Hampton ,2,0,0.0,0.218,0.71
+pop-house-gallery,Pop House Gallery,Gallery,sceglie,Alberobello,2,0,0.0,0.218,0.71
+zawyeh-gallery,Zawyeh Gallery,Gallery,sceglie,Ramallah,2,0,0.0,0.218,0.71
+seefood-room,SEEFOOD ROOM,Gallery,sceglie,Hong Kong,2,0,0.0,0.218,0.71
+leonards-art,Leonards Art,Gallery,sceglie,,2,0,0.0,0.218,0.71
+rosenfeld-gallery,Rosenfeld Gallery,Gallery,sceglie,Tel-Aviv,2,0,0.0,0.218,0.71
+jehangir-nicholson-art-foundation,Jehangir Nicholson Art Foundation,Institution,sceglie,Mumbai,2,0,0.0,0.218,0.71
+seizan-gallery,SEIZAN Gallery,Gallery,sceglie,,2,0,0.0,0.218,0.71
+tomio-koyama-gallery,Tomio Koyama Gallery,Gallery,sceglie,,7,1,0.143,0.211,0.69
+aeroplastics,AEROPLASTICS,Gallery,sceglie,Brussels,7,1,0.143,0.211,0.69
+sundaram-tagore-gallery,Sundaram Tagore Gallery,Gallery,sceglie,Singapore,7,1,0.143,0.211,0.69
+new-image-art,New Image Art,Gallery,sceglie,West Hollywood,8,1,0.125,0.194,0.64
+lis10-gallery,LIS10 Gallery,Gallery,sceglie,,8,1,0.125,0.194,0.64
+downtown-for-democracy,Downtown for Democracy,Institution,sceglie,,3,0,0.0,0.191,0.62
+kunstverein-reutlingen,Kunstverein Reutlingen,Institution,sceglie,Reutlingen,3,0,0.0,0.191,0.62
+asia-society-hong-kong,Asia Society Hong Kong,Institution,sceglie,Admiralty ,3,0,0.0,0.191,0.62
+james-freeman-gallery,James Freeman Gallery,Gallery,sceglie,London,3,0,0.0,0.191,0.62
+c-grimaldis-gallery,C. Grimaldis Gallery,Gallery,sceglie,,3,0,0.0,0.191,0.62
+parlor-gallery,Parlor Gallery,Gallery,sceglie,Asbury Park,3,0,0.0,0.191,0.62
+william-turner-gallery,William Turner Gallery,Gallery,sceglie,Santa Monica,3,0,0.0,0.191,0.62
+moca-taipei,MOCA Taipei,Institution,sceglie,Taipei City,3,0,0.0,0.191,0.62
+galleria-ca-doro,Galleria Ca' d'Oro,Gallery,sceglie,,3,0,0.0,0.191,0.62
+paradigm-gallery-plus-studio,Paradigm Gallery + Studio,Gallery,sceglie,Philadelphia,3,0,0.0,0.191,0.62
+gallery-poulsen,Gallery Poulsen,Gallery,sceglie,Copenhagen,3,0,0.0,0.191,0.62
+artlife-gallery,ArtLife Gallery,Gallery,sceglie,Miami,3,0,0.0,0.191,0.62
+ode-to-art,Ode to Art,Gallery,sceglie,,3,0,0.0,0.191,0.62
+pangee,Pangée,Gallery,sceglie,Montreal,3,0,0.0,0.191,0.62
+pop-international-galleries,Pop International Galleries,Gallery,sceglie,New York,3,0,0.0,0.191,0.62
+hong-kong-contemporary-art,Hong Kong Contemporary Art,Institution,sceglie,,3,0,0.0,0.191,0.62
+ipreciation,iPreciation,Gallery,sceglie,,3,0,0.0,0.191,0.62
+waddington-custot-dubai,Waddington Custot Dubai,Gallery,sceglie,,3,0,0.0,0.191,0.62
+emami-art,Emami Art,Gallery,sceglie,,3,0,0.0,0.191,0.62
+almine-rech,Almine Rech,Gallery,sceglie,,3,0,0.0,0.191,0.62
+christopher-moller-gallery,Christopher Moller Gallery,Gallery,sceglie,Cape Town,3,0,0.0,0.191,0.62
+ooa-gallery,OOA GALLERY,Gallery,sceglie,,3,0,0.0,0.191,0.62
+galerie-coa,Galerie C.O.A,Gallery,sceglie,Montreal,3,0,0.0,0.191,0.62
+kumi-contemporary,Kumi Contemporary,Gallery,sceglie,London,3,0,0.0,0.191,0.62
+tufenkian-fine-arts,Tufenkian Fine Arts,Gallery,sceglie,Glendale,3,0,0.0,0.191,0.62
+shim-art-network,SHIM Art Network,Gallery,sceglie,,3,0,0.0,0.191,0.62
+madelyn-jordon-fine-art,Madelyn Jordon Fine Art,Gallery,sceglie,,3,0,0.0,0.191,0.62
+loft-art-gallery,Loft Art Gallery,Gallery,sceglie,,3,0,0.0,0.191,0.62
+biaggi-and-faure-fine-art,Biaggi & Faure Fine Art,Gallery,sceglie,San Juan,3,0,0.0,0.191,0.62
+gillian-jason-gallery,Gillian Jason Gallery,Gallery,sceglie,,3,0,0.0,0.191,0.62
+urban-spree-galerie,Urban Spree Galerie,Gallery,sceglie,Berlin,3,0,0.0,0.191,0.62
+the-sursock-museum,The Sursock Museum,Institution,sceglie,Beirut,3,0,0.0,0.191,0.62
+532-gallery-thomas-jaeckel,532 Gallery Thomas Jaeckel,Gallery,sceglie,,3,0,0.0,0.191,0.62
+omr,OMR,Gallery,sceglie,Mexico City,3,0,0.0,0.191,0.62
+bildhalle,Bildhalle,Gallery,sceglie,,3,0,0.0,0.191,0.62
+samuel-lynne-galleries,Samuel Lynne Galleries,Gallery,sceglie,,3,0,0.0,0.191,0.62
+scott-richards-contemporary-art,Scott Richards Contemporary Art,Gallery,sceglie,San Francisco,3,0,0.0,0.191,0.62
+liang-yi-museum,Liang Yi Museum,Institution,sceglie,Hong Kong,3,0,0.0,0.191,0.62
+eye-of-the-huntress,Eye of the Huntress,Gallery,sceglie,,3,0,0.0,0.191,0.62
+animazing-gallery,Animazing Gallery,Gallery,sceglie,Las Vegas,3,0,0.0,0.191,0.62
+galerie-bayart,Galerie Bayart,Gallery,sceglie,Le Plessis-Brion,3,0,0.0,0.191,0.62
+gallery-joeun,Gallery Joeun,Gallery,sceglie,,3,0,0.0,0.191,0.62
+gallery-henoch,Gallery Henoch,Gallery,sceglie,New York,3,0,0.0,0.191,0.62
+galerie-dumonteil,Galerie Dumonteil,Gallery,sceglie,,3,0,0.0,0.191,0.62
+ruth-borchard-collection,Ruth Borchard Collection,Institution,sceglie,,3,0,0.0,0.191,0.62
+galerie-tamenaga,Galerie Taménaga,Gallery,sceglie,,3,0,0.0,0.191,0.62
+diehl-gallery,Diehl Gallery,Gallery,sceglie,Jackson,3,0,0.0,0.191,0.62
+galerie-masurel,Galerie Masurel,Gallery,sceglie,,3,0,0.0,0.191,0.62
+megumi-ogita-gallery,Megumi Ogita Gallery,Gallery,sceglie,,3,0,0.0,0.191,0.62
+floren-gallery,Floren Gallery,Gallery,sceglie,,3,0,0.0,0.191,0.62
+mizuma-and-kips,Mizuma & Kips,Gallery,sceglie,,3,0,0.0,0.191,0.62
+japan-society,Japan Society,Institution,sceglie,New York,3,0,0.0,0.191,0.62
+plus-one-projects,PLUS-ONE Projects,Gallery,sceglie,,3,0,0.0,0.191,0.62
+autograph,Autograph,Gallery,sceglie,,3,0,0.0,0.191,0.62
+ojiri-gallery,Ojiri Gallery,Gallery,sceglie,London,3,0,0.0,0.191,0.62
+the-hole,The Hole,Gallery,sceglie,New York,75,13,0.173,0.182,0.59
+cfhill,CFHILL,Gallery,sceglie,Stockholm,15,2,0.133,0.176,0.58
+anthony-gallery-2,Anthony Gallery,Gallery,sceglie,Chicago,15,2,0.133,0.176,0.58
+gallery-lvs,Gallery LVS,Gallery,sceglie,Seoul,4,0,0.0,0.17,0.56
+ed-cross-fine-art,Ed Cross Fine Art,Gallery,sceglie,London,4,0,0.0,0.17,0.56
+childrens-museum-of-the-arts,Children's Museum of the Arts,Institution,sceglie,,4,0,0.0,0.17,0.56
+afikaris,AFIKARIS,Gallery,sceglie,,4,0,0.0,0.17,0.56
+galerie-hussenot,Galerie Hussenot,Gallery,sceglie,Paris,4,0,0.0,0.17,0.56
+efie-gallery,Efiɛ Gallery,Gallery,sceglie,London,4,0,0.0,0.17,0.56
+mamoth,Mamoth,Gallery,sceglie,London,4,0,0.0,0.17,0.56
+zidoun-bossuyt,Zidoun-Bossuyt,Gallery,sceglie,Luxembourg,4,0,0.0,0.17,0.56
+bel-air-fine-art,Bel-Air Fine Art,Gallery,sceglie,,4,0,0.0,0.17,0.56
+circle-culture,Circle Culture,Gallery,sceglie,,4,0,0.0,0.17,0.56
+the-hourglass-gallery,The Hourglass Gallery,Gallery,sceglie,Lagos,4,0,0.0,0.17,0.56
+willas-contemporary,WILLAS contemporary,Gallery,sceglie,,4,0,0.0,0.17,0.56
+maune-contemporary,Maune Contemporary,Gallery,sceglie,,4,0,0.0,0.17,0.56
+casey-kaplan,Casey Kaplan,Gallery,sceglie,New York,4,0,0.0,0.17,0.56
+superposition,Superposition,Gallery,sceglie,Sag Harbor,4,0,0.0,0.17,0.56
+art-lead-her,Art Lead Her,Institution,sceglie,,4,0,0.0,0.17,0.56
+anno-domini,ANNO DOMINI,Gallery,sceglie,San Jose,4,0,0.0,0.17,0.56
+aurum-gallery,AURUM GALLERY,Gallery,sceglie,,4,0,0.0,0.17,0.56
+metaphysical-art-gallery,Metaphysical Art Gallery,Gallery,sceglie,Taipei,4,0,0.0,0.17,0.56
+sabrina-amrani,Sabrina Amrani,Gallery,sceglie,Madrid,4,0,0.0,0.17,0.56
+mazel-galerie,Mazel Galerie,Gallery,sceglie,,4,0,0.0,0.17,0.56
+richard-beavers-gallery,Richard Beavers Gallery,Gallery,sceglie,Brooklyn,4,0,0.0,0.17,0.56
+the-art-dose,The Art Dose,Gallery,sceglie,,4,0,0.0,0.17,0.56
+nextstreet-gallery,NextStreet Gallery,Gallery,sceglie,,4,0,0.0,0.17,0.56
+national-gallery-singapore,National Gallery Singapore,Institution,sceglie,Singapore,4,0,0.0,0.17,0.56
+museum-dhondt-dhaenens,Museum Dhondt-Dhaenens,Institution,sceglie,Deurle,4,0,0.0,0.17,0.56
+saatchi-gallery,Saatchi Gallery,Institution,sceglie,London,16,2,0.125,0.168,0.55
+ebony-slash-curated,EBONY/CURATED,Gallery,sceglie,,10,1,0.1,0.168,0.55
+art-for-change,ART FOR CHANGE,Gallery,sceglie,,17,2,0.118,0.16,0.52
+kantor-gallery,Kantor Gallery,Gallery,sceglie,,11,1,0.091,0.158,0.52
+ross-sutton-gallery,Ross-Sutton Gallery,Gallery,sceglie,Venice,18,2,0.111,0.153,0.5
+cynthia-corbett-gallery,Cynthia Corbett Gallery,Gallery,sceglie,London ,5,0,0.0,0.153,0.5
+virginia-museum-of-contemporary-art,Virginia Museum of Contemporary Art,Institution,sceglie,Virginia Beach,5,0,0.0,0.153,0.5
+koki-arts,KOKI ARTS,Gallery,sceglie,Tokyo,5,0,0.0,0.153,0.5
+sies-plus-hoke-1,Sies + Höke,Gallery,sceglie,Düsseldorf,5,0,0.0,0.153,0.5
+maruani-mercier-gallery,MARUANI MERCIER GALLERY,Gallery,sceglie,,5,0,0.0,0.153,0.5
+choi-and-choi,CHOI&CHOI,Gallery,sceglie,Seoul,5,0,0.0,0.153,0.5
+addison-slash-ripley-fine-art,Addison/Ripley Fine Art,Gallery,sceglie,Washington,5,0,0.0,0.153,0.5
+cohle-gallery,Cohle Gallery,Gallery,sceglie,PARIS,5,0,0.0,0.153,0.5
+mirus-gallery,Mirus Gallery,Gallery,sceglie,Denver,5,0,0.0,0.153,0.5
+artioli-findlay,Artioli Findlay,Gallery,sceglie,,5,0,0.0,0.153,0.5
+samuel-owen-gallery,Samuel Owen Gallery,Gallery,sceglie,Nantucket,5,0,0.0,0.153,0.5
+janet-rady-fine-art,Janet Rady Fine Art,Gallery,sceglie,,5,0,0.0,0.153,0.5
+moosey,Moosey,Gallery,sceglie,London,5,0,0.0,0.153,0.5
+joshua-liner-gallery,Joshua Liner Gallery,Gallery,sceglie,New York,12,1,0.083,0.149,0.49
+hofa-gallery-house-of-fine-art,HOFA Gallery (House of Fine Art),Gallery,sceglie,,19,2,0.105,0.147,0.48
+harpers,Harper's,Gallery,sceglie,East Hampton,47,6,0.128,0.145,0.47
+unit,Unit,Gallery,sceglie,London,40,5,0.125,0.145,0.47
+jonathan-levine-projects,Jonathan LeVine Projects,Gallery,sceglie,,6,0,0.0,0.139,0.45
+mindy-solomon-gallery,Mindy Solomon Gallery,Gallery,sceglie,Miami,6,0,0.0,0.139,0.45
+galleri-christoffer-egelund,Galleri Christoffer Egelund,Gallery,sceglie,Copenhagen,6,0,0.0,0.139,0.45
+zemack-contemporary-art,Zemack Contemporary Art,Gallery,sceglie,,6,0,0.0,0.139,0.45
+kotaro-nukaga,KOTARO NUKAGA,Gallery,sceglie,,6,0,0.0,0.139,0.45
+ota-fine-arts,Ota Fine Arts,Gallery,sceglie,Singapore,6,0,0.0,0.139,0.45
+gilman-contemporary,Gilman Contemporary,Gallery,sceglie,,6,0,0.0,0.139,0.45
+gallery-192,Gallery 192,Gallery,sceglie,,6,0,0.0,0.139,0.45
+maddox-gallery,Maddox Gallery,Gallery,sceglie,London,6,0,0.0,0.139,0.45
+plan-x,PLAN X,Gallery,sceglie,Milan,6,0,0.0,0.139,0.45
+l-plus-slash-lucie-chang-fine-arts,L+/ Lucie Chang Fine Arts,Gallery,sceglie,,6,0,0.0,0.139,0.45
+cob,Cob,Gallery,sceglie,London ,14,1,0.071,0.133,0.44
+danysz-gallery,Danysz Gallery,Gallery,sceglie,Paris,14,1,0.071,0.133,0.44
+hashimoto-contemporary,Hashimoto Contemporary,Gallery,sceglie,San Francisco,14,1,0.071,0.133,0.44
+3-white-dots,3 White Dots,Gallery,sceglie,,37,4,0.108,0.132,0.43
+andrea-festa,Andrea Festa,Gallery,sceglie,,7,0,0.0,0.127,0.42
+sullivan-plus-strumpf,Sullivan+Strumpf,Gallery,sceglie,"Zetland, Sydney",7,0,0.0,0.127,0.42
+vail-international-gallery,Vail International Gallery,Gallery,sceglie,,8,0,0.0,0.117,0.38
+dolby-chadwick-gallery,Dolby Chadwick Gallery,Gallery,sceglie,,9,0,0.0,0.109,0.36
+richard-heller-gallery,Richard Heller Gallery,Gallery,sceglie,Santa Monica,10,0,0.0,0.102,0.33
+volery-gallery,Volery Gallery,Gallery,sceglie,Dubai,10,0,0.0,0.102,0.33
+beyond-the-streets,BEYOND THE STREETS,Gallery,sceglie,London,30,2,0.067,0.101,0.33
+preiss-fine-arts,Preiss Fine Arts,Gallery,sceglie,Vienna,11,0,0.0,0.095,0.31
+ross-plus-co-gallery,Ross + Co. Gallery,Gallery,sceglie,,22,1,0.045,0.094,0.31
+gr-gallery,GR Gallery,Gallery,sceglie,,23,1,0.043,0.09,0.3
+dorothy-circus-gallery,Dorothy Circus Gallery,Gallery,sceglie,,12,0,0.0,0.09,0.29
+kristin-hjellegjerde-gallery,Kristin Hjellegjerde Gallery,Gallery,sceglie,London,12,0,0.0,0.09,0.29
+stolenspace-gallery,StolenSpace Gallery,Gallery,sceglie,London,13,0,0.0,0.085,0.28
+woaw,Woaw,Gallery,sceglie,Hong Kong,28,1,0.036,0.077,0.25
+over-the-influence,Over the Influence,Gallery,sceglie,,21,0,0.0,0.059,0.19
+end-to-end-gallery,End to End Gallery,Gallery,sceglie,,21,0,0.0,0.059,0.19
+pm-slash-am,PM/AM,Gallery,sceglie,London,24,0,0.0,0.053,0.17

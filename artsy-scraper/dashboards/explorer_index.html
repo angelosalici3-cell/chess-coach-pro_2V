@@ -1,0 +1,729 @@
+<meta name="dash-one-writer">
+<meta name="dash-form" content="dashboard">
+<style>
+  .ex { display: flex; flex-direction: column; gap: var(--cds-gap-lg); }
+  .ex h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; }
+  .ex h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+  .ex p { margin: 0; max-width: 78ch; line-height: 1.5; }
+  .ex-muted { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .ex-panel { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-md); min-width: 0; }
+  .ex-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: var(--cds-gap-md); }
+  .ex-f { display: flex; flex-direction: column; gap: 4px; min-width: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .ex-f input[type=text], .ex-f input[type=number], .ex-f input[type=search] { font: inherit; font-size: 15px; color: var(--color-fg); padding: 6px 8px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); width: 100%; }
+  .ex-f input[type=range] { width: 100%; accent-color: var(--color-fg); }
+  .ex-row2 { display: flex; gap: 6px; }
+  .ex-checks { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--color-fg); font-size: 14px; }
+  .ex-checks label { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .ex-actions { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; }
+  .ex-btn { font: inherit; font-size: 14px; padding: 6px 12px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); cursor: pointer; }
+  .ex-btn:hover { border-color: var(--color-fg-muted); }
+  .ex-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--cds-gap-md); }
+  .ex-tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md) var(--cds-pad-lg); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .ex-tile b { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 1.9rem; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .ex-grid2 { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--cds-gap-lg); }
+  @media (max-width: 860px) { .ex-grid2 { grid-template-columns: minmax(0, 1fr); } }
+  .ex-chart { position: relative; height: 380px; }
+  .ex-chart canvas, .ex-chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .ex-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: 6px 8px; font-size: 13px; max-width: 260px; z-index: 2; }
+  .ex-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; }
+  .ex-legend span::before { content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; background: var(--c); vertical-align: -1px; }
+  .ex-bars { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+  .ex-bar { display: grid; grid-template-columns: 110px minmax(0, 1fr) 56px; gap: 8px; align-items: center; }
+  .ex-bar i { display: block; height: 12px; border-radius: 3px; }
+  .ex-bar em { font-style: normal; text-align: right; font-variant-numeric: tabular-nums; }
+  .ex-tablewrap { overflow: auto; max-height: 640px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+  .ex-table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .ex-table th { position: sticky; top: 0; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: 8px; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; cursor: pointer; user-select: none; }
+  .ex-table th.ex-sorted { color: var(--color-fg); }
+  .ex-table td { padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .ex-table td.ex-wrap { white-space: normal; min-width: 180px; }
+  .ex-table tr { cursor: pointer; }
+  .ex-table tbody tr:hover { background: color-mix(in srgb, var(--color-fg) 5%, transparent); }
+  .ex-n { text-align: right; }
+  .ex-table:not(.g-pub) .c-pub, .ex-table:not(.g-mkt) .c-mkt, .ex-table:not(.g-eco) .c-eco, .ex-table:not(.g-syn) .c-syn { display: none; }
+  .ex-pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--color-border-line); }
+  .ex-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: var(--cds-gap-lg); }
+  @media (max-width: 860px) { .ex-detail { grid-template-columns: minmax(0, 1fr); } }
+  .ex-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; font-size: 14px; margin: 0; }
+  .ex-facts dt { color: var(--color-fg-muted); }
+  .ex-facts dd { margin: 0; }
+  .ex-lots { position: relative; height: 300px; }
+</style>
+
+<div class="ex">
+  <header id="intro" style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
+    <h1>Esploratore artisti</h1>
+    <p lang="it" data-read>Tutti i dati del radar in una pagina: <b data-draw="t-all" data-source="kpi_all" data-field="n" data-row="0">—</b> artisti con almeno 100 follower su Artsy. Ogni filtro aggiorna subito tabella, grafici e conteggi; clicca un artista per vedere le sue opere vendute all'asta. In fondo, <a href="#fiuto">gli artisti delle sedi con fiuto</a> con le opere in vendita adesso.</p>
+  </header>
+
+  <section class="ex-panel" id="filters" aria-label="Filtri">
+    <div class="ex-filters">
+      <label class="ex-f">Cerca nome, paese o galleria<input type="search" id="f-q" placeholder="es. Kwade, Italian, Gagosian"></label>
+      <label class="ex-f">Nazionalità<select class="dash-select" id="f-nat" data-draw="f-nat" data-source="matrix" aria-label="Nazionalità"></select></label>
+      <div class="ex-f">Età<div class="ex-row2"><input type="number" id="f-age-min" placeholder="da" min="0" max="120" aria-label="Età minima"><input type="number" id="f-age-max" placeholder="a" min="0" max="120" aria-label="Età massima"></div></div>
+      <label class="ex-f">Punteggio di sintesi minimo: <output id="f-score-out">0</output><input type="range" id="f-score" min="0" max="100" step="1" value="0"></label>
+      <label class="ex-f">Prezzo a 1 m² massimo (USD)<input type="number" id="f-p1m2" min="0" step="1000" placeholder="nessun limite"></label>
+      <label class="ex-f">Prezzo mediano 10 anni massimo (USD)<input type="number" id="f-pmed" min="0" step="1000" placeholder="nessun limite"></label>
+      <label class="ex-f">Follower Instagram minimi<input type="number" id="f-ig" min="0" step="1000" placeholder="0"></label>
+      <label class="ex-f">Collezioni museali minime<input type="number" id="f-mus" min="0" step="1" placeholder="0"></label>
+    </div>
+    <div class="ex-f">Quadrante
+      <div class="ex-checks">
+        <label><input type="checkbox" class="f-quad" value="insider" checked> Insider</label>
+        <label><input type="checkbox" class="f-quad" value="emerging" checked> Emergenti</label>
+        <label><input type="checkbox" class="f-quad" value="hype" checked> Hype</label>
+        <label><input type="checkbox" class="f-quad" value="established" checked> Affermati</label>
+      </div>
+    </div>
+    <div class="ex-checks">
+      <label><input type="checkbox" id="f-living" checked> Solo artisti in vita</label>
+      <label><input type="checkbox" id="f-gallery"> Con una grande galleria</label>
+      <label><input type="checkbox" id="f-proven"> Ha venduto un'opera sopra 100.000 USD</label>
+      <label><input type="checkbox" id="f-ig-has"> Con Instagram</label>
+      <label><input type="checkbox" id="f-buy"> Candidati sotto 5.000 €</label>
+      <label><input type="checkbox" id="f-pick"> Solo i 10 che compreremmo</label>
+      <label><input type="checkbox" id="f-net"> Esposto dal 2023 da sedi con fiuto</label>
+    </div>
+    <div class="ex-actions">
+      <button type="button" class="ex-btn" id="f-reset">Azzera i filtri</button>
+      <span class="ex-muted">Colonne:</span>
+      <div class="ex-checks">
+        <label><input type="checkbox" class="f-col" value="g-syn" checked> Sintesi</label>
+        <label><input type="checkbox" class="f-col" value="g-pub" checked> Pubblico</label>
+        <label><input type="checkbox" class="f-col" value="g-mkt" checked> Mercato</label>
+        <label><input type="checkbox" class="f-col" value="g-eco"> Gallerie e musei</label>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-tiles" id="kpis">
+    <div class="ex-tile"><span class="ex-muted">Artisti filtrati</span><b class="dash-skeleton" data-draw="k-n" data-source="kpi" data-field="n" data-row="0">—</b></div>
+    <div class="ex-tile"><span class="ex-muted">Di cui insider</span><b class="dash-skeleton" data-draw="k-ins" data-source="kpi" data-field="insider" data-row="0">—</b></div>
+    <div class="ex-tile"><span class="ex-muted">Prezzo mediano, 10 anni (USD)</span><b class="dash-skeleton" data-draw="k-med" data-source="kpi" data-field="median_price" data-row="0">—</b></div>
+    <div class="ex-tile"><span class="ex-muted">Prezzo a 1 m² mediano (USD)</span><b class="dash-skeleton" data-draw="k-m2" data-source="kpi" data-field="median_1m2" data-row="0">—</b></div>
+    <div class="ex-tile"><span class="ex-muted">Con Instagram</span><b class="dash-skeleton" data-draw="k-ig" data-source="kpi" data-field="with_ig" data-row="0">—</b></div>
+  </section>
+
+  <div class="ex-grid2">
+    <section class="ex-panel" id="scatter-card">
+      <h2>Ogni punto è un artista</h2>
+      <div class="ex-actions">
+        <label class="ex-f" style="flex-direction:row;align-items:center;gap:6px">Orizzontale
+          <select class="dash-select" id="f-x" aria-label="Asse orizzontale">
+            <option value="expert_pct">Riconoscimento esperti (percentile)</option>
+            <option value="interest_pct">Interesse combinato (percentile)</option>
+            <option value="public_pct">Notorietà pubblica (percentile)</option>
+            <option value="score_synthesis">Punteggio di sintesi</option>
+          </select></label>
+        <label class="ex-f" style="flex-direction:row;align-items:center;gap:6px">Verticale
+          <select class="dash-select" id="f-y" aria-label="Asse verticale">
+            <option value="median_usd_10y">Prezzo mediano 10 anni</option>
+            <option value="price_1m2_usd">Prezzo a 1 m²</option>
+            <option value="max_lot_usd">Opera più cara</option>
+            <option value="ig_followers">Follower Instagram</option>
+            <option value="artsy_followers">Follower Artsy</option>
+          </select></label>
+      </div>
+      <div class="ex-chart" data-draw="scatter" data-source="filtered"></div>
+      <div class="ex-legend">
+        <span style="--c:var(--ex-c0)">Insider</span><span style="--c:var(--ex-c1)">Emergenti</span><span style="--c:var(--ex-c2)">Hype</span><span style="--c:var(--ex-c3)">Affermati</span>
+      </div>
+      <p class="ex-muted">Scala logaritmica in verticale. Si vedono solo gli artisti che hanno il dato scelto; clicca un punto per aprirne la scheda.</p>
+    </section>
+    <section class="ex-panel" id="mix-card">
+      <h2>Composizione del gruppo</h2>
+      <p class="ex-muted">Per quadrante</p>
+      <div class="ex-bars" data-draw="bars-quad" data-source="filtered"></div>
+      <p class="ex-muted">Prime 8 nazionalità</p>
+      <div class="ex-bars" data-draw="bars-nat" data-source="filtered"></div>
+    </section>
+  </div>
+
+  <section class="ex-panel" id="detail" hidden>
+    <div class="ex-actions" style="justify-content:space-between"><h2 data-draw="d-name">—</h2><button type="button" class="ex-btn" id="d-close">Chiudi scheda</button></div>
+    <div class="ex-detail">
+      <dl class="ex-facts" data-draw="d-facts"></dl>
+      <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+        <p class="ex-muted">Opere vendute all'asta negli ultimi 10 anni (fino a 40): un punto per opera, grande come la sua superficie</p>
+        <div class="ex-lots" data-draw="d-lots" data-source="lots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-panel" id="table-card">
+    <div class="ex-actions" style="justify-content:space-between">
+      <h2>Elenco</h2>
+      <span class="ex-muted" data-draw="t-count">—</span>
+    </div>
+    <div class="ex-tablewrap">
+      <table class="ex-table g-syn g-pub g-mkt" data-source="filtered" data-row-key="slug">
+        <thead><tr>
+          <th data-field="name" data-sort="name">Artista</th>
+          <th data-field="quadrant" data-sort="quadrant">Quadrante</th>
+          <th class="ex-n" data-field="age" data-sort="age">Età</th>
+          <th data-field="nationality" data-sort="nationality">Paese</th>
+          <th class="ex-n c-syn" data-field="score_synthesis" data-sort="score_synthesis">Sintesi</th>
+          <th class="ex-n c-syn" data-field="expert_score" data-sort="expert_score">Punteggio esperti</th>
+          <th class="ex-n c-pub" data-field="artsy_followers" data-sort="artsy_followers">Follower Artsy</th>
+          <th class="ex-n c-pub" data-field="ig_followers" data-sort="ig_followers">Follower Instagram</th>
+          <th class="ex-n c-mkt" data-field="median_usd_10y" data-sort="median_usd_10y">Prezzo mediano 10 anni (USD)</th>
+          <th class="ex-n c-mkt" data-field="price_1m2_usd" data-sort="price_1m2_usd">Prezzo a 1 m² (USD)</th>
+          <th class="ex-n c-mkt" data-field="max_lot_usd" data-sort="max_lot_usd">Opera più cara (USD)</th>
+          <th class="ex-n c-mkt" data-field="lots_sold_10y" data-sort="lots_sold_10y">Lotti venduti, 10 anni</th>
+          <th class="ex-n c-mkt" data-field="sell_through_10y" data-sort="sell_through_10y">% venduti</th>
+          <th class="ex-n c-mkt" data-field="price_to_estimate_last3y" data-sort="price_to_estimate_last3y">Prezzo/stima</th>
+          <th class="ex-n c-eco" data-field="museum_collections" data-sort="museum_collections">Musei</th>
+          <th class="ex-n c-eco" data-field="biennials" data-sort="biennials">Biennali</th>
+          <th class="c-eco" data-field="top_galleries" data-sort="top_galleries">Grandi gallerie</th>
+          <th class="c-eco" data-field="net_track_names" data-sort="net_track_venues">Sedi con fiuto, dal 2023</th>
+        </tr></thead>
+        <tbody data-draw="rows"></tbody>
+      </table>
+    </div>
+    <div class="ex-actions"><button type="button" class="ex-btn" id="t-more">Mostra altri 200</button><span class="ex-muted">Clicca l'intestazione di una colonna per ordinare; un secondo clic inverte l'ordine.</span></div>
+  </section>
+
+
+  <section class="ex-panel" id="aste">
+    <h2>In asta adesso</h2>
+    <p lang="it" data-read>Opere dei 50 artisti che compreremmo e dei 10 scelti sotto 5.000 € in aste aperte su Artsy o già annunciate dalle case d'asta: <b data-draw="au-n" data-source="au_kpi" data-field="lots" data-row="0">—</b> lotti, controllo del <b data-draw="au-date" data-source="auctions" data-field="checked" data-row="0">—</b>. L'elenco si aggiorna ogni tre giorni.</p>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="auctions" data-row-key="key">
+        <thead><tr>
+          <th data-field="date">Data</th>
+          <th data-field="artist">Artista</th>
+          <th data-field="title">Opera</th>
+          <th data-field="category">Tipo</th>
+          <th data-field="auction_house">Casa d'asta</th>
+          <th data-field="sale">Asta</th>
+          <th data-field="lot">Lotto</th>
+          <th data-field="estimate">Stima</th>
+          <th data-field="current_bid">Offerta attuale</th>
+          <th data-field="first_seen">Segnalato il</th>
+        </tr></thead>
+        <tbody data-draw="au-rows"></tbody>
+      </table>
+    </div>
+    <p class="ex-muted">La stima è il prezzo martello atteso; chi compra paga in più la commissione della casa d'asta, di solito tra il 20 e il 28%, più eventuali tasse. Il prezzo minimo sotto cui l'opera non si vende (la riserva) è riservato e di norma non supera la stima bassa. Segnalazioni da verificare, non consigli di investimento.</p>
+  </section>
+
+  <section class="ex-panel" id="fiuto">
+    <h2>Gli artisti delle sedi con fiuto</h2>
+    <p lang="it" data-read>Le <b data-draw="fv-nv" data-source="fv_kpi" data-field="venues" data-row="0">—</b> gallerie e istituzioni che tra il 2015 e il 2022 hanno esposto per prime artisti poi diventati insider o affermati. Per le gallerie elenchiamo gli artisti che rappresentano oggi su Artsy, per musei e spazi chi hanno esposto dal 2023: in tutto <b data-draw="fv-na" data-source="fv_kpi" data-field="artists" data-row="0">—</b> artisti, di cui <b data-draw="fv-ns" data-source="fv_kpi" data-field="with_sale" data-row="0">—</b> con opere in vendita su Artsy adesso.</p>
+    <h2 id="fiuto-picks">I 50 che compreremmo</h2>
+    <p lang="it" data-read>Scelti senza guardare i punteggi del radar: artisti in vita non affermati, fino a 55 anni, non ancora cari (asta e prezzi di listino fino a 50.000 USD) e acquistabili. Li ordiniamo per sostegno curatoriale: quante sedi con fiuto li espongono e quanto fiuto hanno, poi biennali e collezioni museali. Clicca un nome per vederne le opere in vendita.</p>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="fiuto_picks" data-row-key="slug">
+        <thead><tr>
+          <th class="ex-n" data-field="rank">#</th>
+          <th data-field="name">Artista</th>
+          <th data-field="quadrant">Quadrante</th>
+          <th class="ex-n" data-field="age">Età</th>
+          <th data-field="nationality">Paese</th>
+          <th class="ex-n" data-field="backing">Sostegno</th>
+          <th data-field="why">Perché</th>
+        </tr></thead>
+        <tbody data-draw="fv-picks"></tbody>
+      </table>
+    </div>
+    <h2>Tutti gli artisti delle sedi con fiuto</h2>
+    <div class="ex-filters">
+      <label class="ex-f">Sede<select class="dash-select" id="fv-venue" data-draw="fv-venue" data-source="fiuto_venues" aria-label="Sede"></select></label>
+      <label class="ex-f">Quadrante<select class="dash-select" id="fv-quad" aria-label="Quadrante">
+        <option value="">Tutti</option><option value="insider">Insider</option><option value="emerging">Emergenti</option><option value="hype">Hype</option><option value="established">Affermati</option><option value="none">Non nel radar</option></select></label>
+      <label class="ex-f">Prezzo massimo di un'opera in vendita (USD)<input type="number" id="fv-pmax" min="0" step="1000" placeholder="nessun limite"></label>
+      <label class="ex-f">Cerca artista<input type="search" id="fv-q" placeholder="nome"></label>
+    </div>
+    <div class="ex-checks">
+      <label><input type="checkbox" id="fv-rep"> Solo artisti rappresentati</label>
+      <label><input type="checkbox" id="fv-living" checked> Solo artisti in vita</label>
+      <label><input type="checkbox" id="fv-sale"> Solo con opere in vendita</label>
+      <label><input type="checkbox" id="fv-uniq" checked> Solo opere uniche (niente stampe, poster, libri)</label>
+    </div>
+    <span class="ex-muted" data-draw="fv-count">—</span>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="fiuto_f" data-row-key="slug">
+        <thead><tr>
+          <th data-field="name">Artista</th>
+          <th data-field="venues">Sedi con fiuto</th>
+          <th data-field="represented">Rapporto</th>
+          <th data-field="quadrant">Quadrante</th>
+          <th class="ex-n" data-field="age">Età</th>
+          <th class="ex-n" data-field="score_synthesis">Sintesi</th>
+          <th class="ex-n" data-field="expert_score">Punteggio esperti</th>
+          <th class="ex-n" data-field="museum_collections">Musei</th>
+          <th class="ex-n" data-field="median_usd_10y">Asta, mediano 10 anni (USD)</th>
+          <th class="ex-n" data-field="works_for_sale">Opere in vendita</th>
+          <th class="ex-n" data-field="min_price_usd">Opera unica da (USD)</th>
+        </tr></thead>
+        <tbody data-draw="fv-rows"></tbody>
+      </table>
+    </div>
+    <h2 id="fiuto-works">Opere in vendita</h2>
+    <p class="ex-muted" data-draw="fv-wtitle">—</p>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="fiuto_w" data-row-key="slug">
+        <thead><tr>
+          <th data-field="artist_name">Artista</th>
+          <th data-field="title">Opera</th>
+          <th data-field="date">Anno</th>
+          <th data-field="category">Tipo</th>
+          <th data-field="medium">Tecnica</th>
+          <th data-field="dimensions_cm">Misure</th>
+          <th class="ex-n" data-field="price_usd">Prezzo (USD)</th>
+          <th data-field="sale_message">Prezzo indicato</th>
+          <th data-field="seller">Venditore</th>
+        </tr></thead>
+        <tbody data-draw="fv-works"></tbody>
+      </table>
+    </div>
+    <p class="ex-muted">Fonte Artsy, novembre 2026: fino a 20 opere in vendita per artista, di qualsiasi venditore. «Opera unica da» è il prezzo più basso tra dipinti, sculture, disegni, fotografie e tecniche miste in vendita. Molte gallerie scrivono «prezzo su richiesta»: senza prezzo l'opera resta in elenco ma non passa il filtro di prezzo. Prezzi convertiti in USD al cambio medio 2025–2026. Clicca un artista per vedere solo le sue opere e aprirne la scheda.</p>
+  </section>
+
+  <details id="notes">
+    <summary>Da dove vengono i dati</summary>
+    <ul lang="it" class="ex-muted" style="line-height:1.6">
+      <li>Artsy (artisti, mostre, musei, fiere, aste e listini), Wikidata e Wikipedia; account Instagram cercati sul web per 2.527 insider ed emergenti e per i primi 300 della sintesi. Dati raccolti nel novembre 2026.</li>
+      <li>Prezzi d'asta degli ultimi 10 anni, in USD verificati lotto per lotto. Prezzo a 1 m² = prezzo riportato a un dipinto o un'opera su carta di 1 m², per artisti con almeno 3 opere di misura nota.</li>
+      <li>Sedi con fiuto: gallerie e istituzioni che tra il 2015 e il 2022 hanno esposto artisti ancora emergenti o hype poi diventati insider o affermati, almeno 3 volte e con frequenza almeno 1,3 volte la media (fiere, stamperie e rivenditori esclusi). Valgono il 10% del punteggio di sintesi, solo come bonus.</li>
+      <li>Quadranti della lettura storica: chi ha venduto un'opera sopra 100.000 USD non è più emergente. Punteggio di sintesi solo per artisti in vita con almeno 3 opere vendute.</li>
+      <li>Candidati sotto 5.000 €: artisti in vita non affermati, fino a 60 anni, con almeno 2 opere uniche vendute all'asta a 5.000 € o meno negli ultimi 3 anni e mercato sano. Esempi da approfondire, non consigli di investimento.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+{
+  const DEF = { q: '', nat: '', age_min: '', age_max: '', score_min: 0, p1m2_max: '', pmed_max: '', ig_min: '', mus_min: '',
+    quad: ['insider', 'emerging', 'hype', 'established'], living: true, gallery: false, proven: false, ig_has: false, buy: false, pick: false, net: false,
+    sort: 'score_synthesis', dir: 'desc', artist: '' };
+  window.EX_P = () => Object.assign({}, DEF, dash.params());
+  const num = (v) => (v === '' || v == null || isNaN(+v) ? null : +v);
+  window.EX_num = num;
+  dash.calc('filtered', {
+    inputs: ['matrix', 'buylist'], title: 'Artisti filtrati', description: 'La matrice dopo i filtri scelti sulla pagina, nell\'ordine scelto',
+    fn: (matrix, buylist) => {
+      const p = Object.assign({}, DEF, dash.params());
+      const buy = new Map(buylist.map((b) => [b.slug, b]));
+      const q = (p.q || '').trim().toLowerCase();
+      const quads = new Set(p.quad || []);
+      const n = (v) => (v === '' || v == null || isNaN(+v) ? null : +v);
+      const ok = (r) => (r.eligible_synthesis === '1' ? r : Object.assign({}, r, { score_synthesis: '' }));  // score only where the radar computes it
+      const out = matrix.map(ok).filter((r) => {
+        if (!quads.has(r.quadrant)) return false;
+        if (p.living && r.living !== '1') return false;
+        if (p.nat && r.nationality !== p.nat) return false;
+        if (q && !(`${r.name} ${r.nationality} ${r.top_galleries}`.toLowerCase().includes(q))) return false;
+        const age = n(r.age);
+        if (n(p.age_min) != null && (age == null || age < +p.age_min)) return false;
+        if (n(p.age_max) != null && (age == null || age > +p.age_max)) return false;
+        if (+p.score_min > 0 && !(n(r.score_synthesis) >= +p.score_min)) return false;
+        if (n(p.p1m2_max) != null && !(n(r.price_1m2_usd) != null && +r.price_1m2_usd <= +p.p1m2_max)) return false;
+        if (n(p.pmed_max) != null && !(n(r.median_usd_10y) != null && +r.median_usd_10y <= +p.pmed_max)) return false;
+        if (n(p.ig_min) != null && !((n(r.ig_followers) || 0) >= +p.ig_min)) return false;
+        if (n(p.mus_min) != null && !((n(r.museum_collections) || 0) >= +p.mus_min)) return false;
+        if (p.gallery && !(+r.top_gallery_count > 0)) return false;
+        if (p.proven && !r.market_proven_year) return false;
+        if (p.ig_has && !(r.ig_handle || r.instagram)) return false;
+        if (p.buy && !buy.has(r.slug)) return false;
+        if (p.pick && !(buy.get(r.slug) || {}).pick_tier) return false;
+        if (p.net && !(+r.net_track_venues > 0)) return false;
+        return true;
+      }).map((r) => Object.assign({}, r, { buy_tier: (buy.get(r.slug) || {}).pick_tier || (buy.has(r.slug) ? 'candidato' : '') }));
+      const key = p.sort, sgn = p.dir === 'asc' ? 1 : -1;
+      const txt = ['name', 'quadrant', 'nationality', 'top_galleries'].includes(key);
+      out.sort((a, b) => {
+        if (txt) return sgn * String(a[key] || '').localeCompare(String(b[key] || ''));
+        const x = n(a[key]), y = n(b[key]);
+        if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
+        return sgn * (x - y);
+      });
+      return out;
+    },
+  });
+  const med = (rows, k) => { const v = rows.map((r) => +r[k]).filter((x) => r_ok(x)); return v.length ? Math.round(d3.median(v)) : null; };
+  const r_ok = (x) => Number.isFinite(x) && x > 0;
+  dash.calc('kpi', {
+    inputs: ['filtered'], title: 'Riepilogo del gruppo filtrato', description: 'Conteggi e mediane degli artisti filtrati',
+    fn: (filtered) => [{ n: filtered.length, insider: filtered.filter((r) => r.quadrant === 'insider').length,
+      median_price: med(filtered, 'median_usd_10y'), median_1m2: med(filtered, 'price_1m2_usd'),
+      with_ig: filtered.filter((r) => r.ig_followers).length }],
+  });
+  dash.calc('kpi_all', { inputs: ['matrix'], title: 'Artisti nella matrice', description: 'Numero di righe della matrice', fn: (matrix) => [{ n: matrix.length }] });
+}
+</script>
+
+<script>
+{
+  const F = d3.formatLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['', ' USD'] });
+  const fmt = F.format(',d'), dec1 = F.format(',.1f'), dec2 = F.format(',.2f');
+  const short = (v) => (v >= 1e6 ? dec1(v / 1e6) + ' M' : v >= 1e4 ? fmt(Math.round(v / 1e3)) + 'K' : fmt(Math.round(v)));
+  window.EX_fmt = { fmt, dec1, dec2, short };
+  const QL = { insider: 'Insider', emerging: 'Emergente', hype: 'Hype', established: 'Affermato' };
+  const QI = { insider: 0, emerging: 1, hype: 2, established: 3 };
+  window.EX_Q = { QL, QI };
+  const one = (name, src, field, f) => dash.draw(name, (el) => {
+    const d = dash.data(src);
+    if (d.status === 'loading') return;
+    el.classList.remove('dash-skeleton');
+    el.textContent = d.status === 'ok' && d.data && d.data[0] && d.data[0][field] != null ? f(d.data[0][field]) : '—';
+  });
+  one('t-all', 'kpi_all', 'n', fmt);
+  one('k-n', 'kpi', 'n', fmt); one('k-ins', 'kpi', 'insider', fmt); one('k-med', 'kpi', 'median_price', fmt);
+  one('k-m2', 'kpi', 'median_1m2', fmt); one('k-ig', 'kpi', 'with_ig', fmt);
+
+  dash.draw('f-nat', (sel) => {
+    const d = dash.data('matrix');
+    const counts = d.status === 'ok' ? d3.rollups(d.data.filter((r) => r.nationality), (v) => v.length, (r) => r.nationality).sort((a, b) => b[1] - a[1]) : [];
+    sel.replaceChildren(new Option('Tutte', ''), ...counts.map(([k, n]) => new Option(`${k} (${fmt(n)})`, k)));
+    sel.value = window.EX_P().nat || '';
+    sel.onchange = () => dash.setParams({ nat: sel.value });
+  });
+
+  // colours resolved for canvas
+  const colorOf = (el, i) => { const s = document.createElement('span'); s.style.color = dash.colors[i % dash.colors.length]; el.append(s); const c = getComputedStyle(s).color; s.remove(); return c; };
+  document.querySelectorAll('.ex').forEach((ex) => { [0, 1, 2, 3].forEach((i) => ex.style.setProperty(`--ex-c${i}`, dash.colors[i % dash.colors.length])); });
+
+  dash.draw('scatter', {
+    mount: (el) => {
+      const cv = document.createElement('canvas'); const svg = d3.create('svg').attr('role', 'img').attr('aria-label', 'Grafico a dispersione degli artisti filtrati').node();
+      const tip = document.createElement('div'); tip.className = 'ex-tip'; tip.hidden = true;
+      el.replaceChildren(cv, svg, tip);
+      return { cv, svg, tip };
+    },
+    update: (el, m) => {
+      const d = dash.data('filtered');
+      if (d.status !== 'ok') { return; }
+      const p = window.EX_P();
+      const xk = document.querySelector('#f-x')?.value || 'expert_pct', yk = document.querySelector('#f-y')?.value || 'median_usd_10y';
+      const pts = d.data.map((r) => ({ r, x: +r[xk], y: +r[yk] })).filter((o) => r_fin(o.x) && o.y > 0);
+      const W = el.clientWidth, H = el.clientHeight, dpr = window.devicePixelRatio || 1;
+      const M = { l: 58, r: 12, t: 10, b: 30 };
+      m.cv.width = W * dpr; m.cv.height = H * dpr;
+      const xs = d3.scaleLinear().domain(pts.length ? d3.extent(pts, (o) => o.x) : [0, 100]).nice().range([M.l, W - M.r]);
+      const ys = d3.scaleLog().domain(pts.length ? d3.extent(pts, (o) => o.y) : [1, 10]).nice().range([H - M.b, M.t]).clamp(true);
+      const svg = d3.select(m.svg).attr('viewBox', `0 0 ${W} ${H}`);
+      svg.selectAll('*').remove();
+      const ax = svg.append('g').attr('transform', `translate(0,${H - M.b})`).call(d3.axisBottom(xs).ticks(W < 500 ? 4 : 8));
+      const ay = svg.append('g').attr('transform', `translate(${M.l},0)`).call(d3.axisLeft(ys).ticks(5, (v) => window.EX_fmt.short(v)));
+      svg.selectAll('.tick text').style('fill', 'var(--cds-text-secondary)').style('font-size', '12px');
+      svg.selectAll('.domain, .tick line').style('stroke', 'var(--cds-chart-axis)');
+      const ctx = m.cv.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+      const cols = [0, 1, 2, 3].map((i) => colorOf(el, i));
+      const sel = p.artist;
+      ctx.globalAlpha = pts.length > 4000 ? 0.35 : 0.6;
+      for (const o of pts) { o.px = xs(o.x); o.py = ys(o.y); ctx.fillStyle = cols[QI[o.r.quadrant] ?? 1]; ctx.beginPath(); ctx.arc(o.px, o.py, 2.6, 0, 7); ctx.fill(); }
+      ctx.globalAlpha = 1;
+      const hit = pts.find((o) => o.r.slug === sel);
+      if (hit) { ctx.strokeStyle = getComputedStyle(el).color; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(hit.px, hit.py, 7, 0, 7); ctx.stroke(); }
+      const qt = d3.quadtree(pts, (o) => o.px, (o) => o.py);
+      m.svg.onmousemove = (e) => {
+        const b = m.svg.getBoundingClientRect(); const o = qt.find(e.clientX - b.left, e.clientY - b.top, 12);
+        if (!o) { m.tip.hidden = true; return; }
+        m.tip.hidden = false; m.tip.replaceChildren();
+        const t = document.createElement('b'); t.textContent = o.r.name; const s = document.createElement('div');
+        s.textContent = `${QL[o.r.quadrant] || ''} · ${o.r.nationality || ''} · ${document.querySelector('#f-y')?.selectedOptions[0]?.textContent || ''}: ${window.EX_fmt.fmt(o.y)}`;
+        m.tip.append(t, s);
+        m.tip.style.left = Math.min(o.px + 12, W - 230) + 'px'; m.tip.style.top = Math.max(o.py - 40, 0) + 'px';
+      };
+      m.svg.onmouseleave = () => { m.tip.hidden = true; };
+      m.svg.onclick = (e) => { const b = m.svg.getBoundingClientRect(); const o = qt.find(e.clientX - b.left, e.clientY - b.top, 12); if (o) dash.setParams({ artist: o.r.slug }); };
+      if (!pts.length) { svg.append('text').attr('x', W / 2).attr('y', H / 2).attr('text-anchor', 'middle').style('fill', 'var(--color-fg-muted)').text('Nessun artista con questo dato nei filtri scelti'); }
+    },
+  });
+  const r_fin = (x) => Number.isFinite(x);
+
+  const bars = (name, keyFn, labelFn, colorFn, top) => dash.draw(name, (el) => {
+    const d = dash.data('filtered');
+    if (d.status !== 'ok') return;
+    let g = d3.rollups(d.data, (v) => v.length, keyFn).filter(([k]) => k).sort((a, b) => b[1] - a[1]);
+    if (top) g = g.slice(0, top);
+    const mx = d3.max(g, (x) => x[1]) || 1;
+    el.replaceChildren(...g.map(([k, n]) => {
+      const row = document.createElement('div'); row.className = 'ex-bar';
+      const l = document.createElement('span'); l.textContent = labelFn(k);
+      const i = document.createElement('i'); i.style.width = `${(100 * n) / mx}%`; i.style.background = colorFn(k);
+      const v = document.createElement('em'); v.textContent = fmt(n);
+      const w = document.createElement('div'); w.append(i);
+      row.append(l, w, v); return row;
+    }));
+    if (!g.length) { const p = document.createElement('p'); p.className = 'ex-muted'; p.textContent = 'Nessun artista'; el.replaceChildren(p); }
+  });
+  bars('bars-quad', (r) => r.quadrant, (k) => QL[k] || k, (k) => dash.colors[(QI[k] ?? 1) % dash.colors.length]);
+  bars('bars-nat', (r) => r.nationality, (k) => k, () => 'var(--cds-chart-muted)', 8);
+}
+</script>
+
+<script>
+{
+  const { fmt, dec1, dec2 } = window.EX_fmt; const { QL } = window.EX_Q;
+  let limit = 200;
+  dash.draw('t-count', (el) => {
+    const d = dash.data('filtered');
+    if (d.status !== 'ok') return;
+    el.textContent = `${fmt(d.data.length)} artisti, mostrati i primi ${fmt(Math.min(limit, d.data.length))}`;
+  });
+  dash.draw('rows', (tb) => {
+    const d = dash.data('filtered');
+    if (d.status === 'error') { const tr = document.createElement('tr'); const td = document.createElement('td'); td.colSpan = 18; td.textContent = 'I dati non si sono caricati.'; tr.append(td); tb.replaceChildren(tr); return; }
+    if (d.status !== 'ok') return;
+    const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; x.textContent = t == null || t === '' ? '—' : t; return x; };
+    const n = (v, f) => (v === '' || v == null ? '—' : f(+v));
+    const sel = window.EX_P().artist;
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessun artista corrisponde ai filtri.'); c.colSpan = 18; tr.append(c); tb.replaceChildren(tr); return; }
+    tb.replaceChildren(...d.data.slice(0, limit).map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
+      if (r.slug === sel) tr.style.background = 'color-mix(in srgb, var(--color-fg) 9%, transparent)';
+      tr.onclick = () => dash.setParams({ artist: r.slug });
+      const name = document.createElement('td'); name.textContent = r.name;
+      if (r.buy_tier) { const s = document.createElement('span'); s.className = 'ex-pill'; s.style.marginLeft = '6px'; s.textContent = r.buy_tier === 'candidato' ? '< 5.000 €' : 'Da comprare'; name.append(s); }
+      tr.append(name, td(QL[r.quadrant] || r.quadrant), td(r.age, 'ex-n'), td(r.nationality),
+        td(n(r.score_synthesis, dec1), 'ex-n c-syn'), td(n(r.expert_score, fmt), 'ex-n c-syn'),
+        td(n(r.artsy_followers, fmt), 'ex-n c-pub'), td(n(r.ig_followers, fmt), 'ex-n c-pub'),
+        td(n(r.median_usd_10y, fmt), 'ex-n c-mkt'), td(n(r.price_1m2_usd, fmt), 'ex-n c-mkt'), td(n(r.max_lot_usd, fmt), 'ex-n c-mkt'),
+        td(n(r.lots_sold_10y, fmt), 'ex-n c-mkt'), td(n(r.sell_through_10y, dec1), 'ex-n c-mkt'), td(n(r.price_to_estimate_last3y, dec2), 'ex-n c-mkt'),
+        td(n(r.museum_collections, fmt), 'ex-n c-eco'), td(n(r.biennials, fmt), 'ex-n c-eco'), td(r.top_galleries, 'c-eco ex-wrap'), td(r.net_track_names, 'c-eco ex-wrap'));
+      return tr;
+    }));
+  });
+  document.querySelectorAll('#t-more').forEach((b) => b.addEventListener('click', () => { limit += 200; dash.draw('rows'); dash.draw('t-count'); }));
+  const markSort = () => { const p = window.EX_P(); document.querySelectorAll('.ex-table th[data-sort]').forEach((th) => { th.classList.toggle('ex-sorted', th.dataset.sort === p.sort); th.setAttribute('aria-sort', th.dataset.sort === p.sort ? (p.dir === 'asc' ? 'ascending' : 'descending') : 'none'); }); };
+  document.querySelectorAll('.ex-table th[data-sort]').forEach((th) => th.addEventListener('click', () => {
+    const p = window.EX_P(); const k = th.dataset.sort;
+    const txt = ['name', 'quadrant', 'nationality', 'top_galleries'].includes(k);
+    dash.setParams({ sort: k, dir: p.sort === k ? (p.dir === 'asc' ? 'desc' : 'asc') : (txt ? 'asc' : 'desc') });
+    limit = 200; markSort();
+  }));
+  markSort();
+
+  // detail
+  dash.onData(() => { const a = window.EX_P().artist; document.querySelectorAll('#detail').forEach((s) => { s.hidden = !a; }); });
+  const row = () => { const d = dash.data('matrix'); const a = window.EX_P().artist; return d.status === 'ok' && a ? d.data.find((r) => r.slug === a) : null; };
+  dash.draw('d-name', (el) => { const r = row(); el.textContent = r ? r.name : '—'; });
+  dash.draw('d-facts', (dl) => {
+    const r = row(); if (!r) { dl.replaceChildren(); return; }
+    const n = (v, f) => (v === '' || v == null ? '—' : f(+v));
+    const items = [
+      ['Quadrante', QL[r.quadrant] || r.quadrant], ['Paese', r.nationality || '—'],
+      ['Età', r.deceased_flag === '1' ? `morto${r.death_year ? ' nel ' + r.death_year : ''}` : (r.age || '—')],
+      ['Punteggio di sintesi', n(r.score_synthesis, dec1)], ['Punteggio esperti', n(r.expert_score, fmt)],
+      ['Musei · biennali', `${r.museum_collections || 0} · ${r.biennials || 0}`], ['Grandi gallerie', r.top_galleries || '—'],
+      ['Follower Artsy', n(r.artsy_followers, fmt)], ['Instagram', (r.ig_handle || r.instagram) ? `@${r.ig_handle || r.instagram}${r.ig_followers ? ' · ' + fmt(+r.ig_followers) : ''}` : '—'],
+      ['Prezzo mediano, 10 anni', n(r.median_usd_10y, (v) => fmt(v) + ' USD')], ['Prezzo a 1 m²', n(r.price_1m2_usd, (v) => fmt(v) + ' USD')],
+      ['Opera più cara', r.max_lot_usd ? `${fmt(+r.max_lot_usd)} USD (${r.max_lot_year})` : '—'],
+      ['Lotti venduti, % venduti', `${r.lots_sold_10y || 0} · ${n(r.sell_through_10y, dec1)}%`], ['Prezzo/stima, ultimi 3 anni', n(r.price_to_estimate_last3y, dec2)],
+      ['Sedi con fiuto che lo espongono dal 2023', r.net_track_names || '—'],
+      ['Crescita prezzi a parità di dimensioni', r.adj_growth_pct_per_year === '' ? '—' : `${dec1(+r.adj_growth_pct_per_year)}% l'anno`],
+    ];
+    dl.replaceChildren(...items.flatMap(([k, v]) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; return [dt, dd]; }));
+    const a = document.createElement('dd'); const link = document.createElement('a'); link.href = `https://www.artsy.net/artist/${encodeURIComponent(r.slug)}`; link.target = '_blank'; link.rel = 'noopener'; link.textContent = 'Apri su Artsy';
+    const dt = document.createElement('dt'); dt.textContent = 'Fonte'; a.append(link); dl.append(dt, a);
+  });
+  dash.draw('d-lots', (el) => {
+    const a = window.EX_P().artist; if (!a) { el.replaceChildren(); return; }
+    const d = dash.data('lots');
+    if (d.status === 'loading') { el.textContent = 'Carico le opere…'; return; }
+    if (d.status !== 'ok') { el.textContent = 'Le opere non si sono caricate.'; return; }
+    const L = d.data.filter((x) => x.slug === a).map((x) => ({ t: new Date(+x.d.slice(0, 4), +x.d.slice(5, 7) - 1, 15), usd: +x.usd, a: +x.a || 0, c: x.c }));
+    el.replaceChildren();
+    if (!L.length) { el.textContent = 'Nessuna opera venduta all\'asta negli ultimi 10 anni.'; return; }
+    const W = el.clientWidth, H = el.clientHeight, M = { l: 58, r: 12, t: 10, b: 28 };
+    const x = d3.scaleTime().domain(d3.extent(L, (o) => o.t)).nice().range([M.l, W - M.r]);
+    const y = d3.scaleLog().domain(d3.extent(L, (o) => o.usd)).nice().range([H - M.b, M.t]);
+    const r = d3.scaleSqrt().domain([0, d3.max(L, (o) => o.a) || 1]).range([3, 14]);
+    const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Opere vendute all\'asta: data e prezzo');
+    svg.append('g').attr('transform', `translate(0,${H - M.b})`).call(d3.axisBottom(x).ticks(W < 500 ? 4 : 8));
+    svg.append('g').attr('transform', `translate(${M.l},0)`).call(d3.axisLeft(y).ticks(5, (v) => window.EX_fmt.short(v)));
+    svg.selectAll('.tick text').style('fill', 'var(--cds-text-secondary)').style('font-size', '12px');
+    svg.selectAll('.domain, .tick line').style('stroke', 'var(--cds-chart-axis)');
+    const CL = { P: 'Dipinto', C: 'Opera su carta', S: 'Scultura', M: 'Stampa o multiplo', F: 'Fotografia', A: 'Altro' };
+    const tip = document.createElement('div'); tip.className = 'ex-tip'; tip.hidden = true; el.append(tip);
+    svg.append('g').selectAll('circle').data(L).join('circle').attr('cx', (o) => x(o.t)).attr('cy', (o) => y(o.usd)).attr('r', (o) => (o.a ? r(o.a) : 3))
+      .style('fill', (o) => dash.colors[['P', 'C', 'S', 'F', 'M', 'A'].indexOf(o.c) % dash.colors.length]).style('fill-opacity', 0.6).style('stroke', 'var(--color-bg)')
+      .on('mousemove', (e, o) => { tip.hidden = false; tip.textContent = `${CL[o.c] || ''} · ${d3.utcFormat('%m/%Y')(o.t)} · ${window.EX_fmt.fmt(o.usd)} USD${o.a ? ' · ' + window.EX_fmt.fmt(o.a) + ' cm²' : ''}`; tip.style.left = Math.min(x(o.t) + 10, W - 230) + 'px'; tip.style.top = Math.max(y(o.usd) - 34, 0) + 'px'; })
+      .on('mouseleave', () => { tip.hidden = true; });
+  });
+  document.querySelectorAll('#d-close').forEach((b) => b.addEventListener('click', () => dash.setParams({ artist: '' })));
+}
+</script>
+
+<script>
+{
+  // controls: read params into fields once, then listen
+  const P = window.EX_P();
+  const set = (sel, prop, v) => document.querySelectorAll(sel).forEach((el) => { el[prop] = v; });
+  set('#f-q', 'value', P.q || ''); set('#f-age-min', 'value', P.age_min ?? ''); set('#f-age-max', 'value', P.age_max ?? '');
+  set('#f-score', 'value', P.score_min || 0); set('#f-p1m2', 'value', P.p1m2_max ?? ''); set('#f-pmed', 'value', P.pmed_max ?? '');
+  set('#f-ig', 'value', P.ig_min ?? ''); set('#f-mus', 'value', P.mus_min ?? '');
+  set('#f-living', 'checked', !!P.living); set('#f-gallery', 'checked', !!P.gallery); set('#f-proven', 'checked', !!P.proven);
+  set('#f-ig-has', 'checked', !!P.ig_has); set('#f-buy', 'checked', !!P.buy); set('#f-pick', 'checked', !!P.pick); set('#f-net', 'checked', !!P.net);
+  document.querySelectorAll('.f-quad').forEach((c) => { c.checked = (P.quad || []).includes(c.value); });
+  document.querySelectorAll('#f-score-out').forEach((o) => { o.value = String(P.score_min || 0); });
+  let t;
+  const later = (fn) => { clearTimeout(t); t = setTimeout(fn, 250); };
+  const on = (sel, ev, fn) => document.querySelectorAll(sel).forEach((el) => el.addEventListener(ev, fn));
+  on('#f-q', 'input', (e) => later(() => dash.setParams({ q: e.target.value.slice(0, 80) })));
+  const numField = (sel, key) => on(sel, 'input', (e) => later(() => dash.setParams({ [key]: e.target.value === '' ? '' : Number(e.target.value) })));
+  numField('#f-age-min', 'age_min'); numField('#f-age-max', 'age_max'); numField('#f-p1m2', 'p1m2_max'); numField('#f-pmed', 'pmed_max');
+  numField('#f-ig', 'ig_min'); numField('#f-mus', 'mus_min');
+  on('#f-score', 'input', (e) => { document.querySelectorAll('#f-score-out').forEach((o) => { o.value = e.target.value; }); later(() => dash.setParams({ score_min: Number(e.target.value) })); });
+  const box = (sel, key) => on(sel, 'change', (e) => dash.setParams({ [key]: e.target.checked }));
+  box('#f-living', 'living'); box('#f-gallery', 'gallery'); box('#f-proven', 'proven'); box('#f-ig-has', 'ig_has'); box('#f-buy', 'buy'); box('#f-pick', 'pick'); box('#f-net', 'net');
+  on('.f-quad', 'change', () => dash.setParams({ quad: [...document.querySelectorAll('.f-quad')].filter((c) => c.checked).map((c) => c.value) }));
+  on('.f-col', 'change', (e) => document.querySelectorAll('.ex-table').forEach((tb) => tb.classList.toggle(e.target.value, e.target.checked)));
+  on('#f-x', 'change', () => dash.draw('scatter')); on('#f-y', 'change', () => dash.draw('scatter'));
+  on('#f-reset', 'click', () => {
+    dash.resetParams();
+    set('#f-q', 'value', ''); ['#f-age-min', '#f-age-max', '#f-p1m2', '#f-pmed', '#f-ig', '#f-mus'].forEach((s) => set(s, 'value', ''));
+    set('#f-score', 'value', 0); document.querySelectorAll('#f-score-out').forEach((o) => { o.value = '0'; });
+    set('#f-living', 'checked', true); ['#f-gallery', '#f-proven', '#f-ig-has', '#f-buy', '#f-pick', '#f-net'].forEach((s) => set(s, 'checked', false));
+    document.querySelectorAll('.f-quad').forEach((c) => { c.checked = true; });
+    document.querySelectorAll('#f-nat').forEach((s) => { s.value = ''; });
+  });
+}
+</script>
+
+<script>
+{
+  const { fmt, dec1 } = window.EX_fmt; const { QL } = window.EX_Q;
+  const FV = { fv_venue: '', fv_quad: '', fv_pmax: '', fv_q: '', fv_rep: false, fv_living: true, fv_sale: false, fv_uniq: true, fv_artist: '' };
+  const PV = () => Object.assign({}, FV, dash.params());
+  window.EX_PV = PV;
+  dash.calc('fiuto_f', {
+    inputs: ['fiuto_artists'], title: 'Artisti delle sedi con fiuto, filtrati', description: 'Elenco degli artisti delle sedi con fiuto dopo i filtri della sezione',
+    fn: (fiuto_artists) => {
+      const p = Object.assign({ fv_venue: '', fv_quad: '', fv_pmax: '', fv_q: '', fv_rep: false, fv_living: true, fv_sale: false }, dash.params());
+      const q = (p.fv_q || '').toLowerCase().trim(); const pm = p.fv_pmax === '' || p.fv_pmax == null ? null : +p.fv_pmax;
+      return fiuto_artists.filter((r) => {
+        if (p.fv_venue && !(r.venue_ids || '').split('|').includes(p.fv_venue)) return false;
+        if (p.fv_quad === 'none' ? r.in_radar === '1' : (p.fv_quad && r.quadrant !== p.fv_quad)) return false;
+        if (p.fv_rep && r.represented !== '1') return false;
+        if (p.fv_living && r.in_radar === '1' && r.living !== '1') return false;
+        if (p.fv_sale && !(+r.works_for_sale > 0)) return false;
+        if (pm != null && !(r.min_price_usd !== '' && r.min_price_usd != null && +r.min_price_usd <= pm)) return false;
+        if (q && !String(r.name).toLowerCase().includes(q)) return false;
+        return true;
+      });
+    },
+  });
+  dash.calc('fiuto_w', {
+    inputs: ['fiuto_works', 'fiuto_f'], title: 'Opere in vendita degli artisti filtrati', description: 'Opere in vendita su Artsy degli artisti filtrati, o dell\'artista scelto, dalla meno cara',
+    fn: (fiuto_works, fiuto_f) => {
+      const p = Object.assign({ fv_pmax: '', fv_artist: '', fv_uniq: true }, dash.params());
+      const pm = p.fv_pmax === '' || p.fv_pmax == null ? null : +p.fv_pmax;
+      const ok = p.fv_artist ? new Set([p.fv_artist]) : new Set(fiuto_f.map((r) => r.slug));  // a chosen artist shows even if outside the list filters
+      return fiuto_works.filter((w) => ok.has(w.artist_slug) && !(p.fv_uniq && w.multiple === '1') && (pm == null || (w.price_usd !== '' && w.price_usd != null && +w.price_usd <= pm)))
+        .sort((a, b) => (a.price_usd === '' || a.price_usd == null ? 1e12 : +a.price_usd) - (b.price_usd === '' || b.price_usd == null ? 1e12 : +b.price_usd));
+    },
+  });
+  dash.calc('fv_kpi', {
+    inputs: ['fiuto_venues', 'fiuto_artists'], title: 'Riepilogo sedi con fiuto', description: 'Sedi con fiuto con almeno un artista, artisti e artisti con opere in vendita',
+    fn: (fiuto_venues, fiuto_artists) => [{ venues: fiuto_venues.filter((v) => +v.represented + +v.recent_show_artists > 0).length, artists: fiuto_artists.length,
+      with_sale: fiuto_artists.filter((r) => +r.works_for_sale > 0).length }],
+  });
+  const one = (name, field) => dash.draw(name, (el) => { const d = dash.data('fv_kpi'); if (d.status !== 'ok' || !d.data) return; el.textContent = fmt(d.data[0][field]); });
+  one('fv-nv', 'venues'); one('fv-na', 'artists'); one('fv-ns', 'with_sale');
+  dash.draw('fv-venue', (sel) => {
+    const d = dash.data('fiuto_venues');
+    const vs = d.status === 'ok' ? d.data.filter((v) => +v.represented + +v.recent_show_artists > 0).sort((a, b) => String(a.venue_name).localeCompare(String(b.venue_name))) : [];
+    sel.replaceChildren(new Option('Tutte le sedi', ''), ...vs.map((v) => new Option(`${v.venue_name}${v.city ? ' · ' + v.city : ''} (${v.hits}/${v.early_bets} a segno)`, v.venue)));
+    sel.value = PV().fv_venue || '';
+    sel.onchange = () => dash.setParams({ fv_venue: sel.value, fv_artist: '' });
+  });
+  dash.draw('fv-count', (el) => { const d = dash.data('fiuto_f'); if (d.status !== 'ok') return; el.textContent = `${fmt(d.data.length)} artisti, mostrati i primi ${fmt(Math.min(300, d.data.length))}`; });
+  const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; if (t instanceof Node) x.append(t); else x.textContent = t == null || t === '' ? '—' : t; return x; };
+  const n = (v, f) => (v === '' || v == null ? '—' : f(+v));
+  dash.draw('fv-rows', (tb) => {
+    const d = dash.data('fiuto_f'); if (d.status !== 'ok') return;
+    const sel = PV().fv_artist;
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessun artista corrisponde ai filtri.'); c.colSpan = 11; tr.append(c); tb.replaceChildren(tr); return; }
+    tb.replaceChildren(...d.data.slice(0, 300).map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
+      if (r.slug === sel) tr.style.background = 'color-mix(in srgb, var(--color-fg) 9%, transparent)';
+      tr.onclick = () => { const on = PV().fv_artist === r.slug; dash.setParams({ fv_artist: on ? '' : r.slug, artist: r.in_radar === '1' && !on ? r.slug : PV().artist }); };
+      tr.append(td(r.name), td(r.venues, 'ex-wrap'), td(r.represented === '1' ? 'Rappresentato' : 'In mostra dal 2023'), td(r.in_radar === '1' ? (QL[r.quadrant] || r.quadrant) : 'Non nel radar'),
+        td(r.age, 'ex-n'), td(n(r.score_synthesis, dec1), 'ex-n'), td(n(r.expert_score, fmt), 'ex-n'), td(n(r.museum_collections, fmt), 'ex-n'),
+        td(n(r.median_usd_10y, fmt), 'ex-n'), td(n(r.works_for_sale, fmt), 'ex-n'), td(n(r.min_price_usd, fmt), 'ex-n'));
+      return tr;
+    }));
+  });
+  dash.draw('fv-wtitle', (el) => {
+    const d = dash.data('fiuto_w'); if (d.status !== 'ok') return;
+    const a = PV().fv_artist;
+    el.textContent = a ? `${fmt(d.data.length)} opere in vendita dell'artista scelto (clicca di nuovo il nome per tornare a tutti)` : `${fmt(d.data.length)} opere in vendita degli artisti filtrati, dalla meno cara; mostrate le prime ${fmt(Math.min(300, d.data.length))}`;
+  });
+  dash.draw('fv-works', (tb) => {
+    const d = dash.data('fiuto_w'); if (d.status !== 'ok') return;
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessuna opera in vendita con questi filtri.'); c.colSpan = 9; tr.append(c); tb.replaceChildren(tr); return; }
+    tb.replaceChildren(...d.data.slice(0, 300).map((w) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(w.slug);
+      const a = document.createElement('a'); a.href = `https://www.artsy.net/artwork/${encodeURIComponent(w.slug)}`; a.target = '_blank'; a.rel = 'noopener'; a.textContent = w.title || 'Senza titolo';
+      tr.append(td(w.artist_name), td(a, 'ex-wrap'), td(w.date), td(w.category), td(w.medium, 'ex-wrap'), td(w.dimensions_cm), td(n(w.price_usd, fmt), 'ex-n'), td(w.sale_message), td(w.seller));
+      return tr;
+    }));
+  });
+  const P = PV();
+  const on = (sel, ev, fn) => document.querySelectorAll(sel).forEach((el) => el.addEventListener(ev, fn));
+  document.querySelectorAll('#fv-quad').forEach((s) => { s.value = P.fv_quad || ''; });
+  document.querySelectorAll('#fv-pmax').forEach((s) => { s.value = P.fv_pmax ?? ''; });
+  document.querySelectorAll('#fv-q').forEach((s) => { s.value = P.fv_q || ''; });
+  document.querySelectorAll('#fv-rep').forEach((s) => { s.checked = !!P.fv_rep; });
+  document.querySelectorAll('#fv-living').forEach((s) => { s.checked = P.fv_living !== false; });
+  document.querySelectorAll('#fv-sale').forEach((s) => { s.checked = !!P.fv_sale; });
+  let t;
+  const later = (fn) => { clearTimeout(t); t = setTimeout(fn, 250); };
+  on('#fv-quad', 'change', (e) => dash.setParams({ fv_quad: e.target.value, fv_artist: '' }));
+  on('#fv-pmax', 'input', (e) => later(() => dash.setParams({ fv_pmax: e.target.value === '' ? '' : Number(e.target.value) })));
+  on('#fv-q', 'input', (e) => later(() => dash.setParams({ fv_q: e.target.value.slice(0, 80), fv_artist: '' })));
+  on('#fv-rep', 'change', (e) => dash.setParams({ fv_rep: e.target.checked }));
+  on('#fv-living', 'change', (e) => dash.setParams({ fv_living: e.target.checked }));
+  on('#fv-sale', 'change', (e) => dash.setParams({ fv_sale: e.target.checked }));
+  on('#fv-uniq', 'change', (e) => dash.setParams({ fv_uniq: e.target.checked }));
+  document.querySelectorAll('#fv-uniq').forEach((s) => { s.checked = P.fv_uniq !== false; });
+}
+</script>
+
+<script>
+{
+  const { dec1 } = window.EX_fmt; const { QL } = window.EX_Q;
+  dash.draw('fv-picks', (tb) => {
+    const d = dash.data('fiuto_picks');
+    if (d.status === 'error') { const tr = document.createElement('tr'); const c = document.createElement('td'); c.colSpan = 7; c.textContent = 'La lista non si è caricata.'; tr.append(c); tb.replaceChildren(tr); return; }
+    if (d.status !== 'ok') return;
+    const sel = (window.EX_PV ? window.EX_PV().fv_artist : '');
+    const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; x.textContent = t == null || t === '' ? '—' : t; return x; };
+    tb.replaceChildren(...d.data.map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
+      if (r.slug === sel) tr.style.background = 'color-mix(in srgb, var(--color-fg) 9%, transparent)';
+      tr.onclick = () => { const on = window.EX_PV().fv_artist === r.slug; dash.setParams({ fv_artist: on ? '' : r.slug, artist: on ? window.EX_PV().artist : r.slug }); };
+      tr.append(td(r.rank, 'ex-n'), td(r.name), td(QL[r.quadrant] || r.quadrant), td(r.age, 'ex-n'), td(r.nationality), td(dec1(+r.backing), 'ex-n'), td(r.why, 'ex-wrap'));
+      return tr;
+    }));
+  });
+}
+</script>
+
+<script>
+{
+  dash.calc('au_kpi', { inputs: ['auctions'], title: 'Lotti in asta', description: 'Numero di lotti in asta o annunciati per gli artisti seguiti', fn: (auctions) => [{ lots: auctions.length }] });
+  dash.draw('au-n', (el) => { const d = dash.data('au_kpi'); if (d.status !== 'ok' || !d.data) return; el.textContent = String(d.data[0].lots); });
+  dash.draw('au-date', (el) => { const d = dash.data('auctions'); if (d.status !== 'ok') return; const v = d.data[0]?.checked; el.textContent = v ? d3.utcFormat('%d/%m/%Y')(new Date(v + 'T00:00:00Z')) : '—'; });
+  dash.draw('au-rows', (tb) => {
+    const d = dash.data('auctions');
+    const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; if (t instanceof Node) x.append(t); else x.textContent = t == null || t === '' ? '—' : t; return x; };
+    if (d.status === 'error') { const tr = document.createElement('tr'); const c = td('I lotti non si sono caricati.'); c.colSpan = 10; tr.append(c); tb.replaceChildren(tr); return; }
+    if (d.status !== 'ok') return;
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessun lotto in asta per gli artisti seguiti all\'ultimo controllo.'); c.colSpan = 10; tr.append(c); tb.replaceChildren(tr); return; }
+    const fd = (v) => (v ? d3.utcFormat('%d/%m/%Y')(new Date(v + 'T00:00:00Z')) : '');
+    tb.replaceChildren(...d.data.map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.key);
+      let title = r.title || 'Senza titolo';
+      if (/^https:\/\//.test(r.url || '')) { const a = document.createElement('a'); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = title; title = a; }
+      const isNew = r.first_seen && r.first_seen === r.checked;
+      const fs = document.createElement('span'); fs.textContent = fd(r.first_seen); if (isNew) { const s = document.createElement('span'); s.className = 'ex-pill'; s.style.marginLeft = '6px'; s.textContent = 'nuovo'; fs.append(s); }
+      tr.append(td(fd(r.date)), td(r.artist), td(title, 'ex-wrap'), td(r.category), td(r.auction_house), td(r.sale, 'ex-wrap'), td(r.lot), td(r.estimate), td(r.current_bid), td(fs));
+      return tr;
+    }));
+  });
+}
+</script>
