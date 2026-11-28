@@ -53,7 +53,7 @@
 <div class="ex">
   <header id="intro" style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
     <h1>Esploratore artisti</h1>
-    <p lang="it" data-read>Tutti i dati del radar in una pagina: <b data-draw="t-all" data-source="kpi_all" data-field="n" data-row="0">—</b> artisti con almeno 100 follower su Artsy. Ogni filtro aggiorna subito tabella, grafici e conteggi; clicca un artista per vedere le sue opere vendute all'asta.</p>
+    <p lang="it" data-read>Tutti i dati del radar in una pagina: <b data-draw="t-all" data-source="kpi_all" data-field="n" data-row="0">—</b> artisti con almeno 100 follower su Artsy. Ogni filtro aggiorna subito tabella, grafici e conteggi; clicca un artista per vedere le sue opere vendute all'asta. In fondo, <a href="#fiuto">gli artisti delle sedi con fiuto</a> con le opere in vendita adesso.</p>
   </header>
 
   <section class="ex-panel" id="filters" aria-label="Filtri">
@@ -181,6 +181,63 @@
       </table>
     </div>
     <div class="ex-actions"><button type="button" class="ex-btn" id="t-more">Mostra altri 200</button><span class="ex-muted">Clicca l'intestazione di una colonna per ordinare; un secondo clic inverte l'ordine.</span></div>
+  </section>
+
+
+  <section class="ex-panel" id="fiuto">
+    <h2>Gli artisti delle sedi con fiuto</h2>
+    <p lang="it" data-read>Le <b data-draw="fv-nv" data-source="fv_kpi" data-field="venues" data-row="0">—</b> gallerie e istituzioni che tra il 2015 e il 2022 hanno esposto per prime artisti poi diventati insider o affermati. Per le gallerie elenchiamo gli artisti che rappresentano oggi su Artsy, per musei e spazi chi hanno esposto dal 2023: in tutto <b data-draw="fv-na" data-source="fv_kpi" data-field="artists" data-row="0">—</b> artisti, di cui <b data-draw="fv-ns" data-source="fv_kpi" data-field="with_sale" data-row="0">—</b> con opere in vendita su Artsy adesso.</p>
+    <div class="ex-filters">
+      <label class="ex-f">Sede<select class="dash-select" id="fv-venue" data-draw="fv-venue" data-source="fiuto_venues" aria-label="Sede"></select></label>
+      <label class="ex-f">Quadrante<select class="dash-select" id="fv-quad" aria-label="Quadrante">
+        <option value="">Tutti</option><option value="insider">Insider</option><option value="emerging">Emergenti</option><option value="hype">Hype</option><option value="established">Affermati</option><option value="none">Non nel radar</option></select></label>
+      <label class="ex-f">Prezzo massimo di un'opera in vendita (USD)<input type="number" id="fv-pmax" min="0" step="1000" placeholder="nessun limite"></label>
+      <label class="ex-f">Cerca artista<input type="search" id="fv-q" placeholder="nome"></label>
+    </div>
+    <div class="ex-checks">
+      <label><input type="checkbox" id="fv-rep"> Solo artisti rappresentati</label>
+      <label><input type="checkbox" id="fv-living" checked> Solo artisti in vita</label>
+      <label><input type="checkbox" id="fv-sale"> Solo con opere in vendita</label>
+      <label><input type="checkbox" id="fv-uniq" checked> Solo opere uniche (niente stampe, poster, libri)</label>
+    </div>
+    <span class="ex-muted" data-draw="fv-count">—</span>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="fiuto_f" data-row-key="slug">
+        <thead><tr>
+          <th data-field="name">Artista</th>
+          <th data-field="venues">Sedi con fiuto</th>
+          <th data-field="represented">Rapporto</th>
+          <th data-field="quadrant">Quadrante</th>
+          <th class="ex-n" data-field="age">Età</th>
+          <th class="ex-n" data-field="score_synthesis">Sintesi</th>
+          <th class="ex-n" data-field="expert_score">Punteggio esperti</th>
+          <th class="ex-n" data-field="museum_collections">Musei</th>
+          <th class="ex-n" data-field="median_usd_10y">Asta, mediano 10 anni (USD)</th>
+          <th class="ex-n" data-field="works_for_sale">Opere in vendita</th>
+          <th class="ex-n" data-field="min_price_usd">Opera unica da (USD)</th>
+        </tr></thead>
+        <tbody data-draw="fv-rows"></tbody>
+      </table>
+    </div>
+    <h2 id="fiuto-works">Opere in vendita</h2>
+    <p class="ex-muted" data-draw="fv-wtitle">—</p>
+    <div class="ex-tablewrap">
+      <table class="ex-table" data-source="fiuto_w" data-row-key="slug">
+        <thead><tr>
+          <th data-field="artist_name">Artista</th>
+          <th data-field="title">Opera</th>
+          <th data-field="date">Anno</th>
+          <th data-field="category">Tipo</th>
+          <th data-field="medium">Tecnica</th>
+          <th data-field="dimensions_cm">Misure</th>
+          <th class="ex-n" data-field="price_usd">Prezzo (USD)</th>
+          <th data-field="sale_message">Prezzo indicato</th>
+          <th data-field="seller">Venditore</th>
+        </tr></thead>
+        <tbody data-draw="fv-works"></tbody>
+      </table>
+    </div>
+    <p class="ex-muted">Fonte Artsy, novembre 2026: fino a 20 opere in vendita per artista, di qualsiasi venditore. «Opera unica da» è il prezzo più basso tra dipinti, sculture, disegni, fotografie e tecniche miste in vendita. Molte gallerie scrivono «prezzo su richiesta»: senza prezzo l'opera resta in elenco ma non passa il filtro di prezzo. Prezzi convertiti in USD al cambio medio 2025–2026. Clicca un artista per vedere solo le sue opere e aprirne la scheda.</p>
   </section>
 
   <details id="notes">
@@ -483,5 +540,105 @@
     document.querySelectorAll('.f-quad').forEach((c) => { c.checked = true; });
     document.querySelectorAll('#f-nat').forEach((s) => { s.value = ''; });
   });
+}
+</script>
+
+<script>
+{
+  const { fmt, dec1 } = window.EX_fmt; const { QL } = window.EX_Q;
+  const FV = { fv_venue: '', fv_quad: '', fv_pmax: '', fv_q: '', fv_rep: false, fv_living: true, fv_sale: false, fv_uniq: true, fv_artist: '' };
+  const PV = () => Object.assign({}, FV, dash.params());
+  window.EX_PV = PV;
+  dash.calc('fiuto_f', {
+    inputs: ['fiuto_artists'], title: 'Artisti delle sedi con fiuto, filtrati', description: 'Elenco degli artisti delle sedi con fiuto dopo i filtri della sezione',
+    fn: (fiuto_artists) => {
+      const p = Object.assign({ fv_venue: '', fv_quad: '', fv_pmax: '', fv_q: '', fv_rep: false, fv_living: true, fv_sale: false }, dash.params());
+      const q = (p.fv_q || '').toLowerCase().trim(); const pm = p.fv_pmax === '' || p.fv_pmax == null ? null : +p.fv_pmax;
+      return fiuto_artists.filter((r) => {
+        if (p.fv_venue && !(r.venue_ids || '').split('|').includes(p.fv_venue)) return false;
+        if (p.fv_quad === 'none' ? r.in_radar === '1' : (p.fv_quad && r.quadrant !== p.fv_quad)) return false;
+        if (p.fv_rep && r.represented !== '1') return false;
+        if (p.fv_living && r.in_radar === '1' && r.living !== '1') return false;
+        if (p.fv_sale && !(+r.works_for_sale > 0)) return false;
+        if (pm != null && !(r.min_price_usd !== '' && r.min_price_usd != null && +r.min_price_usd <= pm)) return false;
+        if (q && !String(r.name).toLowerCase().includes(q)) return false;
+        return true;
+      });
+    },
+  });
+  dash.calc('fiuto_w', {
+    inputs: ['fiuto_works', 'fiuto_f'], title: 'Opere in vendita degli artisti filtrati', description: 'Opere in vendita su Artsy degli artisti filtrati, o dell\'artista scelto, dalla meno cara',
+    fn: (fiuto_works, fiuto_f) => {
+      const p = Object.assign({ fv_pmax: '', fv_artist: '', fv_uniq: true }, dash.params());
+      const pm = p.fv_pmax === '' || p.fv_pmax == null ? null : +p.fv_pmax;
+      const ok = p.fv_artist ? new Set([p.fv_artist]) : new Set(fiuto_f.map((r) => r.slug));
+      return fiuto_works.filter((w) => ok.has(w.artist_slug) && !(p.fv_uniq && w.multiple === '1') && (pm == null || (w.price_usd !== '' && w.price_usd != null && +w.price_usd <= pm)))
+        .sort((a, b) => (a.price_usd === '' || a.price_usd == null ? 1e12 : +a.price_usd) - (b.price_usd === '' || b.price_usd == null ? 1e12 : +b.price_usd));
+    },
+  });
+  dash.calc('fv_kpi', {
+    inputs: ['fiuto_venues', 'fiuto_artists'], title: 'Riepilogo sedi con fiuto', description: 'Sedi con fiuto con almeno un artista, artisti e artisti con opere in vendita',
+    fn: (fiuto_venues, fiuto_artists) => [{ venues: fiuto_venues.filter((v) => +v.represented + +v.recent_show_artists > 0).length, artists: fiuto_artists.length,
+      with_sale: fiuto_artists.filter((r) => +r.works_for_sale > 0).length }],
+  });
+  const one = (name, field) => dash.draw(name, (el) => { const d = dash.data('fv_kpi'); if (d.status !== 'ok' || !d.data) return; el.textContent = fmt(d.data[0][field]); });
+  one('fv-nv', 'venues'); one('fv-na', 'artists'); one('fv-ns', 'with_sale');
+  dash.draw('fv-venue', (sel) => {
+    const d = dash.data('fiuto_venues');
+    const vs = d.status === 'ok' ? d.data.filter((v) => +v.represented + +v.recent_show_artists > 0).sort((a, b) => String(a.venue_name).localeCompare(String(b.venue_name))) : [];
+    sel.replaceChildren(new Option('Tutte le sedi', ''), ...vs.map((v) => new Option(`${v.venue_name}${v.city ? ' · ' + v.city : ''} (${v.hits}/${v.early_bets} a segno)`, v.venue)));
+    sel.value = PV().fv_venue || '';
+    sel.onchange = () => dash.setParams({ fv_venue: sel.value, fv_artist: '' });
+  });
+  dash.draw('fv-count', (el) => { const d = dash.data('fiuto_f'); if (d.status !== 'ok') return; el.textContent = `${fmt(d.data.length)} artisti, mostrati i primi ${fmt(Math.min(300, d.data.length))}`; });
+  const td = (t, c) => { const x = document.createElement('td'); if (c) x.className = c; if (t instanceof Node) x.append(t); else x.textContent = t == null || t === '' ? '—' : t; return x; };
+  const n = (v, f) => (v === '' || v == null ? '—' : f(+v));
+  dash.draw('fv-rows', (tb) => {
+    const d = dash.data('fiuto_f'); if (d.status !== 'ok') return;
+    const sel = PV().fv_artist;
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessun artista corrisponde ai filtri.'); c.colSpan = 11; tr.append(c); tb.replaceChildren(tr); return; }
+    tb.replaceChildren(...d.data.slice(0, 300).map((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.slug);
+      if (r.slug === sel) tr.style.background = 'color-mix(in srgb, var(--color-fg) 9%, transparent)';
+      tr.onclick = () => { const on = PV().fv_artist === r.slug; dash.setParams({ fv_artist: on ? '' : r.slug, artist: r.in_radar === '1' && !on ? r.slug : PV().artist }); };
+      tr.append(td(r.name), td(r.venues, 'ex-wrap'), td(r.represented === '1' ? 'Rappresentato' : 'In mostra dal 2023'), td(r.in_radar === '1' ? (QL[r.quadrant] || r.quadrant) : 'Non nel radar'),
+        td(r.age, 'ex-n'), td(n(r.score_synthesis, dec1), 'ex-n'), td(n(r.expert_score, fmt), 'ex-n'), td(n(r.museum_collections, fmt), 'ex-n'),
+        td(n(r.median_usd_10y, fmt), 'ex-n'), td(n(r.works_for_sale, fmt), 'ex-n'), td(n(r.min_price_usd, fmt), 'ex-n'));
+      return tr;
+    }));
+  });
+  dash.draw('fv-wtitle', (el) => {
+    const d = dash.data('fiuto_w'); if (d.status !== 'ok') return;
+    const a = PV().fv_artist;
+    el.textContent = a ? `${fmt(d.data.length)} opere in vendita dell'artista scelto (clicca di nuovo il nome per tornare a tutti)` : `${fmt(d.data.length)} opere in vendita degli artisti filtrati, dalla meno cara; mostrate le prime ${fmt(Math.min(300, d.data.length))}`;
+  });
+  dash.draw('fv-works', (tb) => {
+    const d = dash.data('fiuto_w'); if (d.status !== 'ok') return;
+    if (!d.data.length) { const tr = document.createElement('tr'); const c = td('Nessuna opera in vendita con questi filtri.'); c.colSpan = 9; tr.append(c); tb.replaceChildren(tr); return; }
+    tb.replaceChildren(...d.data.slice(0, 300).map((w) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(w.slug);
+      const a = document.createElement('a'); a.href = `https://www.artsy.net/artwork/${encodeURIComponent(w.slug)}`; a.target = '_blank'; a.rel = 'noopener'; a.textContent = w.title || 'Senza titolo';
+      tr.append(td(w.artist_name), td(a, 'ex-wrap'), td(w.date), td(w.category), td(w.medium, 'ex-wrap'), td(w.dimensions_cm), td(n(w.price_usd, fmt), 'ex-n'), td(w.sale_message), td(w.seller));
+      return tr;
+    }));
+  });
+  const P = PV();
+  const on = (sel, ev, fn) => document.querySelectorAll(sel).forEach((el) => el.addEventListener(ev, fn));
+  document.querySelectorAll('#fv-quad').forEach((s) => { s.value = P.fv_quad || ''; });
+  document.querySelectorAll('#fv-pmax').forEach((s) => { s.value = P.fv_pmax ?? ''; });
+  document.querySelectorAll('#fv-q').forEach((s) => { s.value = P.fv_q || ''; });
+  document.querySelectorAll('#fv-rep').forEach((s) => { s.checked = !!P.fv_rep; });
+  document.querySelectorAll('#fv-living').forEach((s) => { s.checked = P.fv_living !== false; });
+  document.querySelectorAll('#fv-sale').forEach((s) => { s.checked = !!P.fv_sale; });
+  let t;
+  const later = (fn) => { clearTimeout(t); t = setTimeout(fn, 250); };
+  on('#fv-quad', 'change', (e) => dash.setParams({ fv_quad: e.target.value, fv_artist: '' }));
+  on('#fv-pmax', 'input', (e) => later(() => dash.setParams({ fv_pmax: e.target.value === '' ? '' : Number(e.target.value) })));
+  on('#fv-q', 'input', (e) => later(() => dash.setParams({ fv_q: e.target.value.slice(0, 80), fv_artist: '' })));
+  on('#fv-rep', 'change', (e) => dash.setParams({ fv_rep: e.target.checked }));
+  on('#fv-living', 'change', (e) => dash.setParams({ fv_living: e.target.checked }));
+  on('#fv-sale', 'change', (e) => dash.setParams({ fv_sale: e.target.checked }));
+  on('#fv-uniq', 'change', (e) => dash.setParams({ fv_uniq: e.target.checked }));
+  document.querySelectorAll('#fv-uniq').forEach((s) => { s.checked = P.fv_uniq !== false; });
 }
 </script>
